@@ -1,5 +1,7 @@
 ﻿Init()
 ;=======================================================
+TCPath := "e:\Program Files\totalcmd\TOTALCMD.EXE"
+;=======================================================
 RegisterHotkey("H","0","<0>")
 RegisterHotkey("H","1","<1>")
 RegisterHotkey("H","2","<2>")
@@ -16,13 +18,16 @@ RegisterHotkey("H","j","<down>")
 RegisterHotkey("H","h","<left>")
 RegisterHotkey("H","l","<right>")
 RegisterHotkey("H","d","<DirectoryHotlist>")
-RegisterHotkey("H","B","<DirectoryHistory>")
+RegisterHotkey("H","n","<DirectoryHistory>")
 RegisterHotkey("H","u","<GoToParent>")
-RegisterHotkey("H","za","<reload>")
+RegisterHotkey("S","<lwin>e","<ToggleTC>")
+RegisterHotkey("S","<ctrl>z","<reload>")
 ;Esc必须要以下列形式映射热键
 ;保证Esc的功能不被hotkeycontrol影响
 ;如果不这样映射，则退回正常模式将会失效
 SetHotkey("Escape","<Esc_TTOTAL_CMD>")
+EmptyMem()
+HotkeyControl(False)
 return
 ;======================================================
 <Esc_TTOTAL_CMD>:
@@ -32,6 +37,19 @@ return
 return
 <insert_TTOTAL_CMD>:
 	HotkeyControl(False)	
+return
+<ToggleTC>:
+	IfWinExist,AHK_CLASS TTOTAL_CMD	
+		WinActivate,AHK_CLASS TTOTAL_CMD
+	Else
+		Run,%TCPath%
+	Loop,4
+	{
+		IfWinExist,AHK_CLASS TTOTAL_CMD
+			WinActivate,AHK_CLASS TTOTAL_CMD
+		Sleep,500
+	}
+	EmptyMem()
 return
 <Down>:
 	Send,{Down}

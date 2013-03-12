@@ -19,19 +19,14 @@ Init()
 return
 End()
 {
-	GoSub,<End>
 }
 ; 若要自定义模式切换，不使用Esc，请修改这里！
-<End>:
-return
 ; 错误处理及提示
 <Error>:
 return
 ; 留空处理
 <None>:
 return
-
-
 ; Core Function {{{1
 ; 核心函数
 <SingleHotkey>:
@@ -123,10 +118,15 @@ RegisterHotkey(Scope="H",Key="",Action="<SingleHotkey>",ViCLASS="TTOTAL_CMD")
 	; 判断各个参数是否有意义
 	If IsLabel(Action)
 	{
+		If RegExMatch(Scope,"^S$")
+		{
+			Hotkey,IfWinActive ;,AHK_CLASS TTOTAL_CMD
+			KeyList := ResolveHotkey(key)
+			SetHotkey(KeyList[1],Action)
+			return
+		}
 		If RegExMatch(Scope,"^H$")
 			Hotkey,IfWinActive,ahk_class %ViCLASS%
-		If RegExMatch(Scope,"^S$")
-			Hotkey,IfWinActive ;,AHK_CLASS TTOTAL_CMD
 		For,i,GetKey In ResolveHotkey(Key)
 		{
 			If i = 1
