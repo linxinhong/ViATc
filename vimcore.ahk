@@ -19,6 +19,7 @@ Init()
 return
 End()
 {
+	EmptyMem()
 }
 ; 若要自定义模式切换，不使用Esc，请修改这里！
 ; 错误处理及提示
@@ -64,10 +65,15 @@ GroupKeyStart()
 		Send,%A_ThisHotkey%
 		Return
 	}
-	IfWinActive,ahk_group ViGroup
-		HotkeyTemp := "H" . GetThisHotkey() 
+	If HotkeyTemp
+		GoSub,<GroupKey>
 	Else
-		HotkeyTemp := "S" . GetThisHotkey()
+	{
+		IfWinActive,ahk_group ViGroup
+			HotkeyTemp := "H" . GetThisHotkey() 
+		Else
+			HotkeyTemp := "S" . GetThisHotkey()
+	}
 }
 <GroupKey>:
 	GroupKey()
@@ -148,6 +154,8 @@ RegisterHotkey(Scope="H",Key="",Action="<SingleHotkey>",ViCLASS="TTOTAL_CMD")
 			KeyList .= GetKey
 		}
 	}
+	Else
+		Msgbox % Key " map to Label " Action "Error !"
 	; Save to ViATcKey
 	NeedleRegEx := "\t" . Scope . KeyToMatch(KeyList) . "\s" . ViCLASS . "\t"
 	If Not RegExMatch(ViATcKey["AllKeys"],NeedleRegEx)
@@ -317,8 +325,10 @@ GetThisHotkey()
 }
 ; SetHotkey(sKey,sAction) {{{2
 ; 设置热键功能,只是方便，不然写太多Hotkey也累啊！
-SetHotkey(sKey,sAction)
+SetHotkey(sKey,sAction,Class="")
 {
+	If Class
+		Hotkey,IfWinActive,ahk_class %Class%
 	Hotkey,%sKey%,%sAction%,On,UseErrorLevel
 	If ErrorLevel
 		Msgbox % "Key " sKey " map to " sAction "Error !"

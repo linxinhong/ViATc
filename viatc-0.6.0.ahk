@@ -1,7 +1,26 @@
-﻿Init()
+﻿Setkeydelay,-1 
+SetControlDelay,-1
+Detecthiddenwindows,on
+Coordmode,Menu,Window
+Init()
 ;=======================================================
 TCPath := "e:\Program Files\totalcmd\TOTALCMD.EXE"
+If RegExMatch(TcPath,"i)totalcmd64\.exe$")
+{
+	Global TCListBox := "LCLListBox"
+	Global TCEdit := "Edit2"
+	GLobal TCPanel1 := "Window1"
+	Global TCPanel2 := "Window11"
+}
+Else
+{
+	Global TCListBox := "TMyListBox"
+	Global TCEdit := "Edit1"
+	Global TCPanel1 := "TPanel1"
+	Global TCPanel2 := "TMyPanel8"
+}
 ;=======================================================
+; RegisterHotkey {{{1
 RegisterHotkey("H","0","<0>")
 RegisterHotkey("H","1","<1>")
 RegisterHotkey("H","2","<2>")
@@ -14,30 +33,96 @@ RegisterHotkey("H","8","<8>")
 RegisterHotkey("H","9","<9>")
 RegisterHotkey("H","i","<insert_TTOTAL_CMD>")
 RegisterHotkey("H","k","<up>")
+RegisterHotkey("H","K","<upSelect>")
 RegisterHotkey("H","j","<down>")
+RegisterHotkey("H","J","<downSelect>")
 RegisterHotkey("H","h","<left>")
+RegisterHotkey("H","H","<GotoPreviousDir>")
 RegisterHotkey("H","l","<right>")
+RegisterHotkey("H","L","<GotoNextDir>")
 RegisterHotkey("H","d","<DirectoryHotlist>")
-RegisterHotkey("H","n","<DirectoryHistory>")
+RegisterHotkey("H","D","<OpenDesktop>")
+RegisterHotkey("H","N","<DirectoryHistory>")
+RegisterHotkey("H","n","<azHistory>")
 RegisterHotkey("H","u","<GoToParent>")
-RegisterHotkey("S","<lwin>e","<ToggleTC>")
-RegisterHotkey("S","<ctrl>z","<reload>")
+RegisterHotkey("H","gn","<SwitchToNextTab>")
+RegisterHotkey("H","gp","<SwitchToPreviousTab>")
+RegisterHotkey("H","ga","<CloseAllTabs>")
+RegisterHotkey("H","gc","<CloseCurrentTab>")
+RegisterHotkey("H","gb","<OpenDirInNewTabOther>")
+RegisterHotkey("H","ge","<Exchange>")
+RegisterHotkey("H","gw","<ExchangeWithTabs>")
+RegisterHotkey("H","g1","<SrcActivateTab1>")
+RegisterHotkey("H","g2","<SrcActivateTab2>")
+RegisterHotkey("H","g3","<SrcActivateTab3>")
+RegisterHotkey("H","g4","<SrcActivateTab4>")
+RegisterHotkey("H","g5","<SrcActivateTab5>")
+RegisterHotkey("H","g6","<SrcActivateTab6>")
+RegisterHotkey("H","g7","<SrcActivateTab7>")
+RegisterHotkey("H","g8","<SrcActivateTab8>")
+RegisterHotkey("H","g9","<SrcActivateTab9>")
+RegisterHotkey("H","g0","<GoLastTab>")
+RegisterHotkey("H","sn","<SrcByName>")
+RegisterHotkey("H","se","<SrcByExt>")
+RegisterHotkey("H","ss","<SrcBySize>")
+RegisterHotkey("H","sd","<SrcByDateTime>")
+RegisterHotkey("H","sr","<SrcNegOrder>")
+RegisterHotkey("H","s1","<SrcSortByCol1>")
+RegisterHotkey("H","s2","<SrcSortByCol2>")
+RegisterHotkey("H","s3","<SrcSortByCol3>")
+RegisterHotkey("H","s4","<SrcSortByCol4>")
+RegisterHotkey("H","s5","<SrcSortByCol5>")
+RegisterHotkey("H","s6","<SrcSortByCol6>")
+RegisterHotkey("H","s7","<SrcSortByCol7>")
+RegisterHotkey("H","s8","<SrcSortByCol8>")
+RegisterHotkey("H","s9","<SrcSortByCol9>")
+RegisterHotkey("H","s0","<SrcUnsorted>")
+RegisterHotkey("H","v","<SrcCustomViewMenu>")
+RegisterHotkey("H","Vb","<VisButtonbar>")
+RegisterHotkey("H","Vd","<VisDriveButtons>")
+RegisterHotkey("H","Vo","<VisTwoDriveButtons>")
+RegisterHotkey("H","Vr","<VisDriveCombo>")
+RegisterHotkey("H","Vc","<VisDriveCombo>")
+RegisterHotkey("H","Vt","<VisTabHeader>")
+RegisterHotkey("H","Vs","<VisStatusbar>")
+RegisterHotkey("H","Vn","<VisCmdLine>")
+RegisterHotkey("H","Vf","<VisKeyButtons>")
+RegisterHotkey("H","Vw","<VisDirTabs>")
+RegisterHotkey("H","Ve","<CommandBrowser>")
+RegisterHotkey("H","zz","<50Percent>")
+RegisterHotkey("H","zi","<WinMaxLeft>")
+RegisterHotkey("H","zo","<WinMaxRight>")
+RegisterHotkey("H","zt","<AlwayOnTop>")
+RegisterHotkey("H","zn","<Minimize>")
+RegisterHotkey("H","zm","<Maximize>")
+RegisterHotkey("H","zr","<Reload>")
+RegisterHotkey("H","zv","<VerticalPanels>")
+RegisterHotkey("H","zs","<TransParent>")
+;RegisterHotkey("H","zf","<TCFullScreen>")
+;RegisterHotkey("H","zl","<TCLite>")
+;RegisterHotkey("H","zq","<QuitTC>")
+;RegisterHotkey("H","za","<ReloadTC>")
 ;Esc必须要以下列形式映射热键
 ;保证Esc的功能不被hotkeycontrol影响
 ;如果不这样映射，则退回正常模式将会失效
-SetHotkey("Escape","<Esc_TTOTAL_CMD>")
-EmptyMem()
-HotkeyControl(False)
+RegisterHotkey("S","<lwin>e","<ToggleTC>")
+SetHotkey("Escape","<Esc_TTOTAL_CMD>","TTOTAL_CMD")
+End()
+;HotkeyControl(False)
 return
 ;======================================================
+; Actions {{{1
+; <Esc_TTOTAL_CMD> {{{2
 <Esc_TTOTAL_CMD>:
+	Send,{Esc}
 	HotkeyControl(true)	
-	Send,{Escape}
 	EmptyMem()
 return
+; <insert_TTOTAL_CMD> {{{2
 <insert_TTOTAL_CMD>:
 	HotkeyControl(False)	
 return
+; <ToggleTC> {{{2
 <ToggleTC>:
 	IfWinExist,AHK_CLASS TTOTAL_CMD	
 		WinActivate,AHK_CLASS TTOTAL_CMD
@@ -45,24 +130,185 @@ return
 		Run,%TCPath%
 	Loop,4
 	{
-		IfWinExist,AHK_CLASS TTOTAL_CMD
+		IfWinNotActive,AHK_CLASS TTOTAL_CMD
 			WinActivate,AHK_CLASS TTOTAL_CMD
+		Else
+			Break
 		Sleep,500
 	}
 	EmptyMem()
 return
+; <Down> {{{2
 <Down>:
 	Send,{Down}
 return
+; <up> {{{2
 <up>:
 	Send,{up}
 return
+; <DownSelect> {{{2
+<DownSelect>:
+	tc_Select(1)
+return
+; <upSelect> {{{2
+<upSelect>:
+	tc_Select(-1)
+return
+; tc_Select(Direction) {{{2
+tc_Select(Direction)
+{
+	If Direction > 0
+		Send +{Down}
+	Else
+		Send +{Up}
+/*
+	ControlGetFocus,ctrl,AHK_CLASS TTOTAL_CMD
+	If RegExMatch(Ctrl,"i)^tmylistbox")
+	{
+		SendMessage, 0x188, 0, 0, %ctrl% , AHK_ClASS TTOTAL_CMD
+		Line := ErrorLevel
+		SendMessage, 0x187, %Line% , , %ctrl% ,AHK_CLASS TTOTAL_CMD
+		State := !ErrorLevel
+    	PostMessage, 0x0185, %State% , %Line% , %ctrl%, AHK_CLASS TTOTAL_CMD
+		NextLine := Line + Direction
+		PostMessage, 0x19E, %NextLine% , 1 , %CTRL%, AHK_CLASS TTOTAL_CMD
+	}
+*/
+}
+; <left> {{{2
 <left>:
 	Send,{left}
 return
+; <right> {{{2
 <right>:
 	Send,{Right}
 return
+; <GoLastTab> {{{2
+<GoLastTab>:
+	GoSub,<SrcActivateTab1>
+	GoSub,<SwitchToPreviousTab>
+return
+; <AlwayOnTop> {{{2
+<AlwayOnTop>:
+		AlwayOnTop()
+Return
+AlwayOnTop()
+{
+	WinGet,ExStyle,ExStyle,ahk_class TTOTAL_CMD
+	If (ExStyle & 0x8)
+   		WinSet,AlwaysOnTop,off,ahk_class TTOTAL_CMD
+	else
+   		WinSet,AlwaysOnTop,on,ahk_class TTOTAL_CMD 
+}
+; <TransParent> {{{2
+<TransParent>:
+		TransParent()
+Return
+TransParent()
+{
+	WinGet,TranspVar,Transparent,ahk_class TTOTAL_CMD
+	If TranspVar <> 255
+	{
+		WinSet,Transparent,255,ahk_class TTOTAL_CMD
+	}
+	Else
+	{
+		TranspVar:= 220
+		WinSet,Transparent,%TranspVar%,ahk_class TTOTAL_CMD
+	}
+}
+; <azHistory> {{{2
+<azHistory>:
+		azhistory()
+Return
+azhistory()
+{
+	GoSub,<DirectoryHistory>
+	Sleep, 100
+	if WinExist("ahk_class #32768")
+	{
+	SendMessage,0x01E1 ;Get Menu Hwnd
+    hmenu := ErrorLevel
+    if hmenu!=0
+    {
+		If Not RegExMatch(GetMenuString(Hmenu,1),".*[\\|/]$")
+			Return
+		Menu,sh,add
+		Menu,sh,deleteall
+		a :=
+        itemCount := DllCall("GetMenuItemCount", "Uint", hMenu, "Uint")
+		Loop %itemCount%
+	 	{
+			a := chr(A_Index+64) . ">>" .  GetMenuString(Hmenu,A_Index-1)
+			Menu,SH,add,%a%,azSelect
+		}
+		Send {Esc}
+		ControlGetFocus,TLB,ahk_class TTOTAL_CMD
+		ControlGetPos,xn,yn,,,%TLB%,ahk_class TTOTAL_CMD
+		Menu,SH,show,%xn%,%yn%
+		Return
+    }
+	}	
+}
+GetMenuString(hMenu, nPos)
+{
+      VarSetCapacity(lpString, 256) 
+      length := DllCall("GetMenuString"
+         , "UInt", hMenu
+         , "UInt", nPos
+         , "Str", lpString
+         , "Int", 255
+         , "UInt", 0x0400)
+   	  return lpString
+}
+azSelect:
+	azSelect()
+Return
+azSelect()
+{
+	nPos := A_ThisMenuItem
+	nPos := Asc(Substr(nPos,1,1)) - 64
+	Winactivate,ahk_class TTOTAL_CMD
+	Postmessage,1075,572,0,,ahk_class TTOTAL_CMD
+	Sleep,100
+	if WinExist("ahk_class #32768")
+	{
+		Loop %nPos%
+			SendInput {Down}
+		Send {enter}
+	}
+}
+; <WinMaxLeft> {{{2
+<WinMaxLeft>:
+	WinMaxLR(true)
+Return
+; <WinMaxRight> {{{2
+<WinMaxRight>:
+	WinMaxLR(false)
+Return
+WinMaxLR(lr)
+{
+	If lr
+	{
+		ControlGetPos,x,y,w,h,%TCPanel2%,ahk_class TTOTAL_CMD
+		ControlGetPos,tm1x,tm1y,tm1W,tm1H,%TCPanel1%,ahk_class TTOTAL_CMD
+		If (tm1w < tm1h) ; 判断纵向还是横向 Ture为竖 false为横
+		{
+			ControlMove,%TCPanel1%,x+w,,,,ahk_class TTOTAL_CMD
+		}
+		else
+			ControlMove,%TCPanel1%,0,y+h,,,ahk_class TTOTAL_CMD
+		ControlClick, %TCPanel1%,ahk_class TTOTAL_CMD 
+		WinActivate ahk_class TTOTAL_CMD
+	}
+	Else
+	{
+		ControlMove,%TCPanel1%,0,0,,,ahk_class TTOTAL_CMD
+		ControlClick,%TCPanel1%,ahk_class TTOTAL_CMD
+		WinActivate ahk_class TTOTAL_CMD
+	}
+}
+; <Reload> {{{2
 <Reload>:
 	Reload
 return

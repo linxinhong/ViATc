@@ -1,0 +1,12 @@
+﻿RegisterHotKey(Scope,Key,Action,Class)
+
+
+SetHotkey(Key,Action)
+
+
+EmptyMem()
+
+
+HotkeyControl(Bool)
+
+
