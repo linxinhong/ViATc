@@ -10,3 +10,6 @@ EmptyMem()
 HotkeyControl(Bool)
 
 
+LoadPlugin()
+
+

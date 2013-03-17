@@ -6,15 +6,18 @@
 Init()
 {
 	GoSub,<Init>
+	GoSub,<LoadPlugin>
 }
 <Init>:
 	SetKeyDelay,-1
 	; Global Var {{{1
 	; 全局变量，请勿修改
 	Global ViATcKey := []
+	Global Actions := []
 	Global HotkeyTemp := ""
 	Global HotkeyCount := 0
 	Global ViMode := True
+	Global NeedReload := False
 	GroupAdd,ViGroup,ahk_class TTOTAL_CMD
 return
 End()
@@ -47,10 +50,30 @@ SingleHotkey()
 	{
 		WinGetClass, Class, A
 		IfWinActive,ahk_group ViGroup
+		{
+			If CheckCapsLock()
+				iMatch := "\tH" . KeyToMatch(GetThisHotkey()) . "\s"
 			HotkeyTemp := "H" . GetThisHotkey() . " " . Class 
+		}
 		Else
+		{
+			If CheckCapsLock()
+				iMatch := "\tS" . KeyToMatch(GetThisHotkey()) . "\s"
 			HotkeyTemp := "S" . GetThisHotkey() . " " . Class
-		ExecSub(ViATcKey[HotkeyTemp])
+		}
+		If CheckCapsLock()
+		{
+			If RegExMatch(ViATcKey["AllKeys"],iMatch)
+				ExecSub(ViATcKey[HotkeyTemp])
+			Else
+			{
+				HotkeyTemp :=
+				GoSub,<GroupKeyStart>
+				return
+			}
+		}
+		Else
+			ExecSub(ViATcKey[HotkeyTemp])
 		HotkeyTemp :=
 	}
 }
@@ -70,9 +93,25 @@ GroupKeyStart()
 	Else
 	{
 		IfWinActive,ahk_group ViGroup
+		{
+			If CheckCapsLock()
+				iMatch := "\tH" . KeyToMatch(GetThisHotkey()) . "\s"
 			HotkeyTemp := "H" . GetThisHotkey() 
+		}
 		Else
+		{
+			If CheckCapsLock()
+				iMatch := "\tS" . KeyToMatch(GetThisHotkey()) . "\s"
 			HotkeyTemp := "S" . GetThisHotkey()
+		}
+		If CheckCapsLock()
+		{
+			If RegExMatch(ViATcKey["Allkeys"],iMatch)
+			{
+				HotkeyTemp :=
+				GoSub,<SingleHotkey>
+			}
+		}
 	}
 }
 <GroupKey>:
@@ -97,6 +136,10 @@ GroupKey()
 			HotkeyTemp :=
 	}
 }
+<LoadPlugin>:
+	LoadPlugin()
+return
+return
 <1>:
 return
 <2>:
@@ -121,6 +164,9 @@ return
 ; 注册热键
 RegisterHotkey(Scope="H",Key="",Action="<SingleHotkey>",ViCLASS="TTOTAL_CMD")
 {
+	; 如果需要Reload，先不映射
+	If NeedReload 
+		Return
 	; 判断各个参数是否有意义
 	If IsLabel(Action)
 	{
@@ -165,7 +211,76 @@ RegisterHotkey(Scope="H",Key="",Action="<SingleHotkey>",ViCLASS="TTOTAL_CMD")
 	GroupAdd,ViGroup,ahk_class %ViCLASS%
 	return
 }
-; HotkeyControl() {{{2
+; SetHotkey(sKey,sAction) {{{2
+; 设置热键功能,只是方便，不然写太多Hotkey也累啊！
+SetHotkey(sKey,sAction,Class="")
+{
+	; 如果需要Reload，先不映射
+	If NeedReload 
+		Return
+	If Class
+		Hotkey,IfWinActive,ahk_class %Class%
+	Hotkey,%sKey%,%sAction%,On,UseErrorLevel
+	If ErrorLevel
+		Msgbox % "Key " sKey " map to " sAction "Error !"
+}
+; ExecSub(Label) {{{2
+; 执行标签
+ExecSub(Label)
+{
+	If ( Not Label ) 
+	{
+		HotkeyCount := 0
+		Return
+	}
+	If RegExMatch(Label,"<\d>")
+	{
+		HotkeyCount := HotkeyCount * 10 + Substr(Label,2,1)
+		If HotkeyCount > 99
+			HotkeyCount := 99
+		Return
+	}
+	If Not IsLabel(Label)
+		Msgbox % Label " Error !"
+	If IsLabel(Label) 
+	{
+		If Not HotkeyCount
+			HotkeyCount := 1
+		Loop % HotkeyCount
+		{
+			If HotkeyCount 
+				GoSub % Label
+			Else
+				Break
+		}
+	}
+	HotkeyCount := 0
+	EmptyMem()
+}
+; LoadPlugin() {{{2
+; 加载脚本，并修改VIATC
+LoadPlugin()
+{
+	IfExist %A_Workingdir%\Actions
+	{
+		Loop,%A_Workingdir%\Actions\*.ahk
+		{
+			Label := "<" RegExReplace(A_LoopFileName,"\.ahk") ">"
+			If IsLabel(Label)
+				Continue
+			Else
+			{
+				NeedReload := true
+				FileAppend, #include Actions\%A_LoopFileName%`n , %A_ScriptName%
+			}
+		}	
+		If NeedReload
+			msgbox,4,Plugin,新动作添加完毕，请重启！
+		IfMsgbox yes
+			Reload
+	}
+}
+; HotkeyControl(Control) {{{2
 ; 启用或者禁用热键 
 HotkeyControl(control)
 {
@@ -309,8 +424,7 @@ KeyToMatch(Key)
 ; 获得当前热键，区分大小写
 GetThisHotkey()
 {
-	GetKeyState,Var,CapsLock,T
-	If Var = D
+	If CheckCapsLock()
 	{
 		If RegExMatch(A_ThisHotkey,"^[a-z]$")
 			ThisHotkey := "shift & " . A_ThisHotkey
@@ -323,49 +437,16 @@ GetThisHotkey()
 		ThisHotkey := A_ThisHotkey
 	Return ThisHotkey
 }
-; SetHotkey(sKey,sAction) {{{2
-; 设置热键功能,只是方便，不然写太多Hotkey也累啊！
-SetHotkey(sKey,sAction,Class="")
+CheckCapsLock()
 {
-	If Class
-		Hotkey,IfWinActive,ahk_class %Class%
-	Hotkey,%sKey%,%sAction%,On,UseErrorLevel
-	If ErrorLevel
-		Msgbox % "Key " sKey " map to " sAction "Error !"
+	GetKeyState,Var,CapsLock,T
+	If Var = D
+		Return true
+	Else
+		Return False
 }
 
-; ExecSub(Label) {{{2
-; 执行标签
-ExecSub(Label)
-{
-	If Not Label
-	{
-		HotkeyCount := 0
-		Return
-	}
-	If RegExMatch(Label,"<\d>")
-	{
-		HotkeyCount := HotkeyCount * 10 + Substr(Label,2,1)
-		If HotkeyCount > 99
-			HotkeyCount := 99
-		Return
-	}
-	If IsLabel(Label)
-	{
-		If Not HotkeyCount
-			HotkeyCount := 1
-		Loop % HotkeyCount
-		{
-			If HotkeyCount 
-				GoSub % Label
-			Else
-				Break
-		}
-	}
-	Else
-		Msgbox % Label " Error !"
-	HotkeyCount := 0
-}
+
 ; EmptyMem() {{{2
 ; 减少内存使用
 EmptyMem(PID="AHK Rocks")
