@@ -136,30 +136,6 @@ GroupKey()
 			HotkeyTemp :=
 	}
 }
-<LoadPlugin>:
-	LoadPlugin()
-return
-return
-<1>:
-return
-<2>:
-return
-<3>:
-return
-<4>:
-return
-<5>:
-return
-<6>:
-return
-<7>:
-return
-<8>:
-return
-<9>:
-return
-<0>:
-return
 ; RegisterHotkey() {{{2
 ; 注册热键
 RegisterHotkey(Scope="H",Key="",Action="<SingleHotkey>",ViCLASS="TTOTAL_CMD")
@@ -244,19 +220,25 @@ ExecSub(Label)
 		Msgbox % Label " Error !"
 	If IsLabel(Label) 
 	{
-		If Not HotkeyCount
-			HotkeyCount := 1
-		Loop % HotkeyCount
+		If HotkeyCount
+			LoopCount := HotkeyCount
+		Else
+			LoopCount := 1
+		Loop % LoopCount
 		{
-			If HotkeyCount 
+			If LoopCount
 				GoSub % Label
 			Else
 				Break
+			LoopCount := HotkeyCount
 		}
 	}
 	HotkeyCount := 0
 	EmptyMem()
 }
+<LoadPlugin>:
+	LoadPlugin()
+return
 ; LoadPlugin() {{{2
 ; 加载脚本，并修改VIATC
 LoadPlugin()
@@ -267,7 +249,10 @@ LoadPlugin()
 		{
 			Label := "<" RegExReplace(A_LoopFileName,"\.ahk") ">"
 			If IsLabel(Label)
+			{
+				GoSub,%Label%
 				Continue
+			}
 			Else
 			{
 				NeedReload := true
@@ -278,6 +263,15 @@ LoadPlugin()
 			msgbox,4,Plugin,新动作添加完毕，请重启！
 		IfMsgbox yes
 			Reload
+	}
+}
+CustomActions(Action,Info="")
+{
+	aMatch := KeyToMatch(Action)
+	If Not RegExMatch(Actions["All"],aMatch)
+	{
+		Actions["All"] .= Action 
+		Actions[action] := Info
 	}
 }
 ; HotkeyControl(Control) {{{2

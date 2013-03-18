@@ -32,7 +32,7 @@ RegisterHotkey("H","7","<7>")
 RegisterHotkey("H","8","<8>")
 RegisterHotkey("H","9","<9>")
 RegisterHotkey("H","<f1>","<ListViATC>")
-RegisterHotkey("H","<f2>","<CopyNameOnly>")
+RegisterHotkey("H","<f2>","<ListActions>")
 RegisterHotkey("H","i","<insert_TC>")
 RegisterHotkey("H","k","<up>")
 RegisterHotkey("H","K","<upSelect>")
@@ -42,6 +42,8 @@ RegisterHotkey("H","h","<left>")
 RegisterHotkey("H","H","<GotoPreviousDir>")
 RegisterHotkey("H","l","<right>")
 RegisterHotkey("H","L","<GotoNextDir>")
+RegisterHotkey("H","i","<CreateNewFile>")
+RegisterHotkey("H","I","<MkDir>")
 RegisterHotkey("H","d","<DirectoryHotlist>")
 RegisterHotkey("H","D","<OpenDesktop>")
 RegisterHotkey("H","e","<ContextMenu>")
@@ -49,6 +51,9 @@ RegisterHotkey("H","E","<ExeCuteDOS>")
 ;RegisterHotkey("H","f","<LabelControl>")
 RegisterHotkey("H","N","<DirectoryHistory>")
 RegisterHotkey("H","n","<azHistory>")
+RegisterHotkey("H","m","<Mark>")
+RegisterHotkey("H","M","<Half>")
+RegisterHotkey("H","'","<ListMark>")
 RegisterHotkey("H","u","<GoToParent>")
 RegisterHotkey("H","o","<LeftOpenDrives>")
 RegisterHotkey("H","O","<RightOpenDrives>")
@@ -56,6 +61,7 @@ RegisterHotkey("H","q","<SrcQuickView>")
 RegisterHotkey("H","r","<RenameOnly>")
 RegisterHotkey("H","R","<MultiRenameFiles>")
 RegisterHotkey("H","x","<Delete>")
+RegisterHotkey("H","X","<ForceDelete>")
 RegisterHotkey("H","w","<List>")
 RegisterHotkey("H","y","<CopyNamesToClip>")
 RegisterHotkey("H","Y","<CopyFullNamesToClip>")
@@ -73,6 +79,8 @@ RegisterHotkey("H","\","<ExchangeSelection>")
 RegisterHotkey("H","|","<ClearAll>")
 RegisterHotkey("H","-","<SwitchSeparateTree>")
 RegisterHotkey("H","=","<MatchSrc>")
+RegisterHotkey("H","G","<LastLine>")
+RegisterHotkey("H","gg","<GoToLine>")
 RegisterHotkey("H","gn","<SwitchToNextTab>")
 RegisterHotkey("H","gp","<SwitchToPreviousTab>")
 RegisterHotkey("H","ga","<CloseAllTabs>")
@@ -163,21 +171,7 @@ End()
 return
 ;===================================================
 #include vimcore.ahk
-#include Actions\AlwayOnTop.ahk
-#include Actions\azHistory.ahk
-#include Actions\Down.ahk
-#include Actions\DownSelect.ahk
-#include Actions\Esc_TC.ahk
-#include Actions\GoLastTab.ahk
-#include Actions\Insert_TC.ahk
-#include Actions\left.ahk
-#include Actions\ListViATc.ahk
-#include Actions\reload.ahk
-#include Actions\right.ahk
+#include Actions\Debug.ahk
+#include Actions\General.ahk
 #include Actions\TCCOMMAND.ahk
-#include Actions\ToggleTC.ahk
-#include Actions\TransParent.ahk
-#include Actions\Up.ahk
-#include Actions\UpSelect.ahk
-#include Actions\WinMax.ahk
-#include Actions\copynameonly.ahk
+#include Actions\TConly.ahk
