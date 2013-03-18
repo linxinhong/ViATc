@@ -6,6 +6,10 @@ return
 ; <Reload> {{{1
 <ListViATc>:
 	msgbox % ViATcKey["AllKeys"]
+	Msgbox % ViATcKey["Exist"]
+return
+<ListHotkey>:
+	Msgbox % ViATcKey["Exist"]
 return
 ; <ListActions> {{{1
 <ListActions>:

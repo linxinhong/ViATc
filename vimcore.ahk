@@ -162,17 +162,14 @@ RegisterHotkey(Scope="H",Key="",Action="<SingleHotkey>",ViCLASS="TTOTAL_CMD")
 				Key1 := GetKey
 				SetHotkey(GetKey,"<SingleHotKey>")
 			}
-			If i = 2
+			If i > 1
 			{
 				; 将原先第一个热键注册为<GroupKeyStart>
+				If Not IsHotKey(GetKey)
+					SetHotkey(GetKey,"<SingleHotkey>")
+			}
+			If i = 2
 				SetHotkey(Key1,"<GroupKeyStart>")
-				SetHotkey(GetKey,"<SingleHotkey>")
-			}
-			If i > 2
-			{
-				SetHotkey(GetKey,"<SingleHotkey>")
-				;Action := "<GroupKey>"
-			}
 			KeyList .= GetKey
 		}
 	}
@@ -187,6 +184,11 @@ RegisterHotkey(Scope="H",Key="",Action="<SingleHotkey>",ViCLASS="TTOTAL_CMD")
 	GroupAdd,ViGroup,ahk_class %ViCLASS%
 	return
 }
+IsHotkey(Key)
+{
+	kMatch := "\s" . KeyToMatch(Key) . "\s"
+	Return RegExMatch(ViATcKey["Exist"],kMatch)
+}
 ; SetHotkey(sKey,sAction) {{{2
 ; 设置热键功能,只是方便，不然写太多Hotkey也累啊！
 SetHotkey(sKey,sAction,Class="")
@@ -198,7 +200,12 @@ SetHotkey(sKey,sAction,Class="")
 		Hotkey,IfWinActive,ahk_class %Class%
 	Hotkey,%sKey%,%sAction%,On,UseErrorLevel
 	If ErrorLevel
+	{
 		Msgbox % "Key " sKey " map to " sAction "Error !"
+		return
+	}
+	If Not IsHotKey(sKey)
+		ViATcKey["Exist"] .= " " . sKey . " "
 }
 ; ExecSub(Label) {{{2
 ; 执行标签
@@ -300,9 +307,17 @@ HotkeyControl(control)
 				Else
 					Hotkey,IfWinActive
 				If Control
-					Hotkey,%Key%,on
+				{
+					Hotkey,%Key%,on,,UseErrorLevel
+					;If ErrorLevel
+					;	Msgbox % Key
+				}	
 				Else
-					Hotkey,%Key%,off
+				{
+					Hotkey,%Key%,off,,UseErrorLevel
+					;If ErrorLevel
+					;	Msgbox % Key
+				}	
 			}
 		}
 	}
@@ -355,6 +370,7 @@ ResolveHotkey(SrcKey)
 		}
 		rKey .= A_LoopField
 	}
+	;Msgbox % rkey
 	; 保存rKeyTemp到DstKey数列中
 	rIndex := 1
 	For,i,rKey in rKeyTemp

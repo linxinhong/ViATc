@@ -344,6 +344,14 @@ ListMark()
 	ControlGetPos,xn,yn,,,%TLB%,ahk_class TTOTAL_CMD
 	Menu,MarkMenu,Show,%xn%,%yn%
 }
+; <TempFile> {{{1
+<TempFile>:
+	TempFile()
+return
+TempFile()
+{
+	Msgbox % TempFile
+}
 ; <CreateNewFile> {{{1
 ; 新建文件
 <CreateNewFile>:
@@ -351,17 +359,32 @@ ListMark()
 return
 CreateNewFile()
 {
-	Loop % NewFile[0]
-	{
-		RegExMatch(NewFile[A_Index],".*\)",File,1)
-		Menu,CreateNewFile,Add,%File%,NewFile
-	}
-	Menu,CreateNewFile,Show
+	ControlGetFocus,TLB,ahk_class TTOTAL_CMD
+	ControlGetPos,xn,yn,,,%TLB%,ahk_class TTOTAL_CMD
+	Menu,CreateNewFile,Show,%xn%,%yn%
 		;Msgbox % NewFile[A_Index]
 }
 NewFile:
-	Msgbox % A_ThisMenuItemPos
+	NewFile()
 return
+NewFile()
+{
+	;RegExMatch(NewFile[A_ThisMenuItemPos],"\[.*\]$",GetPath,1)
+	File := RegExReplace(NewFile[A_ThisMenuItemPos],"(.*\[|\]$)","")
+	Splitpath,file,filename,,fileext
+	WinGet,hwndtc,id,AHK_CLASS TTOTAL_CMD
+	Gui,new,+Theme +Owner%hwndtc% +HwndCNF_New
+	Gui,Add,Text,hidden ,%file%
+	;Tooltip,%file%
+	Gui,Add,Edit,x10 y10 w340 h22 -Multi,%filename%
+	Gui,Add,button,x200 y40 w70 Default,确定(&O)
+	Gui,Add,button,x280 y40 w70 ,取消(&C)
+	Gui,Show,w360 h70,新建文件 ;Lang
+	Controlsend,edit1,{ctrl a},ahk_id %CNF_New%
+	If Fileext
+	Loop,% strlen(fileext)+1
+		Controlsend,edit1,+{left},ahk_id %CNF_New%
+}
 ReadNewFile()
 {
 	NewFile[0] := 0
@@ -381,13 +404,57 @@ ReadNewFile()
 					{
 						NewFile[0]++
 						Index := NewFile[0]
-						NewFile[Index] := RegGetFileDescribe(Reg) . "(" . Reg . ")[" . RegGetNewFilePath(NewReg) . "]"
+						NewFile[Index] := RegGetNewFileDescribe(Reg) . "(" . Reg . ")[" . RegGetNewFilePath(NewReg) . "]"
 					}
 				}
 			}
 		}
 	}
+	LoopCount := NewFile[0]
+	Half := LoopCount/2
+	Loop % LoopCount
+	{
+		If A_Index < %Half% 
+		{
+			B_Index := NewFile[0] - A_Index + 1
+			C_Index := NewFile[A_Index]
+			NewFile[A_Index] := NewFile[B_Index]
+			NewFile[B_Index] := C_Index
+		}
+	}
+	Menu,CreateNewFile,UseErrorLevel,On
+/*
+	Menu,CreateNewFile,Add,A >> 新建文件夹,<MKDir>
+	Menu,CreateNewFile,Icon,A >> 新建文件夹,%A_WinDir%\system32\Shell32.dll,-4
+	Menu,CreateNewFile,Add,B >> 创建快捷方式(TC),<CreateShortcut>
+	Menu,CreateNewFile,Icon,B >> 创建快捷方式(TC),%A_WinDir%\system32\Shell32.dll,30
+	Menu,CreateNewFile,Add
+*/
+	Loop % NewFile[0]
+	{
+		File := RegExReplace(NewFile[A_Index],"\(.*","")
+		Exec := RegExReplace(NewFile[A_Index],"(.*\(|\)\[.*)","")
+		MenuFile := Chr(A_Index+64) . " >> " . File . "(" Exec . ")"
+		Menu,CreateNewFile,Add,%MenuFile%,NewFile
+
+		IconFile := RegGetNewFileIcon(Exec)
+		IconFIle := RegExReplace(IconFile,"i)%systemroot%",A_WinDir)
+		IconFilePath := RegExReplace(IconFile,",-?\d*","")
+		If Not FileExist(IconFilePath)
+			IconFilePath := ""
+		IconFileIndex := RegExReplace(IconFile,".*,","")
+		If Not RegExMatch(IconFileIndex,"^-?\d*$")
+			IconFileIndex := ""
+		If RegExMatch(Exec,"\.lnk")
+		{
+			IconFilePath := A_WinDir . "\system32\Shell32.dll"
+			IconFileIndex := "264"
+		}
+		Menu,CreateNewFile,Icon,%MenuFile%,%IconFilePath%,%IconFileIndex%
+	}
 }
+; 获取新建文件的源
+; reg 为后缀
 RegGetNewFilePath(reg)
 {
 	RegRead,GetRegPath,HKEY_CLASSES_ROOT,%Reg%,FileName
@@ -397,16 +464,31 @@ RegGetNewFilePath(reg)
 	IF Not ErrorLevel
 		Return "NullFile"
 }
-RegGetFileType(reg)
+; RegGetNewFileType(reg) 
+; 获取新建文件类型名
+; reg 为后缀
+RegGetNewFileType(reg)
 {
 	RegRead,FileType,HKEY_CLASSES_ROOT,%Reg%
 	If Not ErrorLevel
-		Return % FileType
+		Return FileType
 }
-RegGetFileDescribe(reg)
+; 获取文件描述
+; reg 为后缀
+RegGetNewFileDescribe(reg)
 {
-	FileType := RegGetFileType(reg)
+	FileType := RegGetNewFileType(reg)
 	RegRead,FileDesc,HKEY_CLASSES_ROOT,%FileType%
 	If Not ErrorLevel
-		Return % FileDesc
+		Return FileDesc
+}
+; 获取文件对应的图标
+; reg 为后缀
+RegGetNewFileDescribe(reg)
+RegGetNewFileIcon(reg)
+{
+	IconPath := RegGetNewFileType(reg) . "\DefaultIcon"
+	RegRead,FileIcon,HKEY_CLASSES_ROOT,%IconPath%
+	If Not ErrorLevel
+		Return FileIcon
 }
