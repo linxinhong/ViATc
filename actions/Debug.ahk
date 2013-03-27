@@ -13,7 +13,11 @@ return
 return
 ; <ListActions> {{{1
 <ListActions>:
-	;msgbox % Actions["All"]
+	;ListActions()
+	Msgbox % Help("<lctrl>j")
+return
+ListActions()
+{
 	Info := ""
 	Pos := 1
 	Loop
@@ -25,8 +29,32 @@ return
 		Pos += Strlen(m)
 	}
 	FileAppend,%Info%,%A_WorkingDir%\help.txt
-return
+}
 ; <Reload> {{{1
+<Help>:
+	Help(string)
+return
+Help(string="")
+{
+	AllKeys := ViATcKey["AllKeys"]
+	For,i,GetKey In ResolveHotkey(String)
+	{
+		Keys .= GetKey
+	}
+	WinGetClass,Class,A
+	If Keys
+		Match := "(H|S)" . KeyToMatch(Keys) . ".*" . Class
+	Else
+		Return
+	DeleteMatch := "^.|" . KeyToMatch(Class)
+	Loop,Parse,AllKeys,%A_Tab%
+	{
+		If RegExMatch(A_LoopField,Match)
+			Helplist .= UnResolveHotKey(RegExReplace(A_LoopField,DeleteMatch))  ">>" Actions[ViATcKey[A_LoopField]] . "`n" 
+	}
+	return HelpList
+	
+}
 <Reload>:
 	Reload
 return

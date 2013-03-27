@@ -70,7 +70,12 @@ TransParent()
 {
 	win :=  WinExist(A)
 	WinGet,TranspVar,Transparent,ahk_id %win%
-	If TranspVar <> 255
+	If Not TranspVar ;第一次一般会获取到空值
+	{
+		WinSet,Transparent,220,ahk_id %win%
+		return
+	}
+	If TranspVar <> 255 
 	{
 		WinSet,Transparent,255,ahk_id %win%
 	}

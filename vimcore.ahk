@@ -3,15 +3,14 @@
 ; by Array ( linxinhong.sky@gmail.com )
 
 #UseHook on
+; Global Var {{{1
+; 全局变量，请勿修改
 Init()
 {
 	GoSub,<Init>
 	GoSub,<LoadPlugin>
 }
 <Init>:
-	SetKeyDelay,-1
-	; Global Var {{{1
-	; 全局变量，请勿修改
 	Global ViATcKey := []
 	Global Actions := []
 	Global HotkeyTemp := ""
@@ -24,6 +23,7 @@ End()
 {
 	EmptyMem()
 }
+;===============================================
 ; 若要自定义模式切换，不使用Esc，请修改这里！
 ; 错误处理及提示
 <Error>:
@@ -112,6 +112,7 @@ GroupKeyStart()
 				GoSub,<SingleHotkey>
 			}
 		}
+		;Tooltip,% Help(SubStr(HotkeyTemp,2))
 	}
 }
 <GroupKey>:
@@ -160,16 +161,16 @@ RegisterHotkey(Scope="H",Key="",Action="<SingleHotkey>",ViCLASS="TTOTAL_CMD")
 			If i = 1
 			{
 				Key1 := GetKey
-				SetHotkey(GetKey,"<SingleHotKey>")
+				SetHotkey(GetKey,"<SingleHotKey>",ViClass)
 			}
 			If i > 1
 			{
-				; 将原先第一个热键注册为<GroupKeyStart>
-				If Not IsHotKey(GetKey)
-					SetHotkey(GetKey,"<SingleHotkey>")
+				If Not IsHotKey(GetKey,ViClass)
+					SetHotkey(GetKey,"<SingleHotkey>",ViClass)
 			}
+			; 将原先第一个热键注册为<GroupKeyStart>
 			If i = 2
-				SetHotkey(Key1,"<GroupKeyStart>")
+				SetHotkey(Key1,"<GroupKeyStart>",ViClass)
 			KeyList .= GetKey
 		}
 	}
@@ -184,9 +185,10 @@ RegisterHotkey(Scope="H",Key="",Action="<SingleHotkey>",ViCLASS="TTOTAL_CMD")
 	GroupAdd,ViGroup,ahk_class %ViCLASS%
 	return
 }
-IsHotkey(Key)
+IsHotkey(Key,class)
 {
-	kMatch := "\s" . KeyToMatch(Key) . "\s"
+	item := key . class 
+	kMatch := "\s" . KeyToMatch(item) . "\s"
 	Return RegExMatch(ViATcKey["Exist"],kMatch)
 }
 ; SetHotkey(sKey,sAction) {{{2
@@ -198,14 +200,14 @@ SetHotkey(sKey,sAction,Class="")
 		Return
 	If Class
 		Hotkey,IfWinActive,ahk_class %Class%
+	If Not IsHotKey(sKey,class)
+		ViATcKey["Exist"] .= " " . sKey . class . " "
 	Hotkey,%sKey%,%sAction%,On,UseErrorLevel
 	If ErrorLevel
 	{
 		Msgbox % "Key " sKey " map to " sAction "Error !"
 		return
 	}
-	If Not IsHotKey(sKey)
-		ViATcKey["Exist"] .= " " . sKey . " "
 }
 ; ExecSub(Label) {{{2
 ; 执行标签
@@ -272,6 +274,8 @@ LoadPlugin()
 			Reload
 	}
 }
+; CustomActions(Action,Info="") {{{2
+; 添加自定义Actions的帮助信息
 CustomActions(Action,Info="")
 {
 	aMatch := KeyToMatch(Action)
@@ -308,13 +312,13 @@ HotkeyControl(control)
 					Hotkey,IfWinActive
 				If Control
 				{
-					Hotkey,%Key%,on,,UseErrorLevel
+					Hotkey,%Key%,on ,,UseErrorLevel
 					;If ErrorLevel
 					;	Msgbox % Key
 				}	
 				Else
 				{
-					Hotkey,%Key%,off,,UseErrorLevel
+					Hotkey,%Key%,off ,,UseErrorLevel
 					;If ErrorLevel
 					;	Msgbox % Key
 				}	
@@ -388,6 +392,32 @@ ResolveHotkey(SrcKey)
 	return DstKey
 	BreakResolve:
 	return
+}
+; UnResolveHotkey(Key) {{{2
+; 反解析热键
+UnResolveHotkey(Key)
+{
+	Loop
+	{
+		If RegExMatch(Key,"shift\s&\s.",m)
+		{
+			Match := Chr(Asc(Substr(m,0))-32)
+			Key := RegExReplace(Key,KeyToMatch(m),Match)
+		}
+		Else
+			Break
+	}
+	Loop
+	{
+		If RegExMatch(key,"i)(l|r)?(ctrl|alt|win)\s&\s",m)
+		{
+			Match := "<" . RegExReplace(m,"\s&\s",">")
+			Key := RegExReplace(Key,KeyToMatch(m),Match)
+		}
+		Else
+			Break
+	}
+	return Key
 }
 ; HotkeyFilter(Src,Location) {{{2
 ; 热键过滤器，用于将组合热键过滤成多个单一热键

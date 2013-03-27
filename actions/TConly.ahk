@@ -14,7 +14,7 @@
 	CustomActions("<GotoLine>","移动到[count]行，默认第一行")
 	CustomActions("<LastLine>","移动到[count]行，默认最后一行")
 	CustomActions("<Half>","移动到窗口中间行")
-	CustomActions("<CreateNewFile>","新建文件")
+	CustomActions("<CreateNewFile>","文件模板")
 	ReadNewFile()
 return
 ; <Esc_TC> {{{1
@@ -344,14 +344,6 @@ ListMark()
 	ControlGetPos,xn,yn,,,%TLB%,ahk_class TTOTAL_CMD
 	Menu,MarkMenu,Show,%xn%,%yn%
 }
-; <TempFile> {{{1
-<TempFile>:
-	TempFile()
-return
-TempFile()
-{
-	Msgbox % TempFile
-}
 ; <CreateNewFile> {{{1
 ; 新建文件
 <CreateNewFile>:
@@ -361,35 +353,202 @@ CreateNewFile()
 {
 	ControlGetFocus,TLB,ahk_class TTOTAL_CMD
 	ControlGetPos,xn,yn,,,%TLB%,ahk_class TTOTAL_CMD
-	Menu,CreateNewFile,Show,%xn%,%yn%
-		;Msgbox % NewFile[A_Index]
+	Menu,FileTemp,DeleteAll
+	Menu,FileTemp,Add ,0 新建文件,:CreateNewFile
+	Menu,FileTemp,Icon,0 新建文件,%A_WinDir%\system32\Shell32.dll,-152
+	Menu,FileTemp,Add ,1 文件夹,<Mkdir>
+	Menu,FileTemp,Icon,1 文件夹,%A_WinDir%\system32\Shell32.dll,4
+	Menu,FileTemp,Add ,2 快捷方式,<CreateShortcut>
+	Menu,FileTemp,Icon,2 快捷方式,%A_WinDir%\system32\Shell32.dll,264
+	Menu,FileTemp,Add ,3 添加到新模板,<AddToTempFiles>
+	Menu,FileTemp,Icon,3 添加到新模板,%A_WinDir%\system32\Shell32.dll,-155
+	FileTempMenuCheck()
+	Menu,FileTemp,Show,%xn%,%yn%
 }
+; 检查文件模板功能
+FileTempMenuCheck()
+{
+	Global TCPath
+	Splitpath,TCPath,,TCDir
+	Loop,%TCDir%\shellnew\*.*
+	{
+		If A_Index = 1
+			Menu,FileTemp,Add
+		ft := chr(64+A_Index) . " >> " . A_LoopFileName
+		Menu,FileTemp,Add,%ft%,FileTempNew
+		Ext := "." . A_LoopFileExt
+		IconFile := RegGetNewFileIcon(Ext)
+		IconFIle := RegExReplace(IconFile,"i)%systemroot%",A_WinDir)
+		IconFilePath := RegExReplace(IconFile,",-?\d*","")
+		IconFileIndex := RegExReplace(IconFile,".*,","")
+		If Not FileExist(IconFilePath)
+			Menu,FileTemp,Icon,%ft%,%A_WinDir%\system32\Shell32.dll,-152
+		Else
+			Menu,FileTemp,Icon,%ft%,%IconFilePath%,%IconFileIndex%
+	}
+}
+; 添加到文件模板中
+<AddToTempFiles>:
+	AddToTempFiles()
+return
+AddToTempFiles()
+{
+	ClipSaved := ClipboardAll
+	Clipboard := 
+	GoSub,<CopyFullNamesToClip>
+	ClipWait,2
+	If clipboard
+		AddPath := clipboard
+	Else
+		Return
+	clipboard := ClipSaved
+	If FileExist(AddPath)
+		Splitpath,AddPath,filename,,fileext,filenamenoext
+	else
+		Return
+	Gui, Destroy
+	Gui, Add, Text, Hidden, %AddPath%
+	Gui, Add, Text, x12 y20 w50 h20 +Center, 模板源
+	Gui, Add, Edit, x72 y20 w300 h20 Disabled, %FileName%
+	Gui, Add, Text, x12 y50 w50 h20 +Center, 模板名
+	Gui, Add, Edit, x72 y50 w300 h20 , %FileName%
+	Gui, Add, Button, x162 y80 w90 h30 gAddTempOK default, 确认(&S)
+	Gui, Add, Button, x282 y80 w90 h30 gNewFileClose , 取消(&C)
+	Gui, Show, w400 h120, 添加模板
+	If Fileext
+	{
+		Controlget,nf,hwnd,,edit2,A
+		PostMessage,0x0B1,0,Strlen(filenamenoext),Edit2,A
+	}
+}
+AddTempOK:
+	AddTempOK()
+return
+AddTempOK()
+{
+	Global TCPath
+	GuiControlGet,SrcPath,,Static1
+	Splitpath,SrcPath,filename,,fileext,filenamenoext
+	GuiControlGet,NewFileName,,Edit2
+	SNDir := RegExReplace(TCPath,"[^\\]*$") . "ShellNew\"
+	If Not FileExist(SNDir)
+		FileCreateDir,%SNDir%
+	NewFile := SNDir . NewFileName 
+	FileCopy,%SrcPath%,%NewFile%,1
+	Gui,Destroy
+}
+; 新建文件模板
+FileTempNew:
+	NewFile(RegExReplace(A_ThisMenuItem,".\s>>\s",RegExReplace(TCPath,"\\[^\\]*$","\shellnew\")))
+return
+; 新建文件
 NewFile:
 	NewFile()
 return
-NewFile()
+NewFile(File="")
 {
-	;RegExMatch(NewFile[A_ThisMenuItemPos],"\[.*\]$",GetPath,1)
-	File := RegExReplace(NewFile[A_ThisMenuItemPos],"(.*\[|\]$)","")
-	Splitpath,file,filename,,fileext
-	WinGet,hwndtc,id,AHK_CLASS TTOTAL_CMD
-	Gui,new,+Theme +Owner%hwndtc% +HwndCNF_New
-	Gui,Add,Text,hidden ,%file%
-	;Tooltip,%file%
-	Gui,Add,Edit,x10 y10 w340 h22 -Multi,%filename%
-	Gui,Add,button,x200 y40 w70 Default,确定(&O)
-	Gui,Add,button,x280 y40 w70 ,取消(&C)
-	Gui,Show,w360 h70,新建文件 ;Lang
-	Controlsend,edit1,{ctrl a},ahk_id %CNF_New%
+	If Not File
+		File := RegExReplace(NewFile[A_ThisMenuItemPos],"(.*\[|\]$)","")
+	If Not FileExist(File)
+	{
+		RegRead,ShellNewDir,HKEY_USERS,.default\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders
+		If Not ShellNewDir
+			ShellNewDir := "C:\windows\Shellnew"
+		File := ShellNewDir . "\" file
+		If RegExMatch(SubStr(file,-7),"NullFile")
+		{
+			fileext := RegExReplace(NewFile[A_ThisMenuItemPos],"(.*\(|\).*)")
+			File := "New" . fileext
+			FileName := "New" . fileext
+			FileNamenoext := "New"
+		}
+	}
+	Else
+		Splitpath,file,filename,,fileext,filenamenoext
+	Gui, Add, Text, x12 y20 w50 h20 +Center, 模板源
+	Gui, Add, Edit, x72 y20 w300 h20 Disabled, %file%
+	Gui, Add, Text, x12 y50 w50 h20 +Center, 新建文件
+	Gui, Add, Edit, x72 y50 w300 h20 , %filename%
+	Gui, Add, Button, x162 y80 w90 h30 gNewFileOk default, 确认(&S)
+	Gui, Add, Button, x282 y80 w90 h30 gNewFileClose , 取消(&C)
+	Gui, Show, w400 h120, 新建文件
 	If Fileext
-	Loop,% strlen(fileext)+1
-		Controlsend,edit1,+{left},ahk_id %CNF_New%
+	{
+		Controlget,nf,hwnd,,edit2,A
+		PostMessage,0x0B1,0,Strlen(filenamenoext),Edit2,A
+	}
+	return
 }
+; 关闭新建文件窗口
+NewFileClose:
+	Gui,Destroy
+return
+
+; 确认新建文件
+NewFileOK:
+	NewFileOK()
+return
+NewFileOK()
+{
+	GuiControlGet,SrcPath,,Edit1
+	GuiControlGet,NewFileName,,Edit2
+	ClipSaved := ClipboardAll
+	Clipboard := 
+	GoSub,<CopySrcPathToClip>
+	ClipWait,2
+	If clipboard
+		DstPath := Clipboard
+	Else
+		Return
+	clipboard := ClipSaved
+		If RegExMatch(DstPath,"^\\\\计算机$")
+		Return
+	If RegExMatch(DstPath,"i)\\\\所有控制面板项$")
+		Return
+	If RegExMatch(DstPath,"i)\\\\Fonts$")
+		Return
+	If RegExMatch(DstPath,"i)\\\\网络$")
+		Return
+	If RegExMatch(DstPath,"i)\\\\打印机$")
+		Return
+	If RegExMatch(DstPath,"i)\\\\回收站$")	
+		Return
+	If RegExmatch(DstPath,"^\\\\桌面$")
+		DstPath := A_Desktop
+	NewFile := DstPath . "\" . NewFileName
+	If FileExist(NewFile)
+	{
+		MsgBox, 4, 新建文件, 新建文件已存在，是否覆盖？
+		IfMsgBox No
+			Return
+	}
+	FileCopy,%SrcPath%,%NewFile%,1
+	Gui,Destroy
+	WinActivate,AHK_CLASS TTOTAL_CMD
+	ControlGetFocus,FocusCtrl,AHK_Class TTOTAL_CMD
+	IF RegExMatch(FocusCtrl,TCListBox)
+	{
+		GoSub,<RereadSource>
+		ControlGet,Text,List,,%FocusCtrl%,AHK_CLASS TTOTAL_CMD
+		Loop,Parse,Text,`n
+		{
+			If RegExMatch(A_LoopField,NewFileName)
+			{
+				Index := A_Index - 1 
+				Postmessage,0x19E,%Index%,1,%FocusCtrl%,AHK_CLASS TTOTAL_CMD
+				Break
+			}
+		}
+	}
+}
+;============================================================================
+; ReadNewFile()
+; 新建文件菜单
 ReadNewFile()
 {
 	NewFile[0] := 0
 	SetBatchLines -1
-	Path := "e:\Program Files\totalcmd\ShellNew\"
+	; Path := "e:\Program Files\totalcmd\ShellNew\"
 	Loop,HKEY_CLASSES_ROOT ,,1,0
 	{
 		If RegExMatch(A_LoopRegName,"^\..*")
@@ -423,13 +582,6 @@ ReadNewFile()
 		}
 	}
 	Menu,CreateNewFile,UseErrorLevel,On
-/*
-	Menu,CreateNewFile,Add,A >> 新建文件夹,<MKDir>
-	Menu,CreateNewFile,Icon,A >> 新建文件夹,%A_WinDir%\system32\Shell32.dll,-4
-	Menu,CreateNewFile,Add,B >> 创建快捷方式(TC),<CreateShortcut>
-	Menu,CreateNewFile,Icon,B >> 创建快捷方式(TC),%A_WinDir%\system32\Shell32.dll,30
-	Menu,CreateNewFile,Add
-*/
 	Loop % NewFile[0]
 	{
 		File := RegExReplace(NewFile[A_Index],"\(.*","")
@@ -484,7 +636,6 @@ RegGetNewFileDescribe(reg)
 }
 ; 获取文件对应的图标
 ; reg 为后缀
-RegGetNewFileDescribe(reg)
 RegGetNewFileIcon(reg)
 {
 	IconPath := RegGetNewFileType(reg) . "\DefaultIcon"
