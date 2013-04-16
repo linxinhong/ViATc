@@ -1,12 +1,34 @@
 ﻿<TConly>:
+;=======================================================
+	Global TCPath
+	TCPath := "e:\Program Files\totalcmd\TOTALCMD.EXE"
+	If RegExMatch(TcPath,"i)totalcmd64\.exe$")
+	{
+		Global TCListBox := "LCLListBox"
+		Global TCEdit := "Edit2"
+		Global TInEdit := "TInEdit1"
+		GLobal TCPanel1 := "Window1"
+		Global TCPanel2 := "Window11"
+	}
+	Else
+	{
+		Global TCListBox := "TMyListBox"
+		Global TCEdit := "Edit1"
+		Global TInEdit := "TInEdit1"
+		Global TCPanel1 := "TPanel1"
+		Global TCPanel2 := "TMyPanel8"
+	}
 	Global Mark := []
-	Global NewFile := []
-	CustomActions("<Esc_TC>","返回正常模式")
-	CustomActions("<Insert_TC>","进入插入模式")
+	Global NewFiles := []
+	CustomActions("<Normal_Mode_TC>","返回正常模式")
+	CustomActions("<Insert_Mode_TC>","进入插入模式")
 	CustomActions("<ToggleTC>","打开/激活TC")
 	CustomActions("<azHistory>","a-z历史导航")
 	CustomActions("<DownSelect>","向下选择")
 	CustomActions("<UpSelect>","向上选择")
+	CustomActions("<Mark>","标记功能")
+	CustomActions("<ForceDelete>","强制删除")
+	CustomActions("<ListMark>","显示标记")
 	CustomActions("<WinMaxLeft>","最大化左侧窗口")
 	CustomActions("<WinMaxRight>","最大化右侧窗口")
 	CustomActions("<GoLastTab>","切换到最后一个标签")
@@ -15,16 +37,35 @@
 	CustomActions("<LastLine>","移动到[count]行，默认最后一行")
 	CustomActions("<Half>","移动到窗口中间行")
 	CustomActions("<CreateNewFile>","文件模板")
+	CustomActions("<GoToParentEx>","返回到上层文件夹，可返回到我的电脑")
 	ReadNewFile()
 return
+; TTOTAL_CMD_CheckMode()
+TTOTAL_CMD_CheckMode()
+{
+	WinGet,MenuID,ID,AHK_CLASS #32768
+	If MenuID	
+		return True
+	ControlGetFocus,ctrl,AHK_CLASS TTOTAL_CMD
+	If RegExMatch(ctrl,TInEdit)
+		Return True
+	If RegExMatch(ctrl,TCEdit)
+		Return True
+	Return False
+}
+<ExcSubOK>:
+	Tooltip
+return
 ; <Esc_TC> {{{1
-<Esc_TC>:
+<Normal_Mode_TC>:
 	Send,{Esc}
+	Tooltip
+	Vim_HotKeyCount := 0
 	HotkeyControl(true)	
 	EmptyMem()
 return
 ; <insert_TC> {{{1
-<insert_TC>:
+<Insert_Mode_TC>:
 	HotkeyControl(False)	
 return
 ; <ToggleTC> {{{1
@@ -49,7 +90,7 @@ return
 Return
 azhistory()
 {
-	GoSub,<DirectoryHistory>
+	GoSub,<cm_DirectoryHistory>
 	Sleep, 100
 	if WinExist("ahk_class #32768")
 	{
@@ -59,8 +100,11 @@ azhistory()
     {
 		If Not RegExMatch(GetMenuString(Hmenu,1),".*[\\|/]$")
 			Return
+		Menu,sh,UseErrorLevel
 		Menu,sh,add
 		Menu,sh,deleteall
+		If ErrorLevel
+			return
 		a :=
         itemCount := DllCall("GetMenuItemCount", "Uint", hMenu, "Uint")
 		Loop %itemCount%
@@ -144,8 +188,8 @@ WinMaxLR(lr)
 }
 ; <GoLastTab> {{{1
 <GoLastTab>:
-	GoSub,<SrcActivateTab1>
-	GoSub,<SwitchToPreviousTab>
+	GoSub,<cm_SrcActivateTab1>
+	GoSub,<cm_SwitchToPreviousTab>
 return
 ; <CopyNameOnly> {{{1
 <CopyNameOnly>:
@@ -154,7 +198,7 @@ Return
 CopyNameOnly()
 {
 	clipboard :=
-	GoSub,<CopyNamesToClip>
+	GoSub,<cm_CopyNamesToClip>
 	ClipWait
 	If Not RegExMatch(clipboard,"^\..*")
 		clipboard := RegExReplace(RegExReplace(clipboard,"\\$"),"\.[^\.]*$")
@@ -167,22 +211,22 @@ return
 ; <GotoLine> {{{1
 ; 转到[count]行,缺省第一行
 <GotoLine>:
-	If HotkeyCount
-		GotoLine(HotkeyCount)
+	If Vim_HotKeyCount
+		GotoLine(Vim_HotKeyCount)
 	Else
 		GotoLine(1)
 return
 ; <LastLine> {{{1
 ; 转到[count]行, 最后一行
 <LastLine>:
-	If HotkeyCount
-		GotoLine(HotkeyCount)
+	If Vim_HotKeyCount
+		GotoLine(Vim_HotKeyCount)
 	Else
 		GotoLine(0)
 return
 GotoLine(Index)
 {
-	HotkeyCount := 0
+	Vim_HotKeyCount := 0
 	ControlGetFocus,Ctrl,AHK_CLASS TTOTAL_CMD
 	If Index
 	{
@@ -229,7 +273,7 @@ Return
 Mark()
 {
 	HotkeyControl(False)	
-	GoSub,<FocusCmdLine>
+	GoSub,<cm_FocusCmdLine>
 	ControlGet,EditId,Hwnd,,AHK_CLASS TTOTAL_CMD
 	ControlSetText,%TCEdit%,m,AHK_CLASS TTOTAL_CMD
 	Postmessage,0xB1,2,2,%TCEdit%,AHK_CLASS TTOTAL_CMD
@@ -249,7 +293,7 @@ MarkTimer()
 		Settimer,<MarkTimer>,Off
 		Return
 	}
-	If RegExMatch(OutVar,"i)^m.$")
+	If RegExMatch(OutVar,"i)^m.+")
 	{
 		HotkeyControl(true)	
 		SetTimer,<MarkTimer>,off
@@ -353,12 +397,13 @@ CreateNewFile()
 {
 	ControlGetFocus,TLB,ahk_class TTOTAL_CMD
 	ControlGetPos,xn,yn,,,%TLB%,ahk_class TTOTAL_CMD
+	Menu,FileTemp,Add
 	Menu,FileTemp,DeleteAll
 	Menu,FileTemp,Add ,0 新建文件,:CreateNewFile
 	Menu,FileTemp,Icon,0 新建文件,%A_WinDir%\system32\Shell32.dll,-152
-	Menu,FileTemp,Add ,1 文件夹,<Mkdir>
+	Menu,FileTemp,Add ,1 文件夹,<cm_Mkdir>
 	Menu,FileTemp,Icon,1 文件夹,%A_WinDir%\system32\Shell32.dll,4
-	Menu,FileTemp,Add ,2 快捷方式,<CreateShortcut>
+	Menu,FileTemp,Add ,2 快捷方式,<cm_CreateShortcut>
 	Menu,FileTemp,Icon,2 快捷方式,%A_WinDir%\system32\Shell32.dll,264
 	Menu,FileTemp,Add ,3 添加到新模板,<AddToTempFiles>
 	Menu,FileTemp,Icon,3 添加到新模板,%A_WinDir%\system32\Shell32.dll,-155
@@ -395,7 +440,7 @@ AddToTempFiles()
 {
 	ClipSaved := ClipboardAll
 	Clipboard := 
-	GoSub,<CopyFullNamesToClip>
+	GoSub,<cm_CopyFullNamesToClip>
 	ClipWait,2
 	If clipboard
 		AddPath := clipboard
@@ -447,8 +492,9 @@ NewFile:
 return
 NewFile(File="")
 {
+	Global NewFile
 	If Not File
-		File := RegExReplace(NewFile[A_ThisMenuItemPos],"(.*\[|\]$)","")
+		File := RegExReplace(NewFiles[A_ThisMenuItemPos],"(.*\[|\]$)","")
 	If Not FileExist(File)
 	{
 		RegRead,ShellNewDir,HKEY_USERS,.default\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders
@@ -457,7 +503,7 @@ NewFile(File="")
 		File := ShellNewDir . "\" file
 		If RegExMatch(SubStr(file,-7),"NullFile")
 		{
-			fileext := RegExReplace(NewFile[A_ThisMenuItemPos],"(.*\(|\).*)")
+			fileext := RegExReplace(NewFiles[A_ThisMenuItemPos],"(.*\(|\).*)")
 			File := "New" . fileext
 			FileName := "New" . fileext
 			FileNamenoext := "New"
@@ -465,6 +511,7 @@ NewFile(File="")
 	}
 	Else
 		Splitpath,file,filename,,fileext,filenamenoext
+	Gui, Destroy
 	Gui, Add, Text, x12 y20 w50 h20 +Center, 模板源
 	Gui, Add, Edit, x72 y20 w300 h20 Disabled, %file%
 	Gui, Add, Text, x12 y50 w50 h20 +Center, 新建文件
@@ -494,7 +541,7 @@ NewFileOK()
 	GuiControlGet,NewFileName,,Edit2
 	ClipSaved := ClipboardAll
 	Clipboard := 
-	GoSub,<CopySrcPathToClip>
+	GoSub,<cm_CopySrcPathToClip>
 	ClipWait,2
 	If clipboard
 		DstPath := Clipboard
@@ -522,13 +569,13 @@ NewFileOK()
 		IfMsgBox No
 			Return
 	}
-	FileCopy,%SrcPath%,%NewFile%,1
+		FileCopy,%SrcPath%,%NewFile%,1
 	Gui,Destroy
 	WinActivate,AHK_CLASS TTOTAL_CMD
 	ControlGetFocus,FocusCtrl,AHK_Class TTOTAL_CMD
 	IF RegExMatch(FocusCtrl,TCListBox)
 	{
-		GoSub,<RereadSource>
+		GoSub,<cm_RereadSource>
 		ControlGet,Text,List,,%FocusCtrl%,AHK_CLASS TTOTAL_CMD
 		Loop,Parse,Text,`n
 		{
@@ -546,9 +593,8 @@ NewFileOK()
 ; 新建文件菜单
 ReadNewFile()
 {
-	NewFile[0] := 0
+	NewFiles[0] := 0
 	SetBatchLines -1
-	; Path := "e:\Program Files\totalcmd\ShellNew\"
 	Loop,HKEY_CLASSES_ROOT ,,1,0
 	{
 		If RegExMatch(A_LoopRegName,"^\..*")
@@ -561,31 +607,31 @@ ReadNewFile()
 					NewReg := A_LoopRegSubKey "\shellnew"
 					If RegGetNewFilePath(NewReg)
 					{
-						NewFile[0]++
-						Index := NewFile[0]
-						NewFile[Index] := RegGetNewFileDescribe(Reg) . "(" . Reg . ")[" . RegGetNewFilePath(NewReg) . "]"
+						NewFiles[0]++
+						Index := NewFiles[0]
+						NewFiles[Index] := RegGetNewFileDescribe(Reg) . "(" . Reg . ")[" . RegGetNewFilePath(NewReg) . "]"
 					}
 				}
 			}
 		}
 	}
-	LoopCount := NewFile[0]
+	LoopCount := NewFiles[0]
 	Half := LoopCount/2
 	Loop % LoopCount
 	{
 		If A_Index < %Half% 
 		{
-			B_Index := NewFile[0] - A_Index + 1
-			C_Index := NewFile[A_Index]
-			NewFile[A_Index] := NewFile[B_Index]
-			NewFile[B_Index] := C_Index
+			B_Index := NewFiles[0] - A_Index + 1
+			C_Index := NewFiles[A_Index]
+			NewFiles[A_Index] := NewFiles[B_Index]
+			NewFiles[B_Index] := C_Index
 		}
 	}
 	Menu,CreateNewFile,UseErrorLevel,On
-	Loop % NewFile[0]
+	Loop % NewFiles[0]
 	{
-		File := RegExReplace(NewFile[A_Index],"\(.*","")
-		Exec := RegExReplace(NewFile[A_Index],"(.*\(|\)\[.*)","")
+		File := RegExReplace(NewFiles[A_Index],"\(.*","")
+		Exec := RegExReplace(NewFiles[A_Index],"(.*\(|\)\[.*)","")
 		MenuFile := Chr(A_Index+64) . " >> " . File . "(" Exec . ")"
 		Menu,CreateNewFile,Add,%MenuFile%,NewFile
 
@@ -642,4 +688,37 @@ RegGetNewFileIcon(reg)
 	RegRead,FileIcon,HKEY_CLASSES_ROOT,%IconPath%
 	If Not ErrorLevel
 		Return FileIcon
+}
+; <GoToParentEx> {{{1
+; 返回到上层文件夹，可返回到我的电脑
+<GoToParentEx>:
+	IsRootDir()
+	GoSub,<cm_GoToParent>
+return
+IsRootDir()
+{
+	ClipSaved := ClipboardAll
+	clipboard := 
+	GoSub,<cm_CopySrcPathToClip>
+	ClipWait,1
+	Path := Clipboard
+	Clipboard := ClipSaved
+	If RegExMatch(Path,"^.:\\$")
+	{
+		GoSub,<cm_OpenDrives>
+		Path := "i)" . RegExReplace(Path,"\\","")
+		ControlGetFocus,focus_control,AHK_CLASS TTOTAL_CMD
+		ControlGet,outvar,list,,%focus_control%,AHK_CLASS TTOTAL_CMD
+		Loop,Parse,Outvar,`n
+		{
+			If Not A_LoopField
+				Break
+			If RegExMatch(A_LoopField,Path)
+			{
+				Focus := A_Index - 1
+				Break
+			}
+		}
+		PostMessage, 0x19E, %Focus%, 1, %focus_control%, AHK_CLASS TTOTAL_CMD
+	}
 }

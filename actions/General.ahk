@@ -16,6 +16,7 @@
 	CustomActions("<Up>","向上移动[Count]次")
 	CustomActions("<AlwayOnTop>","设置窗口顶置")
 	CustomActions("<TransParent>","设置窗口透明")
+	CustomActions("<Repeat>","重复上一次动作")
 return
 <1>:
 return
@@ -48,6 +49,14 @@ return
 return
 <Up>:
 	Send,{Up}
+return
+<Insert_Mode>:
+	HotkeyControl(False)
+return
+<Normal_Mode>:
+	HotkeyControl(True)
+	Vim_HotKeyCount := 0
+	Send,{Esc}
 return
 ; <AlwayOnTop> {{{1
 <AlwayOnTop>:
@@ -85,4 +94,6 @@ TransParent()
 		WinSet,Transparent,%TranspVar%,ahk_id %win%
 	}
 }
-
+<Reload>:
+	Reload
+return
