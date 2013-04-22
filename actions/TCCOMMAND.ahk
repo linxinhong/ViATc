@@ -1,1750 +1,1750 @@
-; TC×Ô´øÃüÁî {{{1
+ï»¿; TCè‡ªå¸¦å‘½ä»¤ {{{1
 ;==================================================
-;=======Ê¹ÓÃVIMÏÂµÄVOom ²å¼ş¿ÉÒÔºÜ·½±ãµÄ²é¿´=======
+;=======ä½¿ç”¨VIMä¸‹çš„VOom æ’ä»¶å¯ä»¥å¾ˆæ–¹ä¾¿çš„æŸ¥çœ‹=======
 ;==================================================
 <TCCOMMAND>:
-  CustomActions("<cm_SrcComments>","À´Ô´´°¿Ú: ÏÔÊ¾ÎÄ¼ş±¸×¢")
-  CustomActions("<cm_SrcShort>","À´Ô´´°¿Ú: ÁĞ±í")
-  CustomActions("<cm_SrcLong>","À´Ô´´°¿Ú: ÏêÏ¸ĞÅÏ¢")
-  CustomActions("<cm_SrcTree>","À´Ô´´°¿Ú: ÎÄ¼ş¼ĞÊ÷")
-  CustomActions("<cm_SrcQuickview>","À´Ô´´°¿Ú: ¿ìËÙ²é¿´")
-  CustomActions("<cm_VerticalPanels>","×İÏò/ºáÏòÅÅÁĞ")
-  CustomActions("<cm_SrcQuickInternalOnly>","À´Ô´´°¿Ú: ¿ìËÙ²é¿´(²»ÓÃ²å¼ş)")
-  CustomActions("<cm_SrcHideQuickview>","À´Ô´´°¿Ú: ¹Ø±Õ¿ìËÙ²é¿´´°¿Ú")
-  CustomActions("<cm_SrcExecs>","À´Ô´´°¿Ú: ¿ÉÖ´ĞĞÎÄ¼ş")
-  CustomActions("<cm_SrcAllFiles>","À´Ô´´°¿Ú: ËùÓĞÎÄ¼ş")
-  CustomActions("<cm_SrcUserSpec>","À´Ô´´°¿Ú: ÉÏ´ÎÑ¡ÖĞµÄÎÄ¼ş")
-  CustomActions("<cm_SrcUserDef>","À´Ô´´°¿Ú: ×Ô¶¨ÒåÀàĞÍ")
-  CustomActions("<cm_SrcByName>","À´Ô´´°¿Ú: °´ÎÄ¼şÃûÅÅĞò")
-  CustomActions("<cm_SrcByExt>","À´Ô´´°¿Ú: °´À©Õ¹ÃûÅÅĞò")
-  CustomActions("<cm_SrcBySize>","À´Ô´´°¿Ú: °´´óĞ¡ÅÅĞò")
-  CustomActions("<cm_SrcByDateTime>","À´Ô´´°¿Ú: °´ÈÕÆÚÊ±¼äÅÅĞò")
-  CustomActions("<cm_SrcUnsorted>","À´Ô´´°¿Ú: ²»ÅÅĞò")
-  CustomActions("<cm_SrcNegOrder>","À´Ô´´°¿Ú: ·´ÏòÅÅĞò")
-  CustomActions("<cm_SrcOpenDrives>","À´Ô´´°¿Ú: ´ò¿ªÇı¶¯Æ÷ÁĞ±í")
-  CustomActions("<cm_SrcThumbs>","À´Ô´´°¿Ú: ËõÂÔÍ¼")
-  CustomActions("<cm_SrcCustomViewMenu>","À´Ô´´°¿Ú: ×Ô¶¨ÒåÊÓÍ¼²Ëµ¥")
-  CustomActions("<cm_SrcPathFocus>","À´Ô´´°¿Ú: ½¹µãÖÃÓÚÂ·¾¶ÉÏ")
-  CustomActions("<cm_LeftComments>","×ó´°¿Ú: ÏÔÊ¾ÎÄ¼ş±¸×¢")
-  CustomActions("<cm_LeftShort>","×ó´°¿Ú: ÁĞ±í")
-  CustomActions("<cm_LeftLong>","×ó´°¿Ú: ÏêÏ¸ĞÅÏ¢")
-  CustomActions("<cm_LeftTree>","×ó´°¿Ú: ÎÄ¼ş¼ĞÊ÷")
-  CustomActions("<cm_LeftQuickview>","×ó´°¿Ú: ¿ìËÙ²é¿´")
-  CustomActions("<cm_LeftQuickInternalOnly>","×ó´°¿Ú: ¿ìËÙ²é¿´(²»ÓÃ²å¼ş)")
-  CustomActions("<cm_LeftHideQuickview>","×ó´°¿Ú: ¹Ø±Õ¿ìËÙ²é¿´´°¿Ú")
-  CustomActions("<cm_LeftExecs>","×ó´°¿Ú: ¿ÉÖ´ĞĞÎÄ¼ş")
-  CustomActions("<cm_LeftAllFiles>","	×ó´°¿Ú: ËùÓĞÎÄ¼ş")
-  CustomActions("<cm_LeftUserSpec>","×ó´°¿Ú: ÉÏ´ÎÑ¡ÖĞµÄÎÄ¼ş")
-  CustomActions("<cm_LeftUserDef>","×ó´°¿Ú: ×Ô¶¨ÒåÀàĞÍ")
-  CustomActions("<cm_LeftByName>","×ó´°¿Ú: °´ÎÄ¼şÃûÅÅĞò")
-  CustomActions("<cm_LeftByExt>","×ó´°¿Ú: °´À©Õ¹ÃûÅÅĞò")
-  CustomActions("<cm_LeftBySize>","×ó´°¿Ú: °´´óĞ¡ÅÅĞò")
-  CustomActions("<cm_LeftByDateTime>","×ó´°¿Ú: °´ÈÕÆÚÊ±¼äÅÅĞò")
-  CustomActions("<cm_LeftUnsorted>","×ó´°¿Ú: ²»ÅÅĞò")
-  CustomActions("<cm_LeftNegOrder>","×ó´°¿Ú: ·´ÏòÅÅĞò")
-  CustomActions("<cm_LeftOpenDrives>","×ó´°¿Ú: ´ò¿ªÇı¶¯Æ÷ÁĞ±í")
-  CustomActions("<cm_LeftPathFocus>","×ó´°¿Ú: ½¹µãÖÃÓÚÂ·¾¶ÉÏ")
-  CustomActions("<cm_LeftDirBranch>","×ó´°¿Ú: Õ¹¿ªËùÓĞÎÄ¼ş¼Ğ")
-  CustomActions("<cm_LeftDirBranchSel>","×ó´°¿Ú: Ö»Õ¹¿ªÑ¡ÖĞµÄÎÄ¼ş¼Ğ")
-  CustomActions("<cm_LeftThumbs>","´°¿Ú: ËõÂÔÍ¼")
-  CustomActions("<cm_LeftCustomViewMenu>","´°¿Ú: ×Ô¶¨ÒåÊÓÍ¼²Ëµ¥")
-  CustomActions("<cm_RightComments>","ÓÒ´°¿Ú: ÏÔÊ¾ÎÄ¼ş±¸×¢")
-  CustomActions("<cm_RightShort>","ÓÒ´°¿Ú: ÁĞ±í")
-  CustomActions("<cm_RightLong>","ÏêÏ¸ĞÅÏ¢")
-  CustomActions("<cm_RightTre>","ÓÒ´°¿Ú: ÎÄ¼ş¼ĞÊ÷")
-  CustomActions("<cm_RightQuickvie>","ÓÒ´°¿Ú: ¿ìËÙ²é¿´")
-  CustomActions("<cm_RightQuickInternalOnl>","ÓÒ´°¿Ú: ¿ìËÙ²é¿´(²»ÓÃ²å¼ş)")
-  CustomActions("<cm_RightHideQuickvie>","ÓÒ´°¿Ú: ¹Ø±Õ¿ìËÙ²é¿´´°¿Ú")
-  CustomActions("<cm_RightExec>","ÓÒ´°¿Ú: ¿ÉÖ´ĞĞÎÄ¼ş")
-  CustomActions("<cm_RightAllFile>","ÓÒ´°¿Ú: ËùÓĞÎÄ¼ş")
-  CustomActions("<cm_RightUserSpe>","ÓÒ´°¿Ú: ÉÏ´ÎÑ¡ÖĞµÄÎÄ¼ş")
-  CustomActions("<cm_RightUserDe>","ÓÒ´°¿Ú: ×Ô¶¨ÒåÀàĞÍ")
-  CustomActions("<cm_RightByNam>","ÓÒ´°¿Ú: °´ÎÄ¼şÃûÅÅĞò")
-  CustomActions("<cm_RightByEx>","ÓÒ´°¿Ú: °´À©Õ¹ÃûÅÅĞò")
-  CustomActions("<cm_RightBySiz>","ÓÒ´°¿Ú: °´´óĞ¡ÅÅĞò")
-  CustomActions("<cm_RightByDateTim>","ÓÒ´°¿Ú: °´ÈÕÆÚÊ±¼äÅÅĞò")
-  CustomActions("<cm_RightUnsorte>","ÓÒ´°¿Ú: ²»ÅÅĞò")
-  CustomActions("<cm_RightNegOrde>","ÓÒ´°¿Ú: ·´ÏòÅÅĞò")
-  CustomActions("<cm_RightOpenDrives>","ÓÒ´°¿Ú: ´ò¿ªÇı¶¯Æ÷ÁĞ±í")
-  CustomActions("<cm_RightPathFocu>","ÓÒ´°¿Ú: ½¹µãÖÃÓÚÂ·¾¶ÉÏ")
-  CustomActions("<cm_RightDirBranch>","ÓÒ´°¿Ú: Õ¹¿ªËùÓĞÎÄ¼ş¼Ğ")
-  CustomActions("<cm_RightDirBranchSel>","ÓÒ´°¿Ú: Ö»Õ¹¿ªÑ¡ÖĞµÄÎÄ¼ş¼Ğ")
-  CustomActions("<cm_RightThumb>","ÓÒ´°¿Ú: ËõÂÔÍ¼")
-  CustomActions("<cm_RightCustomViewMen>","ÓÒ´°¿Ú: ×Ô¶¨ÒåÊÓÍ¼²Ëµ¥")
-  CustomActions("<cm_List>","²é¿´(ÓÃ²é¿´³ÌĞò)")
-  CustomActions("<cm_ListInternalOnly>","²é¿´(ÓÃ²é¿´³ÌĞò, µ«²»ÓÃ²å¼ş/¶àÃ½Ìå)")
-  CustomActions("<cm_Edit>","±à¼­")
-  CustomActions("<cm_Copy>","¸´ÖÆ")
-  CustomActions("<cm_CopySamepanel>","¸´ÖÆµ½µ±Ç°´°¿Ú")
-  CustomActions("<cm_CopyOtherpanel>","¸´ÖÆµ½ÁíÒ»´°¿Ú")
-  CustomActions("<cm_RenMov>","ÖØÃüÃû/ÒÆ¶¯")
-  CustomActions("<cm_MkDir>","ĞÂ½¨ÎÄ¼ş¼Ğ")
-  CustomActions("<cm_Delete>","É¾³ı")
-  CustomActions("<cm_TestArchive>","²âÊÔÑ¹Ëõ°ü")
-  CustomActions("<cm_PackFiles>","Ñ¹ËõÎÄ¼ş")
-  CustomActions("<cm_UnpackFiles>","½âÑ¹ÎÄ¼ş")
-  CustomActions("<cm_RenameOnly>","ÖØÃüÃû(Shift+F6)")
-  CustomActions("<cm_RenameSingleFile>","ÖØÃüÃûµ±Ç°ÎÄ¼ş")
-  CustomActions("<cm_MoveOnly>","ÒÆ¶¯(F6)")
-  CustomActions("<cm_Properties>","ÏÔÊ¾ÊôĞÔ")
-  CustomActions("<cm_CreateShortcut>","´´½¨¿ì½İ·½Ê½")
-  CustomActions("<cm_Return>","Ä£·Â°´ ENTER ¼ü")
-  CustomActions("<cm_OpenAsUser>","ÒÔÆäËûÓÃ»§Éí·İÔËĞĞ¹â±ê´¦µÄ³ÌĞò")
-  CustomActions("<cm_Split>","·Ö¸îÎÄ¼ş")
-  CustomActions("<cm_Combine>","ºÏ²¢ÎÄ¼ş")
-  CustomActions("<cm_Encode>","±àÂëÎÄ¼ş(MIME/UUE/XXE ¸ñÊ½)")
-  CustomActions("<cm_Decode>","½âÂëÎÄ¼ş(MIME/UUE/XXE/BinHex ¸ñÊ½)")
-  CustomActions("<cm_CRCcreate>","´´½¨Ğ£ÑéÎÄ¼ş")
-  CustomActions("<cm_CRCcheck>","ÑéÖ¤Ğ£ÑéºÍ")
-  CustomActions("<cm_SetAttrib>","¸ü¸ÄÊôĞÔ")
-  CustomActions("<cm_Config>","ÅäÖÃ: ²¼¾Ö")
-  CustomActions("<cm_DisplayConfig>","ÅäÖÃ: ÏÔÊ¾")
-  CustomActions("<cm_IconConfig>","ÅäÖÃ: Í¼±ê")
-  CustomActions("<cm_FontConfig>","ÅäÖÃ: ×ÖÌå")
-  CustomActions("<cm_ColorConfig>","ÅäÖÃ: ÑÕÉ«")
-  CustomActions("<cm_ConfTabChange>","ÅäÖÃ: ÖÆ±í·û")
-  CustomActions("<cm_DirTabsConfig>","ÅäÖÃ: ÎÄ¼ş¼Ğ±êÇ©")
-  CustomActions("<cm_CustomColumnConfig>","ÅäÖÃ: ×Ô¶¨ÒåÁĞ")
-  CustomActions("<cm_CustomColumnDlg>","¸ü¸Äµ±Ç°×Ô¶¨ÒåÁĞ")
-  CustomActions("<cm_LanguageConfig>","ÅäÖÃ: ÓïÑÔ")
-  CustomActions("<cm_Config2>","ÅäÖÃ: ²Ù×÷·½Ê½")
-  CustomActions("<cm_EditConfig>","ÅäÖÃ: ±à¼­/²é¿´")
-  CustomActions("<cm_CopyConfig>","ÅäÖÃ: ¸´ÖÆ/É¾³ı")
-  CustomActions("<cm_RefreshConfig>","ÅäÖÃ: Ë¢ĞÂ")
-  CustomActions("<cm_QuickSearchConfig>","ÅäÖÃ: ¿ìËÙËÑË÷")
-  CustomActions("<cm_FtpConfig>","ÅäÖÃ: FTP")
-  CustomActions("<cm_PluginsConfig>","ÅäÖÃ: ²å¼ş")
-  CustomActions("<cm_ThumbnailsConfig>","ÅäÖÃ: ËõÂÔÍ¼")
-  CustomActions("<cm_LogConfig>","ÅäÖÃ: ÈÕÖ¾ÎÄ¼ş")
-  CustomActions("<cm_IgnoreConfig>","ÅäÖÃ: Òş²ØÎÄ¼ş")
-  CustomActions("<cm_PackerConfig>","ÅäÖÃ: Ñ¹Ëõ³ÌĞò")
-  CustomActions("<cm_ZipPackerConfig>","ÅäÖÃ: ZIP Ñ¹Ëõ³ÌĞò")
-  CustomActions("<cm_Confirmation>","ÅäÖÃ: ÆäËû/È·ÈÏ")
-  CustomActions("<cm_ConfigSavePos>","±£´æÎ»ÖÃ")
-  CustomActions("<cm_ButtonConfig>","¸ü¸Ä¹¤¾ßÀ¸")
-  CustomActions("<cm_ConfigSaveSettings>","±£´æÉèÖÃ")
-  CustomActions("<cm_ConfigChangeIniFiles>","Ö±½ÓĞŞ¸ÄÅäÖÃÎÄ¼ş")
-  CustomActions("<cm_ConfigSaveDirHistory>","±£´æÎÄ¼ş¼ĞÀúÊ·¼ÇÂ¼")
-  CustomActions("<cm_ChangeStartMenu>","¸ü¸Ä¿ªÊ¼²Ëµ¥")
-  CustomActions("<cm_NetConnect>","Ó³ÉäÍøÂçÇı¶¯Æ÷")
-  CustomActions("<cm_NetDisconnect>","¶Ï¿ªÍøÂçÇı¶¯Æ÷")
-  CustomActions("<cm_NetShareDir>","¹²Ïíµ±Ç°ÎÄ¼ş¼Ğ")
-  CustomActions("<cm_NetUnshareDir>","È¡ÏûÎÄ¼ş¼Ğ¹²Ïí")
-  CustomActions("<cm_AdministerServer>","ÏÔÊ¾ÏµÍ³¹²ÏíÎÄ¼ş¼Ğ")
-  CustomActions("<cm_ShowFileUser>","ÏÔÊ¾±¾µØÎÄ¼şµÄÔ¶³ÌÓÃ»§")
-  CustomActions("<cm_GetFileSpace>","¼ÆËãÕ¼ÓÃ¿Õ¼ä")
-  CustomActions("<cm_VolumeId>","ÉèÖÃ¾í±ê")
-  CustomActions("<cm_VersionInfo>","°æ±¾ĞÅÏ¢")
-  CustomActions("<cm_ExecuteDOS>","´ò¿ªÃüÁîÌáÊ¾·û´°¿Ú")
-  CustomActions("<cm_CompareDirs>","±È½ÏÎÄ¼ş¼Ğ")
-  CustomActions("<cm_CompareDirsWithSubdirs>","±È½ÏÎÄ¼ş¼Ğ(Í¬Ê±±ê³öÁíÒ»´°¿ÚÃ»ÓĞµÄ×ÓÎÄ¼ş¼Ğ)")
-  CustomActions("<cm_ContextMenu>","ÏÔÊ¾¿ì½İ²Ëµ¥")
-  CustomActions("<cm_ContextMenuInternal>","ÏÔÊ¾¿ì½İ²Ëµ¥(ÄÚ²¿¹ØÁª)")
-  CustomActions("<cm_ContextMenuInternalCursor>","ÏÔÊ¾¹â±ê´¦ÎÄ¼şµÄÄÚ²¿¹ØÁª¿ì½İ²Ëµ¥")
-  CustomActions("<cm_ShowRemoteMenu>","Ã½ÌåÖĞĞÄÒ£¿ØÆ÷²¥·Å/ÔİÍ£¼ü¿ì½İ²Ëµ¥")
-  CustomActions("<cm_SyncChangeDir>","Á½±ß´°¿ÚÍ¬²½¸ü¸ÄÎÄ¼ş¼Ğ")
-  CustomActions("<cm_EditComment>","±à¼­ÎÄ¼ş±¸×¢")
-  CustomActions("<cm_FocusLeft>","½¹µãÖÃÓÚ×ó´°¿Ú")
-  CustomActions("<cm_FocusRight>","½¹µãÖÃÓÚÓÒ´°¿Ú")
-  CustomActions("<cm_FocusCmdLine>","½¹µãÖÃÓÚÃüÁîĞĞ")
-  CustomActions("<cm_FocusButtonBar>","½¹µãÖÃÓÚ¹¤¾ßÀ¸")
-  CustomActions("<cm_CountDirContent>","¼ÆËãËùÓĞÎÄ¼ş¼ĞÕ¼ÓÃµÄ¿Õ¼ä")
-  CustomActions("<cm_UnloadPlugins>","Ğ¶ÔØËùÓĞ²å¼ş")
-  CustomActions("<cm_DirMatch>","±ê³öĞÂÎÄ¼ş, Òş²ØÏàÍ¬Õß")
-  CustomActions("<cm_Exchange>","½»»»×óÓÒ´°¿Ú")
-  CustomActions("<cm_MatchSrc>","Ä¿±ê = À´Ô´")
-  CustomActions("<cm_ReloadSelThumbs>","Ë¢ĞÂÑ¡ÖĞÎÄ¼şµÄËõÂÔÍ¼")
-  CustomActions("<cm_DirectCableConnect>","Ö±½ÓµçÀÂÁ¬½Ó")
-  CustomActions("<cm_NTinstallDriver>","¼ÓÔØ NT ²¢¿ÚÇı¶¯³ÌĞò")
-  CustomActions("<cm_NTremoveDriver>","Ğ¶ÔØ NT ²¢¿ÚÇı¶¯³ÌĞò")
-  CustomActions("<cm_PrintDir>","´òÓ¡ÎÄ¼şÁĞ±í")
-  CustomActions("<cm_PrintDirSub>","´òÓ¡ÎÄ¼şÁĞ±í(º¬×ÓÎÄ¼ş¼Ğ)")
-  CustomActions("<cm_PrintFile>","´òÓ¡ÎÄ¼şÄÚÈİ")
-  CustomActions("<cm_SpreadSelection>","Ñ¡ÔñÒ»×éÎÄ¼ş")
-  CustomActions("<cm_SelectBoth>","Ñ¡ÔñÒ»×é: ÎÄ¼şºÍÎÄ¼ş¼Ğ")
-  CustomActions("<cm_SelectFiles>","Ñ¡ÔñÒ»×é: ½öÎÄ¼ş")
-  CustomActions("<cm_SelectFolders>","Ñ¡ÔñÒ»×é: ½öÎÄ¼ş¼Ğ")
-  CustomActions("<cm_ShrinkSelection>","²»Ñ¡Ò»×éÎÄ¼ş")
-  CustomActions("<cm_ClearFiles>","²»Ñ¡Ò»×é: ½öÎÄ¼ş")
-  CustomActions("<cm_ClearFolders>","²»Ñ¡Ò»×é: ½öÎÄ¼ş¼Ğ")
-  CustomActions("<cm_ClearSelCfg>","²»Ñ¡Ò»×é: ÎÄ¼şºÍ/»òÎÄ¼ş¼Ğ(ÊÓÅäÖÃ¶ø¶¨)")
-  CustomActions("<cm_SelectAll>","È«²¿Ñ¡Ôñ: ÎÄ¼şºÍ/»òÎÄ¼ş¼Ğ(ÊÓÅäÖÃ¶ø¶¨)")
-  CustomActions("<cm_SelectAllBoth>","È«²¿Ñ¡Ôñ: ÎÄ¼şºÍÎÄ¼ş¼Ğ")
-  CustomActions("<cm_SelectAllFiles>","È«²¿Ñ¡Ôñ: ½öÎÄ¼ş")
-  CustomActions("<cm_SelectAllFolders>","È«²¿Ñ¡Ôñ: ½öÎÄ¼ş¼Ğ")
-  CustomActions("<cm_ClearAll>","È«²¿È¡Ïû: ÎÄ¼şºÍÎÄ¼ş¼Ğ")
-  CustomActions("<cm_ClearAllFiles>","È«²¿È¡Ïû: ½öÎÄ¼ş")
-  CustomActions("<cm_ClearAllFolders>","È«²¿È¡Ïû: ½öÎÄ¼ş¼Ğ")
-  CustomActions("<cm_ClearAllCfg>","È«²¿È¡Ïû: ÎÄ¼şºÍ/»òÎÄ¼ş¼Ğ(ÊÓÅäÖÃ¶ø¶¨)")
-  CustomActions("<cm_ExchangeSelection>","·´ÏòÑ¡Ôñ")
-  CustomActions("<cm_ExchangeSelBoth>","·´ÏòÑ¡Ôñ: ÎÄ¼şºÍÎÄ¼ş¼Ğ")
-  CustomActions("<cm_ExchangeSelFiles>","·´ÏòÑ¡Ôñ: ½öÎÄ¼ş")
-  CustomActions("<cm_ExchangeSelFolders>","·´ÏòÑ¡Ôñ: ½öÎÄ¼ş¼Ğ")
-  CustomActions("<cm_SelectCurrentExtension>","Ñ¡ÔñÀ©Õ¹ÃûÏàÍ¬µÄÎÄ¼ş")
-  CustomActions("<cm_UnselectCurrentExtension>","²»Ñ¡À©Õ¹ÃûÏàÍ¬µÄÎÄ¼ş")
-  CustomActions("<cm_SelectCurrentName>","Ñ¡ÔñÎÄ¼şÃûÏàÍ¬µÄÎÄ¼ş")
-  CustomActions("<cm_UnselectCurrentName>","²»Ñ¡ÎÄ¼şÃûÏàÍ¬µÄÎÄ¼ş")
-  CustomActions("<cm_SelectCurrentNameExt>","Ñ¡ÔñÎÄ¼şÃûºÍÀ©Õ¹ÃûÏàÍ¬µÄÎÄ¼ş")
-  CustomActions("<cm_UnselectCurrentNameExt>","²»Ñ¡ÎÄ¼şÃûºÍÀ©Õ¹ÃûÏàÍ¬µÄÎÄ¼ş")
-  CustomActions("<cm_SelectCurrentPath>","Ñ¡ÔñÍ¬Ò»Â·¾¶ÏÂµÄÎÄ¼ş(Õ¹¿ªÎÄ¼ş¼Ğ+ËÑË÷ÎÄ¼ş)")
-  CustomActions("<cm_UnselectCurrentPath>","²»Ñ¡Í¬Ò»Â·¾¶ÏÂµÄÎÄ¼ş(Õ¹¿ªÎÄ¼ş¼Ğ+ËÑË÷ÎÄ¼ş)")
-  CustomActions("<cm_RestoreSelection>","»Ö¸´Ñ¡ÔñÁĞ±í")
-  CustomActions("<cm_SaveSelection>","±£´æÑ¡ÔñÁĞ±í")
-  CustomActions("<cm_SaveSelectionToFile>","µ¼³öÑ¡ÔñÁĞ±í")
-  CustomActions("<cm_SaveSelectionToFileA>","µ¼³öÑ¡ÔñÁĞ±í(ANSI)")
-  CustomActions("<cm_SaveSelectionToFileW>","µ¼³öÑ¡ÔñÁĞ±í(Unicode)")
-  CustomActions("<cm_SaveDetailsToFile>","µ¼³öÏêÏ¸ĞÅÏ¢")
-  CustomActions("<cm_SaveDetailsToFileA>","µ¼³öÏêÏ¸ĞÅÏ¢(ANSI)")
-  CustomActions("<cm_SaveDetailsToFileW>","µ¼³öÏêÏ¸ĞÅÏ¢(Unicode)")
-  CustomActions("<cm_LoadSelectionFromFile>","µ¼ÈëÑ¡ÔñÁĞ±í(´ÓÎÄ¼ş)")
-  CustomActions("<cm_LoadSelectionFromClip>","µ¼ÈëÑ¡ÔñÁĞ±í(´Ó¼ôÌù°å)")
-  CustomActions("<cm_EditPermissionInfo>","ÉèÖÃÈ¨ÏŞ(NTFS)")
-  CustomActions("<cm_EditAuditInfo>","ÉóºËÎÄ¼ş(NTFS)")
-  CustomActions("<cm_EditOwnerInfo>","»ñÈ¡ËùÓĞÈ¨(NTFS)")
-  CustomActions("<cm_CutToClipboard>","¼ôÇĞÑ¡ÖĞµÄÎÄ¼şµ½¼ôÌù°å")
-  CustomActions("<cm_CopyToClipboard>","¸´ÖÆÑ¡ÖĞµÄÎÄ¼şµ½¼ôÌù°å")
-  CustomActions("<cm_PasteFromClipboard>","´Ó¼ôÌù°åÕ³Ìùµ½µ±Ç°ÎÄ¼ş¼Ğ")
-  CustomActions("<cm_CopyNamesToClip>","¸´ÖÆÎÄ¼şÃû")
-  CustomActions("<cm_CopyFullNamesToClip>","¸´ÖÆÎÄ¼şÃû¼°ÍêÕûÂ·¾¶")
-  CustomActions("<cm_CopyNetNamesToClip>","¸´ÖÆÎÄ¼şÃû¼°ÍøÂçÂ·¾¶")
-  CustomActions("<cm_CopySrcPathToClip>","¸´ÖÆÀ´Ô´Â·¾¶")
-  CustomActions("<cm_CopyTrgPathToClip>","¸´ÖÆÄ¿±êÂ·¾¶")
-  CustomActions("<cm_CopyFileDetailsToClip>","¸´ÖÆÎÄ¼şÏêÏ¸ĞÅÏ¢")
-  CustomActions("<cm_CopyFpFileDetailsToClip>","¸´ÖÆÎÄ¼şÏêÏ¸ĞÅÏ¢¼°ÍêÕûÂ·¾¶")
-  CustomActions("<cm_CopyNetFileDetailsToClip>","¸´ÖÆÎÄ¼şÏêÏ¸ĞÅÏ¢¼°ÍøÂçÂ·¾¶")
-  CustomActions("<cm_FtpConnect>","FTP Á¬½Ó")
-  CustomActions("<cm_FtpNew>","ĞÂ½¨ FTP Á¬½Ó")
-  CustomActions("<cm_FtpDisconnect>","¶Ï¿ª FTP Á¬½Ó")
-  CustomActions("<cm_FtpHiddenFiles>","ÏÔÊ¾Òş²ØÎÄ¼ş")
-  CustomActions("<cm_FtpAbort>","ÖĞÖ¹µ±Ç° FTP ÃüÁî")
-  CustomActions("<cm_FtpResumeDownload>","Ğø´«")
-  CustomActions("<cm_FtpSelectTransferMode>","Ñ¡Ôñ´«ÊäÄ£Ê½")
-  CustomActions("<cm_FtpAddToList>","Ìí¼Óµ½ÏÂÔØÁĞ±í")
-  CustomActions("<cm_FtpDownloadList>","°´ÁĞ±íÏÂÔØ")
-  CustomActions("<cm_GotoPreviousDir>","ºóÍË")
-  CustomActions("<cm_GotoNextDir>","Ç°½ø")
-  CustomActions("<cm_DirectoryHistory>","ÎÄ¼ş¼ĞÀúÊ·¼ÇÂ¼")
-  CustomActions("<cm_GotoPreviousLocalDir>","ºóÍË(·Ç FTP)")
-  CustomActions("<cm_GotoNextLocalDir>","Ç°½ø(·Ç FTP)")
-  CustomActions("<cm_DirectoryHotlist>","³£ÓÃÎÄ¼ş¼Ğ")
-  CustomActions("<cm_GoToRoot>","×ªµ½¸ùÎÄ¼ş¼Ğ")
-  CustomActions("<cm_GoToParent>","×ªµ½ÉÏ²ãÎÄ¼ş¼Ğ")
-  CustomActions("<cm_GoToDir>","´ò¿ª¹â±ê´¦µÄÎÄ¼ş¼Ğ»òÑ¹Ëõ°ü")
-  CustomActions("<cm_OpenDesktop>","×ÀÃæ")
-  CustomActions("<cm_OpenDrives>","ÎÒµÄµçÄÔ")
-  CustomActions("<cm_OpenControls>","¿ØÖÆÃæ°å")
-  CustomActions("<cm_OpenFonts>","×ÖÌå")
-  CustomActions("<cm_OpenNetwork>","ÍøÉÏÁÚ¾Ó")
-  CustomActions("<cm_OpenPrinters>","´òÓ¡»ú")
-  CustomActions("<cm_OpenRecycled>","»ØÊÕÕ¾")
-  CustomActions("<cm_CDtree>","¸ü¸ÄÎÄ¼ş¼Ğ")
-  CustomActions("<cm_TransferLeft>","ÔÚ×ó´°¿Ú´ò¿ª¹â±ê´¦µÄÎÄ¼ş¼Ğ»òÑ¹Ëõ°ü")
-  CustomActions("<cm_TransferRight>","ÔÚÓÒ´°¿Ú´ò¿ª¹â±ê´¦µÄÎÄ¼ş¼Ğ»òÑ¹Ëõ°ü")
-  CustomActions("<cm_EditPath>","±à¼­À´Ô´´°¿ÚµÄÂ·¾¶")
-  CustomActions("<cm_GoToFirstFile>","¹â±êÒÆµ½ÁĞ±íÖĞµÄµÚÒ»¸öÎÄ¼ş")
-  CustomActions("<cm_GotoNextDrive>","×ªµ½ÏÂÒ»¸öÇı¶¯Æ÷")
-  CustomActions("<cm_GotoPreviousDrive>","×ªµ½ÉÏÒ»¸öÇı¶¯Æ÷")
-  CustomActions("<cm_GotoNextSelected>","×ªµ½ÏÂÒ»¸öÑ¡ÖĞµÄÎÄ¼ş")
-  CustomActions("<cm_GotoPrevSelected>","×ªµ½ÉÏÒ»¸öÑ¡ÖĞµÄÎÄ¼ş")
-  CustomActions("<cm_GotoDriveA>","×ªµ½Çı¶¯Æ÷ A")
-  CustomActions("<cm_GotoDriveC>","×ªµ½Çı¶¯Æ÷ C")
-  CustomActions("<cm_GotoDriveD>","×ªµ½Çı¶¯Æ÷ D")
-  CustomActions("<cm_GotoDriveE>","×ªµ½Çı¶¯Æ÷ E")
-  CustomActions("<cm_GotoDriveF>","¿É×Ô¶¨ÒåÆäËûÇı¶¯Æ÷")
-  CustomActions("<cm_GotoDriveZ>","×î¶à 26 ¸ö")
-  CustomActions("<cm_HelpIndex>","°ïÖúË÷Òı")
-  CustomActions("<cm_Keyboard>","¿ì½İ¼üÁĞ±í")
-  CustomActions("<cm_Register>","×¢²áĞÅÏ¢")
-  CustomActions("<cm_VisitHomepage>","·ÃÎÊ Totalcmd ÍøÕ¾")
-  CustomActions("<cm_About>","¹ØÓÚ Total Commander")
-  CustomActions("<cm_Exit>","ÍË³ö Total Commander")
-  CustomActions("<cm_Minimize>","×îĞ¡»¯ Total Commander")
-  CustomActions("<cm_Maximize>","×î´ó»¯ Total Commander")
-  CustomActions("<cm_Restore>","»Ö¸´Õı³£´óĞ¡")
-  CustomActions("<cm_ClearCmdLine>","Çå³ıÃüÁîĞĞ")
-  CustomActions("<cm_NextCommand>","ÏÂÒ»ÌõÃüÁî")
-  CustomActions("<cm_PrevCommand>","ÉÏÒ»ÌõÃüÁî")
-  CustomActions("<cm_AddPathToCmdline>","½«Â·¾¶¸´ÖÆµ½ÃüÁîĞĞ")
-  CustomActions("<cm_MultiRenameFiles>","ÅúÁ¿ÖØÃüÃû")
-  CustomActions("<cm_SysInfo>","ÏµÍ³ĞÅÏ¢")
-  CustomActions("<cm_OpenTransferManager>","ºóÌ¨´«Êä¹ÜÀíÆ÷")
-  CustomActions("<cm_SearchFor>","ËÑË÷ÎÄ¼ş")
-  CustomActions("<cm_FileSync>","Í¬²½ÎÄ¼ş¼Ğ")
-  CustomActions("<cm_Associate>","ÎÄ¼ş¹ØÁª")
-  CustomActions("<cm_InternalAssociate>","¶¨ÒåÄÚ²¿¹ØÁª")
-  CustomActions("<cm_CompareFilesByContent>","±È½ÏÎÄ¼şÄÚÈİ")
-  CustomActions("<cm_IntCompareFilesByContent>","Ê¹ÓÃÄÚ²¿±È½Ï³ÌĞò")
-  CustomActions("<cm_CommandBrowser>","ä¯ÀÀÄÚ²¿ÃüÁî")
-  CustomActions("<cm_VisButtonbar>","ÏÔÊ¾/Òş²Ø: ¹¤¾ßÀ¸")
-  CustomActions("<cm_VisDriveButtons>","ÏÔÊ¾/Òş²Ø: Çı¶¯Æ÷°´Å¥")
-  CustomActions("<cm_VisTwoDriveButtons>","ÏÔÊ¾/Òş²Ø: Á½¸öÇı¶¯Æ÷°´Å¥À¸")
-  CustomActions("<cm_VisFlatDriveButtons>","ÇĞ»»: Æ½Ì¹/Á¢ÌåÇı¶¯Æ÷°´Å¥")
-  CustomActions("<cm_VisFlatInterface>","ÇĞ»»: Æ½Ì¹/Á¢ÌåÓÃ»§½çÃæ")
-  CustomActions("<cm_VisDriveCombo>","ÏÔÊ¾/Òş²Ø: Çı¶¯Æ÷ÁĞ±í")
-  CustomActions("<cm_VisCurDir>","ÏÔÊ¾/Òş²Ø: µ±Ç°ÎÄ¼ş¼Ğ")
-  CustomActions("<cm_VisBreadCrumbs>","ÏÔÊ¾/Òş²Ø: Â·¾¶µ¼º½À¸")
-  CustomActions("<cm_VisTabHeader>","ÏÔÊ¾/Òş²Ø: ÅÅĞòÖÆ±í·û")
-  CustomActions("<cm_VisStatusbar>","ÏÔÊ¾/Òş²Ø: ×´Ì¬À¸")
-  CustomActions("<cm_VisCmdLine>","ÏÔÊ¾/Òş²Ø: ÃüÁîĞĞ")
-  CustomActions("<cm_VisKeyButtons>","ÏÔÊ¾/Òş²Ø: ¹¦ÄÜ¼ü°´Å¥")
-  CustomActions("<cm_ShowHint>","ÏÔÊ¾ÎÄ¼şÌáÊ¾")
-  CustomActions("<cm_ShowQuickSearch>","ÏÔÊ¾¿ìËÙËÑË÷´°¿Ú")
-  CustomActions("<cm_SwitchLongNames>","¿ªÆô/¹Ø±Õ: ³¤ÎÄ¼şÃûÏÔÊ¾")
-  CustomActions("<cm_RereadSource>","Ë¢ĞÂÀ´Ô´´°¿Ú")
-  CustomActions("<cm_ShowOnlySelected>","½öÏÔÊ¾Ñ¡ÖĞµÄÎÄ¼ş")
-  CustomActions("<cm_SwitchHidSys>","¿ªÆô/¹Ø±Õ: Òş²Ø»òÏµÍ³ÎÄ¼şÏÔÊ¾")
-  CustomActions("<cm_Switch83Names>","¿ªÆô/¹Ø±Õ: 8.3 Ê½ÎÄ¼şÃûĞ¡Ğ´ÏÔÊ¾")
-  CustomActions("<cm_SwitchDirSort>","¿ªÆô/¹Ø±Õ: ÎÄ¼ş¼Ğ°´Ãû³ÆÅÅĞò")
-  CustomActions("<cm_DirBranch>","Õ¹¿ªËùÓĞÎÄ¼ş¼Ğ")
-  CustomActions("<cm_DirBranchSel>","Ö»Õ¹¿ªÑ¡ÖĞµÄÎÄ¼ş¼Ğ")
-  CustomActions("<cm_50Percent>","´°¿Ú·Ö¸ôÀ¸Î»ÓÚ 50%")
-  CustomActions("<cm_100Percent>","´°¿Ú·Ö¸ôÀ¸Î»ÓÚ 100% TC 8.0+")
-  CustomActions("<cm_VisDirTabs>","ÏÔÊ¾/Òş²Ø: ÎÄ¼ş¼Ğ±êÇ©")
-  CustomActions("<cm_VisXPThemeBackground>","ÏÔÊ¾/Òş²Ø: XP Ö÷Ìâ±³¾°")
-  CustomActions("<cm_SwitchOverlayIcons>","¿ªÆô/¹Ø±Õ: µşÖÃÍ¼±êÏÔÊ¾")
-  CustomActions("<cm_VisHistHotButtons>","ÏÔÊ¾/Òş²Ø: ÎÄ¼ş¼ĞÀúÊ·¼ÇÂ¼ºÍ³£ÓÃÎÄ¼ş¼Ğ°´Å¥")
-  CustomActions("<cm_SwitchWatchDirs>","ÆôÓÃ/½ûÓÃ: ÎÄ¼ş¼Ğ×Ô¶¯Ë¢ĞÂ")
-  CustomActions("<cm_SwitchIgnoreList>","ÆôÓÃ/½ûÓÃ: ×Ô¶¨ÒåÒş²ØÎÄ¼ş")
-  CustomActions("<cm_SwitchX64Redirection>","¿ªÆô/¹Ø±Õ: 32 Î» system32 Ä¿Â¼ÖØ¶¨Ïò(64 Î» Windows)")
-  CustomActions("<cm_SeparateTreeOff>","¹Ø±Õ¶ÀÁ¢ÎÄ¼ş¼ĞÊ÷Ãæ°å")
-  CustomActions("<cm_SeparateTree1>","Ò»¸ö¶ÀÁ¢ÎÄ¼ş¼ĞÊ÷Ãæ°å")
-  CustomActions("<cm_SeparateTree2>","Á½¸ö¶ÀÁ¢ÎÄ¼ş¼ĞÊ÷Ãæ°å")
-  CustomActions("<cm_SwitchSeparateTree>","ÇĞ»»¶ÀÁ¢ÎÄ¼ş¼ĞÊ÷Ãæ°å×´Ì¬")
-  CustomActions("<cm_ToggleSeparateTree1>","¿ªÆô/¹Ø±Õ: Ò»¸ö¶ÀÁ¢ÎÄ¼ş¼ĞÊ÷Ãæ°å")
-  CustomActions("<cm_ToggleSeparateTree2>","¿ªÆô/¹Ø±Õ: Á½¸ö¶ÀÁ¢ÎÄ¼ş¼ĞÊ÷Ãæ°å")
-  CustomActions("<cm_UserMenu1>","ÓÃ»§²Ëµ¥ 1")
-  CustomActions("<cm_UserMenu2>","ÓÃ»§²Ëµ¥ 2")
-  CustomActions("<cm_UserMenu3>","ÓÃ»§²Ëµ¥ 3")
-  CustomActions("<cm_UserMenu4>","ÓÃ»§²Ëµ¥ 4")
-  CustomActions("<cm_UserMenu5>","ÓÃ»§²Ëµ¥ 5")
-  CustomActions("<cm_UserMenu6>","ÓÃ»§²Ëµ¥ 6")
-  CustomActions("<cm_UserMenu7>","ÓÃ»§²Ëµ¥ 7")
-  CustomActions("<cm_UserMenu8>","ÓÃ»§²Ëµ¥ 8")
-  CustomActions("<cm_UserMenu9>","ÓÃ»§²Ëµ¥ 9")
-  CustomActions("<cm_UserMenu10>","¿É¶¨ÒåÆäËûÓÃ»§²Ëµ¥")
-  CustomActions("<cm_OpenNewTab>","ĞÂ½¨±êÇ©")
-  CustomActions("<cm_OpenNewTabBg>","ĞÂ½¨±êÇ©(ÔÚºóÌ¨)")
-  CustomActions("<cm_OpenDirInNewTab>","ĞÂ½¨±êÇ©(²¢´ò¿ª¹â±ê´¦µÄÎÄ¼ş¼Ğ)")
-  CustomActions("<cm_OpenDirInNewTabOther>","ĞÂ½¨±êÇ©(ÔÚÁíÒ»´°¿Ú´ò¿ªÎÄ¼ş¼Ğ)")
-  CustomActions("<cm_SwitchToNextTab>","ÏÂÒ»¸ö±êÇ©(Ctrl+Tab)")
-  CustomActions("<cm_SwitchToPreviousTab>","ÉÏÒ»¸ö±êÇ©(Ctrl+Shift+Tab)")
-  CustomActions("<cm_CloseCurrentTab>","¹Ø±Õµ±Ç°±êÇ©")
-  CustomActions("<cm_CloseAllTabs>","¹Ø±ÕËùÓĞ±êÇ©")
-  CustomActions("<cm_DirTabsShowMenu>","ÏÔÊ¾±êÇ©²Ëµ¥")
-  CustomActions("<cm_ToggleLockCurrentTab>","Ëø¶¨/½âËøµ±Ç°±êÇ©")
-  CustomActions("<cm_ToggleLockDcaCurrentTab>","Ëø¶¨/½âËøµ±Ç°±êÇ©(¿É¸ü¸ÄÎÄ¼ş¼Ğ)")
-  CustomActions("<cm_ExchangeWithTabs>","½»»»×óÓÒ´°¿Ú¼°Æä±êÇ©")
-  CustomActions("<cm_GoToLockedDir>","×ªµ½Ëø¶¨±êÇ©µÄ¸ùÎÄ¼ş¼Ğ")
-  CustomActions("<cm_SrcActivateTab1>","À´Ô´´°¿Ú: ¼¤»î±êÇ© 1")
-  CustomActions("<cm_SrcActivateTab2>","À´Ô´´°¿Ú: ¼¤»î±êÇ© 2")
-  CustomActions("<cm_SrcActivateTab3>","À´Ô´´°¿Ú: ¼¤»î±êÇ© 3")
-  CustomActions("<cm_SrcActivateTab4>","À´Ô´´°¿Ú: ¼¤»î±êÇ© 4")
-  CustomActions("<cm_SrcActivateTab5>","À´Ô´´°¿Ú: ¼¤»î±êÇ© 5")
-  CustomActions("<cm_SrcActivateTab6>","À´Ô´´°¿Ú: ¼¤»î±êÇ© 6")
-  CustomActions("<cm_SrcActivateTab7>","À´Ô´´°¿Ú: ¼¤»î±êÇ© 7")
-  CustomActions("<cm_SrcActivateTab8>","À´Ô´´°¿Ú: ¼¤»î±êÇ© 8")
-  CustomActions("<cm_SrcActivateTab9>","À´Ô´´°¿Ú: ¼¤»î±êÇ© 9")
-  CustomActions("<cm_SrcActivateTab10>","À´Ô´´°¿Ú: ¼¤»î±êÇ© 10")
-  CustomActions("<cm_TrgActivateTab1>","Ä¿±ê´°¿Ú: ¼¤»î±êÇ© 1")
-  CustomActions("<cm_TrgActivateTab2>","Ä¿±ê´°¿Ú: ¼¤»î±êÇ© 2")
-  CustomActions("<cm_TrgActivateTab3>","Ä¿±ê´°¿Ú: ¼¤»î±êÇ© 3")
-  CustomActions("<cm_TrgActivateTab4>","Ä¿±ê´°¿Ú: ¼¤»î±êÇ© 4")
-  CustomActions("<cm_TrgActivateTab5>","Ä¿±ê´°¿Ú: ¼¤»î±êÇ© 5")
-  CustomActions("<cm_TrgActivateTab6>","Ä¿±ê´°¿Ú: ¼¤»î±êÇ© 6")
-  CustomActions("<cm_TrgActivateTab7>","Ä¿±ê´°¿Ú: ¼¤»î±êÇ© 7")
-  CustomActions("<cm_TrgActivateTab8>","Ä¿±ê´°¿Ú: ¼¤»î±êÇ© 8")
-  CustomActions("<cm_TrgActivateTab9>","Ä¿±ê´°¿Ú: ¼¤»î±êÇ© 9")
-  CustomActions("<cm_TrgActivateTab10>","Ä¿±ê´°¿Ú: ¼¤»î±êÇ© 10")
-  CustomActions("<cm_LeftActivateTab1>","×ó´°¿Ú: ¼¤»î±êÇ© 1")
-  CustomActions("<cm_LeftActivateTab2>","×ó´°¿Ú: ¼¤»î±êÇ© 2")
-  CustomActions("<cm_LeftActivateTab3>","×ó´°¿Ú: ¼¤»î±êÇ© 3")
-  CustomActions("<cm_LeftActivateTab4>","×ó´°¿Ú: ¼¤»î±êÇ© 4")
-  CustomActions("<cm_LeftActivateTab5>","×ó´°¿Ú: ¼¤»î±êÇ© 5")
-  CustomActions("<cm_LeftActivateTab6>","×ó´°¿Ú: ¼¤»î±êÇ© 6")
-  CustomActions("<cm_LeftActivateTab7>","×ó´°¿Ú: ¼¤»î±êÇ© 7")
-  CustomActions("<cm_LeftActivateTab8>","×ó´°¿Ú: ¼¤»î±êÇ© 8")
-  CustomActions("<cm_LeftActivateTab9>","×ó´°¿Ú: ¼¤»î±êÇ© 9")
-  CustomActions("<cm_LeftActivateTab10>","×ó´°¿Ú: ¼¤»î±êÇ© 10")
-  CustomActions("<cm_RightActivateTab1>","ÓÒ´°¿Ú: ¼¤»î±êÇ© 1")
-  CustomActions("<cm_RightActivateTab2>","ÓÒ´°¿Ú: ¼¤»î±êÇ© 2")
-  CustomActions("<cm_RightActivateTab3>","ÓÒ´°¿Ú: ¼¤»î±êÇ© 3")
-  CustomActions("<cm_RightActivateTab4>","ÓÒ´°¿Ú: ¼¤»î±êÇ© 4")
-  CustomActions("<cm_RightActivateTab5>","ÓÒ´°¿Ú: ¼¤»î±êÇ© 5")
-  CustomActions("<cm_RightActivateTab6>","ÓÒ´°¿Ú: ¼¤»î±êÇ© 6")
-  CustomActions("<cm_RightActivateTab7>","ÓÒ´°¿Ú: ¼¤»î±êÇ© 7")
-  CustomActions("<cm_RightActivateTab8>","ÓÒ´°¿Ú: ¼¤»î±êÇ© 8")
-  CustomActions("<cm_RightActivateTab9>","ÓÒ´°¿Ú: ¼¤»î±êÇ© 9")
-  CustomActions("<cm_RightActivateTab10>","ÓÒ´°¿Ú: ¼¤»î±êÇ© 10")
-  CustomActions("<cm_SrcSortByCol1>","À´Ô´´°¿Ú: °´µÚ 1 ÁĞÅÅĞò")
-  CustomActions("<cm_SrcSortByCol2>","À´Ô´´°¿Ú: °´µÚ 2 ÁĞÅÅĞò")
-  CustomActions("<cm_SrcSortByCol3>","À´Ô´´°¿Ú: °´µÚ 3 ÁĞÅÅĞò")
-  CustomActions("<cm_SrcSortByCol4>","À´Ô´´°¿Ú: °´µÚ 4 ÁĞÅÅĞò")
-  CustomActions("<cm_SrcSortByCol5>","À´Ô´´°¿Ú: °´µÚ 5 ÁĞÅÅĞò")
-  CustomActions("<cm_SrcSortByCol6>","À´Ô´´°¿Ú: °´µÚ 6 ÁĞÅÅĞò")
-  CustomActions("<cm_SrcSortByCol7>","À´Ô´´°¿Ú: °´µÚ 7 ÁĞÅÅĞò")
-  CustomActions("<cm_SrcSortByCol8>","À´Ô´´°¿Ú: °´µÚ 8 ÁĞÅÅĞò")
-  CustomActions("<cm_SrcSortByCol9>","À´Ô´´°¿Ú: °´µÚ 9 ÁĞÅÅĞò")
-  CustomActions("<cm_SrcSortByCol10>","À´Ô´´°¿Ú: °´µÚ 10 ÁĞÅÅĞò")
-  CustomActions("<cm_TrgSortByCol1>","Ä¿±ê´°¿Ú: °´µÚ 1 ÁĞÅÅĞò")
-  CustomActions("<cm_TrgSortByCol2>","Ä¿±ê´°¿Ú: °´µÚ 2 ÁĞÅÅĞò")
-  CustomActions("<cm_TrgSortByCol3>","Ä¿±ê´°¿Ú: °´µÚ 3 ÁĞÅÅĞò")
-  CustomActions("<cm_TrgSortByCol4>","Ä¿±ê´°¿Ú: °´µÚ 4 ÁĞÅÅĞò")
-  CustomActions("<cm_TrgSortByCol5>","Ä¿±ê´°¿Ú: °´µÚ 5 ÁĞÅÅĞò")
-  CustomActions("<cm_TrgSortByCol6>","Ä¿±ê´°¿Ú: °´µÚ 6 ÁĞÅÅĞò")
-  CustomActions("<cm_TrgSortByCol7>","Ä¿±ê´°¿Ú: °´µÚ 7 ÁĞÅÅĞò")
-  CustomActions("<cm_TrgSortByCol8>","Ä¿±ê´°¿Ú: °´µÚ 8 ÁĞÅÅĞò")
-  CustomActions("<cm_TrgSortByCol9>","Ä¿±ê´°¿Ú: °´µÚ 9 ÁĞÅÅĞò")
-  CustomActions("<cm_TrgSortByCol10>","Ä¿±ê´°¿Ú: °´µÚ 10 ÁĞÅÅĞò")
-  CustomActions("<cm_LeftSortByCol1>","×ó´°¿Ú: °´µÚ 1 ÁĞÅÅĞò")
-  CustomActions("<cm_LeftSortByCol2>","×ó´°¿Ú: °´µÚ 2 ÁĞÅÅĞò")
-  CustomActions("<cm_LeftSortByCol3>","×ó´°¿Ú: °´µÚ 3 ÁĞÅÅĞò")
-  CustomActions("<cm_LeftSortByCol4>","×ó´°¿Ú: °´µÚ 4 ÁĞÅÅĞò")
-  CustomActions("<cm_LeftSortByCol5>","×ó´°¿Ú: °´µÚ 5 ÁĞÅÅĞò")
-  CustomActions("<cm_LeftSortByCol6>","×ó´°¿Ú: °´µÚ 6 ÁĞÅÅĞò")
-  CustomActions("<cm_LeftSortByCol7>","×ó´°¿Ú: °´µÚ 7 ÁĞÅÅĞò")
-  CustomActions("<cm_LeftSortByCol8>","×ó´°¿Ú: °´µÚ 8 ÁĞÅÅĞò")
-  CustomActions("<cm_LeftSortByCol9>","×ó´°¿Ú: °´µÚ 9 ÁĞÅÅĞò")
-  CustomActions("<cm_LeftSortByCol10>","×ó´°¿Ú: °´µÚ 10 ÁĞÅÅĞò")
-  CustomActions("<cm_RightSortByCol1>","ÓÒ´°¿Ú: °´µÚ 1 ÁĞÅÅĞò")
-  CustomActions("<cm_RightSortByCol2>","ÓÒ´°¿Ú: °´µÚ 2 ÁĞÅÅĞò")
-  CustomActions("<cm_RightSortByCol3>","ÓÒ´°¿Ú: °´µÚ 3 ÁĞÅÅĞò")
-  CustomActions("<cm_RightSortByCol4>","ÓÒ´°¿Ú: °´µÚ 4 ÁĞÅÅĞò")
-  CustomActions("<cm_RightSortByCol5>","ÓÒ´°¿Ú: °´µÚ 5 ÁĞÅÅĞò")
-  CustomActions("<cm_RightSortByCol6>","ÓÒ´°¿Ú: °´µÚ 6 ÁĞÅÅĞò")
-  CustomActions("<cm_RightSortByCol7>","ÓÒ´°¿Ú: °´µÚ 7 ÁĞÅÅĞò")
-  CustomActions("<cm_RightSortByCol8>","ÓÒ´°¿Ú: °´µÚ 8 ÁĞÅÅĞò")
-  CustomActions("<cm_RightSortByCol9>","ÓÒ´°¿Ú: °´µÚ 9 ÁĞÅÅĞò")
-  CustomActions("<cm_RightSortByCol10>","ÓÒ´°¿Ú: °´µÚ 10 ÁĞÅÅĞò")
-  CustomActions("<cm_SrcCustomView1>","À´Ô´´°¿Ú: ×Ô¶¨ÒåÁĞÊÓÍ¼ 1")
-  CustomActions("<cm_SrcCustomView2>","À´Ô´´°¿Ú: ×Ô¶¨ÒåÁĞÊÓÍ¼ 2")
-  CustomActions("<cm_SrcCustomView3>","À´Ô´´°¿Ú: ×Ô¶¨ÒåÁĞÊÓÍ¼ 3")
-  CustomActions("<cm_SrcCustomView4>","À´Ô´´°¿Ú: ×Ô¶¨ÒåÁĞÊÓÍ¼ 4")
-  CustomActions("<cm_SrcCustomView5>","À´Ô´´°¿Ú: ×Ô¶¨ÒåÁĞÊÓÍ¼ 5")
-  CustomActions("<cm_SrcCustomView6>","À´Ô´´°¿Ú: ×Ô¶¨ÒåÁĞÊÓÍ¼ 6")
-  CustomActions("<cm_SrcCustomView7>","À´Ô´´°¿Ú: ×Ô¶¨ÒåÁĞÊÓÍ¼ 7")
-  CustomActions("<cm_SrcCustomView8>","À´Ô´´°¿Ú: ×Ô¶¨ÒåÁĞÊÓÍ¼ 8")
-  CustomActions("<cm_SrcCustomView9>","À´Ô´´°¿Ú: ×Ô¶¨ÒåÁĞÊÓÍ¼ 9")
-  CustomActions("<cm_SrcCustomView10>","À´Ô´´°¿Ú: ×Ô¶¨ÒåÁĞÊÓÍ¼ 10")
-  CustomActions("<cm_LeftCustomView1>","×ó´°¿Ú: ×Ô¶¨ÒåÁĞÊÓÍ¼ 1")
-  CustomActions("<cm_LeftCustomView2>","×ó´°¿Ú: ×Ô¶¨ÒåÁĞÊÓÍ¼ 2")
-  CustomActions("<cm_LeftCustomView3>","×ó´°¿Ú: ×Ô¶¨ÒåÁĞÊÓÍ¼ 3")
-  CustomActions("<cm_LeftCustomView4>","×ó´°¿Ú: ×Ô¶¨ÒåÁĞÊÓÍ¼ 4")
-  CustomActions("<cm_LeftCustomView5>","×ó´°¿Ú: ×Ô¶¨ÒåÁĞÊÓÍ¼ 5")
-  CustomActions("<cm_LeftCustomView6>","×ó´°¿Ú: ×Ô¶¨ÒåÁĞÊÓÍ¼ 6")
-  CustomActions("<cm_LeftCustomView7>","×ó´°¿Ú: ×Ô¶¨ÒåÁĞÊÓÍ¼ 7")
-  CustomActions("<cm_LeftCustomView8>","×ó´°¿Ú: ×Ô¶¨ÒåÁĞÊÓÍ¼ 8")
-  CustomActions("<cm_LeftCustomView9>","×ó´°¿Ú: ×Ô¶¨ÒåÁĞÊÓÍ¼ 9")
-  CustomActions("<cm_LeftCustomView10>","×ó´°¿Ú: ×Ô¶¨ÒåÁĞÊÓÍ¼ 10")
-  CustomActions("<cm_RightCustomView1>","ÓÒ´°¿Ú: ×Ô¶¨ÒåÁĞÊÓÍ¼ 1")
-  CustomActions("<cm_RightCustomView2>","ÓÒ´°¿Ú: ×Ô¶¨ÒåÁĞÊÓÍ¼ 2")
-  CustomActions("<cm_RightCustomView3>","ÓÒ´°¿Ú: ×Ô¶¨ÒåÁĞÊÓÍ¼ 3")
-  CustomActions("<cm_RightCustomView4>","ÓÒ´°¿Ú: ×Ô¶¨ÒåÁĞÊÓÍ¼ 4")
-  CustomActions("<cm_RightCustomView5>","ÓÒ´°¿Ú: ×Ô¶¨ÒåÁĞÊÓÍ¼ 5")
-  CustomActions("<cm_RightCustomView6>","ÓÒ´°¿Ú: ×Ô¶¨ÒåÁĞÊÓÍ¼ 6")
-  CustomActions("<cm_RightCustomView7>","ÓÒ´°¿Ú: ×Ô¶¨ÒåÁĞÊÓÍ¼ 7")
-  CustomActions("<cm_RightCustomView8>","ÓÒ´°¿Ú: ×Ô¶¨ÒåÁĞÊÓÍ¼ 8")
-  CustomActions("<cm_RightCustomView9>","ÓÒ´°¿Ú: ×Ô¶¨ÒåÁĞÊÓÍ¼ 9")
-  CustomActions("<cm_RightCustomView10>","ÓÒ´°¿Ú: ×Ô¶¨ÒåÁĞÊÓÍ¼ 10")
-  CustomActions("<cm_SrcNextCustomView>","À´Ô´´°¿Ú: ÏÂÒ»¸ö×Ô¶¨ÒåÊÓÍ¼")
-  CustomActions("<cm_SrcPrevCustomView>","À´Ô´´°¿Ú: ÉÏÒ»¸ö×Ô¶¨ÒåÊÓÍ¼")
-  CustomActions("<cm_TrgNextCustomView>","Ä¿±ê´°¿Ú: ÏÂÒ»¸ö×Ô¶¨ÒåÊÓÍ¼")
-  CustomActions("<cm_TrgPrevCustomView>","Ä¿±ê´°¿Ú: ÉÏÒ»¸ö×Ô¶¨ÒåÊÓÍ¼")
-  CustomActions("<cm_LeftNextCustomView>","×ó´°¿Ú: ÏÂÒ»¸ö×Ô¶¨ÒåÊÓÍ¼")
-  CustomActions("<cm_LeftPrevCustomView>","×ó´°¿Ú: ÉÏÒ»¸ö×Ô¶¨ÒåÊÓÍ¼")
-  CustomActions("<cm_RightNextCustomView>","ÓÒ´°¿Ú: ÏÂÒ»¸ö×Ô¶¨ÒåÊÓÍ¼")
-  CustomActions("<cm_RightPrevCustomView>","ÓÒ´°¿Ú: ÉÏÒ»¸ö×Ô¶¨ÒåÊÓÍ¼")
-  CustomActions("<cm_LoadAllOnDemandFields>","ËùÓĞÎÄ¼ş¶¼°´Ğè¼ÓÔØ±¸×¢")
-  CustomActions("<cm_LoadSelOnDemandFields>","½öÑ¡ÖĞµÄÎÄ¼ş°´Ğè¼ÓÔØ±¸×¢")
-  CustomActions("<cm_ContentStopLoadFields>","Í£Ö¹ºóÌ¨¼ÓÔØ±¸×¢")
+  CustomActions("<cm_SrcComments>","æ¥æºçª—å£: æ˜¾ç¤ºæ–‡ä»¶å¤‡æ³¨")
+  CustomActions("<cm_SrcShort>","æ¥æºçª—å£: åˆ—è¡¨")
+  CustomActions("<cm_SrcLong>","æ¥æºçª—å£: è¯¦ç»†ä¿¡æ¯")
+  CustomActions("<cm_SrcTree>","æ¥æºçª—å£: æ–‡ä»¶å¤¹æ ‘")
+  CustomActions("<cm_SrcQuickview>","æ¥æºçª—å£: å¿«é€ŸæŸ¥çœ‹")
+  CustomActions("<cm_VerticalPanels>","çºµå‘/æ¨ªå‘æ’åˆ—")
+  CustomActions("<cm_SrcQuickInternalOnly>","æ¥æºçª—å£: å¿«é€ŸæŸ¥çœ‹(ä¸ç”¨æ’ä»¶)")
+  CustomActions("<cm_SrcHideQuickview>","æ¥æºçª—å£: å…³é—­å¿«é€ŸæŸ¥çœ‹çª—å£")
+  CustomActions("<cm_SrcExecs>","æ¥æºçª—å£: å¯æ‰§è¡Œæ–‡ä»¶")
+  CustomActions("<cm_SrcAllFiles>","æ¥æºçª—å£: æ‰€æœ‰æ–‡ä»¶")
+  CustomActions("<cm_SrcUserSpec>","æ¥æºçª—å£: ä¸Šæ¬¡é€‰ä¸­çš„æ–‡ä»¶")
+  CustomActions("<cm_SrcUserDef>","æ¥æºçª—å£: è‡ªå®šä¹‰ç±»å‹")
+  CustomActions("<cm_SrcByName>","æ¥æºçª—å£: æŒ‰æ–‡ä»¶åæ’åº")
+  CustomActions("<cm_SrcByExt>","æ¥æºçª—å£: æŒ‰æ‰©å±•åæ’åº")
+  CustomActions("<cm_SrcBySize>","æ¥æºçª—å£: æŒ‰å¤§å°æ’åº")
+  CustomActions("<cm_SrcByDateTime>","æ¥æºçª—å£: æŒ‰æ—¥æœŸæ—¶é—´æ’åº")
+  CustomActions("<cm_SrcUnsorted>","æ¥æºçª—å£: ä¸æ’åº")
+  CustomActions("<cm_SrcNegOrder>","æ¥æºçª—å£: åå‘æ’åº")
+  CustomActions("<cm_SrcOpenDrives>","æ¥æºçª—å£: æ‰“å¼€é©±åŠ¨å™¨åˆ—è¡¨")
+  CustomActions("<cm_SrcThumbs>","æ¥æºçª—å£: ç¼©ç•¥å›¾")
+  CustomActions("<cm_SrcCustomViewMenu>","æ¥æºçª—å£: è‡ªå®šä¹‰è§†å›¾èœå•")
+  CustomActions("<cm_SrcPathFocus>","æ¥æºçª—å£: ç„¦ç‚¹ç½®äºè·¯å¾„ä¸Š")
+  CustomActions("<cm_LeftComments>","å·¦çª—å£: æ˜¾ç¤ºæ–‡ä»¶å¤‡æ³¨")
+  CustomActions("<cm_LeftShort>","å·¦çª—å£: åˆ—è¡¨")
+  CustomActions("<cm_LeftLong>","å·¦çª—å£: è¯¦ç»†ä¿¡æ¯")
+  CustomActions("<cm_LeftTree>","å·¦çª—å£: æ–‡ä»¶å¤¹æ ‘")
+  CustomActions("<cm_LeftQuickview>","å·¦çª—å£: å¿«é€ŸæŸ¥çœ‹")
+  CustomActions("<cm_LeftQuickInternalOnly>","å·¦çª—å£: å¿«é€ŸæŸ¥çœ‹(ä¸ç”¨æ’ä»¶)")
+  CustomActions("<cm_LeftHideQuickview>","å·¦çª—å£: å…³é—­å¿«é€ŸæŸ¥çœ‹çª—å£")
+  CustomActions("<cm_LeftExecs>","å·¦çª—å£: å¯æ‰§è¡Œæ–‡ä»¶")
+  CustomActions("<cm_LeftAllFiles>","	å·¦çª—å£: æ‰€æœ‰æ–‡ä»¶")
+  CustomActions("<cm_LeftUserSpec>","å·¦çª—å£: ä¸Šæ¬¡é€‰ä¸­çš„æ–‡ä»¶")
+  CustomActions("<cm_LeftUserDef>","å·¦çª—å£: è‡ªå®šä¹‰ç±»å‹")
+  CustomActions("<cm_LeftByName>","å·¦çª—å£: æŒ‰æ–‡ä»¶åæ’åº")
+  CustomActions("<cm_LeftByExt>","å·¦çª—å£: æŒ‰æ‰©å±•åæ’åº")
+  CustomActions("<cm_LeftBySize>","å·¦çª—å£: æŒ‰å¤§å°æ’åº")
+  CustomActions("<cm_LeftByDateTime>","å·¦çª—å£: æŒ‰æ—¥æœŸæ—¶é—´æ’åº")
+  CustomActions("<cm_LeftUnsorted>","å·¦çª—å£: ä¸æ’åº")
+  CustomActions("<cm_LeftNegOrder>","å·¦çª—å£: åå‘æ’åº")
+  CustomActions("<cm_LeftOpenDrives>","å·¦çª—å£: æ‰“å¼€é©±åŠ¨å™¨åˆ—è¡¨")
+  CustomActions("<cm_LeftPathFocus>","å·¦çª—å£: ç„¦ç‚¹ç½®äºè·¯å¾„ä¸Š")
+  CustomActions("<cm_LeftDirBranch>","å·¦çª—å£: å±•å¼€æ‰€æœ‰æ–‡ä»¶å¤¹")
+  CustomActions("<cm_LeftDirBranchSel>","å·¦çª—å£: åªå±•å¼€é€‰ä¸­çš„æ–‡ä»¶å¤¹")
+  CustomActions("<cm_LeftThumbs>","çª—å£: ç¼©ç•¥å›¾")
+  CustomActions("<cm_LeftCustomViewMenu>","çª—å£: è‡ªå®šä¹‰è§†å›¾èœå•")
+  CustomActions("<cm_RightComments>","å³çª—å£: æ˜¾ç¤ºæ–‡ä»¶å¤‡æ³¨")
+  CustomActions("<cm_RightShort>","å³çª—å£: åˆ—è¡¨")
+  CustomActions("<cm_RightLong>","è¯¦ç»†ä¿¡æ¯")
+  CustomActions("<cm_RightTre>","å³çª—å£: æ–‡ä»¶å¤¹æ ‘")
+  CustomActions("<cm_RightQuickvie>","å³çª—å£: å¿«é€ŸæŸ¥çœ‹")
+  CustomActions("<cm_RightQuickInternalOnl>","å³çª—å£: å¿«é€ŸæŸ¥çœ‹(ä¸ç”¨æ’ä»¶)")
+  CustomActions("<cm_RightHideQuickvie>","å³çª—å£: å…³é—­å¿«é€ŸæŸ¥çœ‹çª—å£")
+  CustomActions("<cm_RightExec>","å³çª—å£: å¯æ‰§è¡Œæ–‡ä»¶")
+  CustomActions("<cm_RightAllFile>","å³çª—å£: æ‰€æœ‰æ–‡ä»¶")
+  CustomActions("<cm_RightUserSpe>","å³çª—å£: ä¸Šæ¬¡é€‰ä¸­çš„æ–‡ä»¶")
+  CustomActions("<cm_RightUserDe>","å³çª—å£: è‡ªå®šä¹‰ç±»å‹")
+  CustomActions("<cm_RightByNam>","å³çª—å£: æŒ‰æ–‡ä»¶åæ’åº")
+  CustomActions("<cm_RightByEx>","å³çª—å£: æŒ‰æ‰©å±•åæ’åº")
+  CustomActions("<cm_RightBySiz>","å³çª—å£: æŒ‰å¤§å°æ’åº")
+  CustomActions("<cm_RightByDateTim>","å³çª—å£: æŒ‰æ—¥æœŸæ—¶é—´æ’åº")
+  CustomActions("<cm_RightUnsorte>","å³çª—å£: ä¸æ’åº")
+  CustomActions("<cm_RightNegOrde>","å³çª—å£: åå‘æ’åº")
+  CustomActions("<cm_RightOpenDrives>","å³çª—å£: æ‰“å¼€é©±åŠ¨å™¨åˆ—è¡¨")
+  CustomActions("<cm_RightPathFocu>","å³çª—å£: ç„¦ç‚¹ç½®äºè·¯å¾„ä¸Š")
+  CustomActions("<cm_RightDirBranch>","å³çª—å£: å±•å¼€æ‰€æœ‰æ–‡ä»¶å¤¹")
+  CustomActions("<cm_RightDirBranchSel>","å³çª—å£: åªå±•å¼€é€‰ä¸­çš„æ–‡ä»¶å¤¹")
+  CustomActions("<cm_RightThumb>","å³çª—å£: ç¼©ç•¥å›¾")
+  CustomActions("<cm_RightCustomViewMen>","å³çª—å£: è‡ªå®šä¹‰è§†å›¾èœå•")
+  CustomActions("<cm_List>","æŸ¥çœ‹(ç”¨æŸ¥çœ‹ç¨‹åº)")
+  CustomActions("<cm_ListInternalOnly>","æŸ¥çœ‹(ç”¨æŸ¥çœ‹ç¨‹åº, ä½†ä¸ç”¨æ’ä»¶/å¤šåª’ä½“)")
+  CustomActions("<cm_Edit>","ç¼–è¾‘")
+  CustomActions("<cm_Copy>","å¤åˆ¶")
+  CustomActions("<cm_CopySamepanel>","å¤åˆ¶åˆ°å½“å‰çª—å£")
+  CustomActions("<cm_CopyOtherpanel>","å¤åˆ¶åˆ°å¦ä¸€çª—å£")
+  CustomActions("<cm_RenMov>","é‡å‘½å/ç§»åŠ¨")
+  CustomActions("<cm_MkDir>","æ–°å»ºæ–‡ä»¶å¤¹")
+  CustomActions("<cm_Delete>","åˆ é™¤")
+  CustomActions("<cm_TestArchive>","æµ‹è¯•å‹ç¼©åŒ…")
+  CustomActions("<cm_PackFiles>","å‹ç¼©æ–‡ä»¶")
+  CustomActions("<cm_UnpackFiles>","è§£å‹æ–‡ä»¶")
+  CustomActions("<cm_RenameOnly>","é‡å‘½å(Shift+F6)")
+  CustomActions("<cm_RenameSingleFile>","é‡å‘½åå½“å‰æ–‡ä»¶")
+  CustomActions("<cm_MoveOnly>","ç§»åŠ¨(F6)")
+  CustomActions("<cm_Properties>","æ˜¾ç¤ºå±æ€§")
+  CustomActions("<cm_CreateShortcut>","åˆ›å»ºå¿«æ·æ–¹å¼")
+  CustomActions("<cm_Return>","æ¨¡ä»¿æŒ‰ ENTER é”®")
+  CustomActions("<cm_OpenAsUser>","ä»¥å…¶ä»–ç”¨æˆ·èº«ä»½è¿è¡Œå…‰æ ‡å¤„çš„ç¨‹åº")
+  CustomActions("<cm_Split>","åˆ†å‰²æ–‡ä»¶")
+  CustomActions("<cm_Combine>","åˆå¹¶æ–‡ä»¶")
+  CustomActions("<cm_Encode>","ç¼–ç æ–‡ä»¶(MIME/UUE/XXE æ ¼å¼)")
+  CustomActions("<cm_Decode>","è§£ç æ–‡ä»¶(MIME/UUE/XXE/BinHex æ ¼å¼)")
+  CustomActions("<cm_CRCcreate>","åˆ›å»ºæ ¡éªŒæ–‡ä»¶")
+  CustomActions("<cm_CRCcheck>","éªŒè¯æ ¡éªŒå’Œ")
+  CustomActions("<cm_SetAttrib>","æ›´æ”¹å±æ€§")
+  CustomActions("<cm_Config>","é…ç½®: å¸ƒå±€")
+  CustomActions("<cm_DisplayConfig>","é…ç½®: æ˜¾ç¤º")
+  CustomActions("<cm_IconConfig>","é…ç½®: å›¾æ ‡")
+  CustomActions("<cm_FontConfig>","é…ç½®: å­—ä½“")
+  CustomActions("<cm_ColorConfig>","é…ç½®: é¢œè‰²")
+  CustomActions("<cm_ConfTabChange>","é…ç½®: åˆ¶è¡¨ç¬¦")
+  CustomActions("<cm_DirTabsConfig>","é…ç½®: æ–‡ä»¶å¤¹æ ‡ç­¾")
+  CustomActions("<cm_CustomColumnConfig>","é…ç½®: è‡ªå®šä¹‰åˆ—")
+  CustomActions("<cm_CustomColumnDlg>","æ›´æ”¹å½“å‰è‡ªå®šä¹‰åˆ—")
+  CustomActions("<cm_LanguageConfig>","é…ç½®: è¯­è¨€")
+  CustomActions("<cm_Config2>","é…ç½®: æ“ä½œæ–¹å¼")
+  CustomActions("<cm_EditConfig>","é…ç½®: ç¼–è¾‘/æŸ¥çœ‹")
+  CustomActions("<cm_CopyConfig>","é…ç½®: å¤åˆ¶/åˆ é™¤")
+  CustomActions("<cm_RefreshConfig>","é…ç½®: åˆ·æ–°")
+  CustomActions("<cm_QuickSearchConfig>","é…ç½®: å¿«é€Ÿæœç´¢")
+  CustomActions("<cm_FtpConfig>","é…ç½®: FTP")
+  CustomActions("<cm_PluginsConfig>","é…ç½®: æ’ä»¶")
+  CustomActions("<cm_ThumbnailsConfig>","é…ç½®: ç¼©ç•¥å›¾")
+  CustomActions("<cm_LogConfig>","é…ç½®: æ—¥å¿—æ–‡ä»¶")
+  CustomActions("<cm_IgnoreConfig>","é…ç½®: éšè—æ–‡ä»¶")
+  CustomActions("<cm_PackerConfig>","é…ç½®: å‹ç¼©ç¨‹åº")
+  CustomActions("<cm_ZipPackerConfig>","é…ç½®: ZIP å‹ç¼©ç¨‹åº")
+  CustomActions("<cm_Confirmation>","é…ç½®: å…¶ä»–/ç¡®è®¤")
+  CustomActions("<cm_ConfigSavePos>","ä¿å­˜ä½ç½®")
+  CustomActions("<cm_ButtonConfig>","æ›´æ”¹å·¥å…·æ ")
+  CustomActions("<cm_ConfigSaveSettings>","ä¿å­˜è®¾ç½®")
+  CustomActions("<cm_ConfigChangeIniFiles>","ç›´æ¥ä¿®æ”¹é…ç½®æ–‡ä»¶")
+  CustomActions("<cm_ConfigSaveDirHistory>","ä¿å­˜æ–‡ä»¶å¤¹å†å²è®°å½•")
+  CustomActions("<cm_ChangeStartMenu>","æ›´æ”¹å¼€å§‹èœå•")
+  CustomActions("<cm_NetConnect>","æ˜ å°„ç½‘ç»œé©±åŠ¨å™¨")
+  CustomActions("<cm_NetDisconnect>","æ–­å¼€ç½‘ç»œé©±åŠ¨å™¨")
+  CustomActions("<cm_NetShareDir>","å…±äº«å½“å‰æ–‡ä»¶å¤¹")
+  CustomActions("<cm_NetUnshareDir>","å–æ¶ˆæ–‡ä»¶å¤¹å…±äº«")
+  CustomActions("<cm_AdministerServer>","æ˜¾ç¤ºç³»ç»Ÿå…±äº«æ–‡ä»¶å¤¹")
+  CustomActions("<cm_ShowFileUser>","æ˜¾ç¤ºæœ¬åœ°æ–‡ä»¶çš„è¿œç¨‹ç”¨æˆ·")
+  CustomActions("<cm_GetFileSpace>","è®¡ç®—å ç”¨ç©ºé—´")
+  CustomActions("<cm_VolumeId>","è®¾ç½®å·æ ‡")
+  CustomActions("<cm_VersionInfo>","ç‰ˆæœ¬ä¿¡æ¯")
+  CustomActions("<cm_ExecuteDOS>","æ‰“å¼€å‘½ä»¤æç¤ºç¬¦çª—å£")
+  CustomActions("<cm_CompareDirs>","æ¯”è¾ƒæ–‡ä»¶å¤¹")
+  CustomActions("<cm_CompareDirsWithSubdirs>","æ¯”è¾ƒæ–‡ä»¶å¤¹(åŒæ—¶æ ‡å‡ºå¦ä¸€çª—å£æ²¡æœ‰çš„å­æ–‡ä»¶å¤¹)")
+  CustomActions("<cm_ContextMenu>","æ˜¾ç¤ºå¿«æ·èœå•")
+  CustomActions("<cm_ContextMenuInternal>","æ˜¾ç¤ºå¿«æ·èœå•(å†…éƒ¨å…³è”)")
+  CustomActions("<cm_ContextMenuInternalCursor>","æ˜¾ç¤ºå…‰æ ‡å¤„æ–‡ä»¶çš„å†…éƒ¨å…³è”å¿«æ·èœå•")
+  CustomActions("<cm_ShowRemoteMenu>","åª’ä½“ä¸­å¿ƒé¥æ§å™¨æ’­æ”¾/æš‚åœé”®å¿«æ·èœå•")
+  CustomActions("<cm_SyncChangeDir>","ä¸¤è¾¹çª—å£åŒæ­¥æ›´æ”¹æ–‡ä»¶å¤¹")
+  CustomActions("<cm_EditComment>","ç¼–è¾‘æ–‡ä»¶å¤‡æ³¨")
+  CustomActions("<cm_FocusLeft>","ç„¦ç‚¹ç½®äºå·¦çª—å£")
+  CustomActions("<cm_FocusRight>","ç„¦ç‚¹ç½®äºå³çª—å£")
+  CustomActions("<cm_FocusCmdLine>","ç„¦ç‚¹ç½®äºå‘½ä»¤è¡Œ")
+  CustomActions("<cm_FocusButtonBar>","ç„¦ç‚¹ç½®äºå·¥å…·æ ")
+  CustomActions("<cm_CountDirContent>","è®¡ç®—æ‰€æœ‰æ–‡ä»¶å¤¹å ç”¨çš„ç©ºé—´")
+  CustomActions("<cm_UnloadPlugins>","å¸è½½æ‰€æœ‰æ’ä»¶")
+  CustomActions("<cm_DirMatch>","æ ‡å‡ºæ–°æ–‡ä»¶, éšè—ç›¸åŒè€…")
+  CustomActions("<cm_Exchange>","äº¤æ¢å·¦å³çª—å£")
+  CustomActions("<cm_MatchSrc>","ç›®æ ‡ = æ¥æº")
+  CustomActions("<cm_ReloadSelThumbs>","åˆ·æ–°é€‰ä¸­æ–‡ä»¶çš„ç¼©ç•¥å›¾")
+  CustomActions("<cm_DirectCableConnect>","ç›´æ¥ç”µç¼†è¿æ¥")
+  CustomActions("<cm_NTinstallDriver>","åŠ è½½ NT å¹¶å£é©±åŠ¨ç¨‹åº")
+  CustomActions("<cm_NTremoveDriver>","å¸è½½ NT å¹¶å£é©±åŠ¨ç¨‹åº")
+  CustomActions("<cm_PrintDir>","æ‰“å°æ–‡ä»¶åˆ—è¡¨")
+  CustomActions("<cm_PrintDirSub>","æ‰“å°æ–‡ä»¶åˆ—è¡¨(å«å­æ–‡ä»¶å¤¹)")
+  CustomActions("<cm_PrintFile>","æ‰“å°æ–‡ä»¶å†…å®¹")
+  CustomActions("<cm_SpreadSelection>","é€‰æ‹©ä¸€ç»„æ–‡ä»¶")
+  CustomActions("<cm_SelectBoth>","é€‰æ‹©ä¸€ç»„: æ–‡ä»¶å’Œæ–‡ä»¶å¤¹")
+  CustomActions("<cm_SelectFiles>","é€‰æ‹©ä¸€ç»„: ä»…æ–‡ä»¶")
+  CustomActions("<cm_SelectFolders>","é€‰æ‹©ä¸€ç»„: ä»…æ–‡ä»¶å¤¹")
+  CustomActions("<cm_ShrinkSelection>","ä¸é€‰ä¸€ç»„æ–‡ä»¶")
+  CustomActions("<cm_ClearFiles>","ä¸é€‰ä¸€ç»„: ä»…æ–‡ä»¶")
+  CustomActions("<cm_ClearFolders>","ä¸é€‰ä¸€ç»„: ä»…æ–‡ä»¶å¤¹")
+  CustomActions("<cm_ClearSelCfg>","ä¸é€‰ä¸€ç»„: æ–‡ä»¶å’Œ/æˆ–æ–‡ä»¶å¤¹(è§†é…ç½®è€Œå®š)")
+  CustomActions("<cm_SelectAll>","å…¨éƒ¨é€‰æ‹©: æ–‡ä»¶å’Œ/æˆ–æ–‡ä»¶å¤¹(è§†é…ç½®è€Œå®š)")
+  CustomActions("<cm_SelectAllBoth>","å…¨éƒ¨é€‰æ‹©: æ–‡ä»¶å’Œæ–‡ä»¶å¤¹")
+  CustomActions("<cm_SelectAllFiles>","å…¨éƒ¨é€‰æ‹©: ä»…æ–‡ä»¶")
+  CustomActions("<cm_SelectAllFolders>","å…¨éƒ¨é€‰æ‹©: ä»…æ–‡ä»¶å¤¹")
+  CustomActions("<cm_ClearAll>","å…¨éƒ¨å–æ¶ˆ: æ–‡ä»¶å’Œæ–‡ä»¶å¤¹")
+  CustomActions("<cm_ClearAllFiles>","å…¨éƒ¨å–æ¶ˆ: ä»…æ–‡ä»¶")
+  CustomActions("<cm_ClearAllFolders>","å…¨éƒ¨å–æ¶ˆ: ä»…æ–‡ä»¶å¤¹")
+  CustomActions("<cm_ClearAllCfg>","å…¨éƒ¨å–æ¶ˆ: æ–‡ä»¶å’Œ/æˆ–æ–‡ä»¶å¤¹(è§†é…ç½®è€Œå®š)")
+  CustomActions("<cm_ExchangeSelection>","åå‘é€‰æ‹©")
+  CustomActions("<cm_ExchangeSelBoth>","åå‘é€‰æ‹©: æ–‡ä»¶å’Œæ–‡ä»¶å¤¹")
+  CustomActions("<cm_ExchangeSelFiles>","åå‘é€‰æ‹©: ä»…æ–‡ä»¶")
+  CustomActions("<cm_ExchangeSelFolders>","åå‘é€‰æ‹©: ä»…æ–‡ä»¶å¤¹")
+  CustomActions("<cm_SelectCurrentExtension>","é€‰æ‹©æ‰©å±•åç›¸åŒçš„æ–‡ä»¶")
+  CustomActions("<cm_UnselectCurrentExtension>","ä¸é€‰æ‰©å±•åç›¸åŒçš„æ–‡ä»¶")
+  CustomActions("<cm_SelectCurrentName>","é€‰æ‹©æ–‡ä»¶åç›¸åŒçš„æ–‡ä»¶")
+  CustomActions("<cm_UnselectCurrentName>","ä¸é€‰æ–‡ä»¶åç›¸åŒçš„æ–‡ä»¶")
+  CustomActions("<cm_SelectCurrentNameExt>","é€‰æ‹©æ–‡ä»¶åå’Œæ‰©å±•åç›¸åŒçš„æ–‡ä»¶")
+  CustomActions("<cm_UnselectCurrentNameExt>","ä¸é€‰æ–‡ä»¶åå’Œæ‰©å±•åç›¸åŒçš„æ–‡ä»¶")
+  CustomActions("<cm_SelectCurrentPath>","é€‰æ‹©åŒä¸€è·¯å¾„ä¸‹çš„æ–‡ä»¶(å±•å¼€æ–‡ä»¶å¤¹+æœç´¢æ–‡ä»¶)")
+  CustomActions("<cm_UnselectCurrentPath>","ä¸é€‰åŒä¸€è·¯å¾„ä¸‹çš„æ–‡ä»¶(å±•å¼€æ–‡ä»¶å¤¹+æœç´¢æ–‡ä»¶)")
+  CustomActions("<cm_RestoreSelection>","æ¢å¤é€‰æ‹©åˆ—è¡¨")
+  CustomActions("<cm_SaveSelection>","ä¿å­˜é€‰æ‹©åˆ—è¡¨")
+  CustomActions("<cm_SaveSelectionToFile>","å¯¼å‡ºé€‰æ‹©åˆ—è¡¨")
+  CustomActions("<cm_SaveSelectionToFileA>","å¯¼å‡ºé€‰æ‹©åˆ—è¡¨(ANSI)")
+  CustomActions("<cm_SaveSelectionToFileW>","å¯¼å‡ºé€‰æ‹©åˆ—è¡¨(Unicode)")
+  CustomActions("<cm_SaveDetailsToFile>","å¯¼å‡ºè¯¦ç»†ä¿¡æ¯")
+  CustomActions("<cm_SaveDetailsToFileA>","å¯¼å‡ºè¯¦ç»†ä¿¡æ¯(ANSI)")
+  CustomActions("<cm_SaveDetailsToFileW>","å¯¼å‡ºè¯¦ç»†ä¿¡æ¯(Unicode)")
+  CustomActions("<cm_LoadSelectionFromFile>","å¯¼å…¥é€‰æ‹©åˆ—è¡¨(ä»æ–‡ä»¶)")
+  CustomActions("<cm_LoadSelectionFromClip>","å¯¼å…¥é€‰æ‹©åˆ—è¡¨(ä»å‰ªè´´æ¿)")
+  CustomActions("<cm_EditPermissionInfo>","è®¾ç½®æƒé™(NTFS)")
+  CustomActions("<cm_EditAuditInfo>","å®¡æ ¸æ–‡ä»¶(NTFS)")
+  CustomActions("<cm_EditOwnerInfo>","è·å–æ‰€æœ‰æƒ(NTFS)")
+  CustomActions("<cm_CutToClipboard>","å‰ªåˆ‡é€‰ä¸­çš„æ–‡ä»¶åˆ°å‰ªè´´æ¿")
+  CustomActions("<cm_CopyToClipboard>","å¤åˆ¶é€‰ä¸­çš„æ–‡ä»¶åˆ°å‰ªè´´æ¿")
+  CustomActions("<cm_PasteFromClipboard>","ä»å‰ªè´´æ¿ç²˜è´´åˆ°å½“å‰æ–‡ä»¶å¤¹")
+  CustomActions("<cm_CopyNamesToClip>","å¤åˆ¶æ–‡ä»¶å")
+  CustomActions("<cm_CopyFullNamesToClip>","å¤åˆ¶æ–‡ä»¶ååŠå®Œæ•´è·¯å¾„")
+  CustomActions("<cm_CopyNetNamesToClip>","å¤åˆ¶æ–‡ä»¶ååŠç½‘ç»œè·¯å¾„")
+  CustomActions("<cm_CopySrcPathToClip>","å¤åˆ¶æ¥æºè·¯å¾„")
+  CustomActions("<cm_CopyTrgPathToClip>","å¤åˆ¶ç›®æ ‡è·¯å¾„")
+  CustomActions("<cm_CopyFileDetailsToClip>","å¤åˆ¶æ–‡ä»¶è¯¦ç»†ä¿¡æ¯")
+  CustomActions("<cm_CopyFpFileDetailsToClip>","å¤åˆ¶æ–‡ä»¶è¯¦ç»†ä¿¡æ¯åŠå®Œæ•´è·¯å¾„")
+  CustomActions("<cm_CopyNetFileDetailsToClip>","å¤åˆ¶æ–‡ä»¶è¯¦ç»†ä¿¡æ¯åŠç½‘ç»œè·¯å¾„")
+  CustomActions("<cm_FtpConnect>","FTP è¿æ¥")
+  CustomActions("<cm_FtpNew>","æ–°å»º FTP è¿æ¥")
+  CustomActions("<cm_FtpDisconnect>","æ–­å¼€ FTP è¿æ¥")
+  CustomActions("<cm_FtpHiddenFiles>","æ˜¾ç¤ºéšè—æ–‡ä»¶")
+  CustomActions("<cm_FtpAbort>","ä¸­æ­¢å½“å‰ FTP å‘½ä»¤")
+  CustomActions("<cm_FtpResumeDownload>","ç»­ä¼ ")
+  CustomActions("<cm_FtpSelectTransferMode>","é€‰æ‹©ä¼ è¾“æ¨¡å¼")
+  CustomActions("<cm_FtpAddToList>","æ·»åŠ åˆ°ä¸‹è½½åˆ—è¡¨")
+  CustomActions("<cm_FtpDownloadList>","æŒ‰åˆ—è¡¨ä¸‹è½½")
+  CustomActions("<cm_GotoPreviousDir>","åé€€")
+  CustomActions("<cm_GotoNextDir>","å‰è¿›")
+  CustomActions("<cm_DirectoryHistory>","æ–‡ä»¶å¤¹å†å²è®°å½•")
+  CustomActions("<cm_GotoPreviousLocalDir>","åé€€(é FTP)")
+  CustomActions("<cm_GotoNextLocalDir>","å‰è¿›(é FTP)")
+  CustomActions("<cm_DirectoryHotlist>","å¸¸ç”¨æ–‡ä»¶å¤¹")
+  CustomActions("<cm_GoToRoot>","è½¬åˆ°æ ¹æ–‡ä»¶å¤¹")
+  CustomActions("<cm_GoToParent>","è½¬åˆ°ä¸Šå±‚æ–‡ä»¶å¤¹")
+  CustomActions("<cm_GoToDir>","æ‰“å¼€å…‰æ ‡å¤„çš„æ–‡ä»¶å¤¹æˆ–å‹ç¼©åŒ…")
+  CustomActions("<cm_OpenDesktop>","æ¡Œé¢")
+  CustomActions("<cm_OpenDrives>","æˆ‘çš„ç”µè„‘")
+  CustomActions("<cm_OpenControls>","æ§åˆ¶é¢æ¿")
+  CustomActions("<cm_OpenFonts>","å­—ä½“")
+  CustomActions("<cm_OpenNetwork>","ç½‘ä¸Šé‚»å±…")
+  CustomActions("<cm_OpenPrinters>","æ‰“å°æœº")
+  CustomActions("<cm_OpenRecycled>","å›æ”¶ç«™")
+  CustomActions("<cm_CDtree>","æ›´æ”¹æ–‡ä»¶å¤¹")
+  CustomActions("<cm_TransferLeft>","åœ¨å·¦çª—å£æ‰“å¼€å…‰æ ‡å¤„çš„æ–‡ä»¶å¤¹æˆ–å‹ç¼©åŒ…")
+  CustomActions("<cm_TransferRight>","åœ¨å³çª—å£æ‰“å¼€å…‰æ ‡å¤„çš„æ–‡ä»¶å¤¹æˆ–å‹ç¼©åŒ…")
+  CustomActions("<cm_EditPath>","ç¼–è¾‘æ¥æºçª—å£çš„è·¯å¾„")
+  CustomActions("<cm_GoToFirstFile>","å…‰æ ‡ç§»åˆ°åˆ—è¡¨ä¸­çš„ç¬¬ä¸€ä¸ªæ–‡ä»¶")
+  CustomActions("<cm_GotoNextDrive>","è½¬åˆ°ä¸‹ä¸€ä¸ªé©±åŠ¨å™¨")
+  CustomActions("<cm_GotoPreviousDrive>","è½¬åˆ°ä¸Šä¸€ä¸ªé©±åŠ¨å™¨")
+  CustomActions("<cm_GotoNextSelected>","è½¬åˆ°ä¸‹ä¸€ä¸ªé€‰ä¸­çš„æ–‡ä»¶")
+  CustomActions("<cm_GotoPrevSelected>","è½¬åˆ°ä¸Šä¸€ä¸ªé€‰ä¸­çš„æ–‡ä»¶")
+  CustomActions("<cm_GotoDriveA>","è½¬åˆ°é©±åŠ¨å™¨ A")
+  CustomActions("<cm_GotoDriveC>","è½¬åˆ°é©±åŠ¨å™¨ C")
+  CustomActions("<cm_GotoDriveD>","è½¬åˆ°é©±åŠ¨å™¨ D")
+  CustomActions("<cm_GotoDriveE>","è½¬åˆ°é©±åŠ¨å™¨ E")
+  CustomActions("<cm_GotoDriveF>","å¯è‡ªå®šä¹‰å…¶ä»–é©±åŠ¨å™¨")
+  CustomActions("<cm_GotoDriveZ>","æœ€å¤š 26 ä¸ª")
+  CustomActions("<cm_HelpIndex>","å¸®åŠ©ç´¢å¼•")
+  CustomActions("<cm_Keyboard>","å¿«æ·é”®åˆ—è¡¨")
+  CustomActions("<cm_Register>","æ³¨å†Œä¿¡æ¯")
+  CustomActions("<cm_VisitHomepage>","è®¿é—® Totalcmd ç½‘ç«™")
+  CustomActions("<cm_About>","å…³äº Total Commander")
+  CustomActions("<cm_Exit>","é€€å‡º Total Commander")
+  CustomActions("<cm_Minimize>","æœ€å°åŒ– Total Commander")
+  CustomActions("<cm_Maximize>","æœ€å¤§åŒ– Total Commander")
+  CustomActions("<cm_Restore>","æ¢å¤æ­£å¸¸å¤§å°")
+  CustomActions("<cm_ClearCmdLine>","æ¸…é™¤å‘½ä»¤è¡Œ")
+  CustomActions("<cm_NextCommand>","ä¸‹ä¸€æ¡å‘½ä»¤")
+  CustomActions("<cm_PrevCommand>","ä¸Šä¸€æ¡å‘½ä»¤")
+  CustomActions("<cm_AddPathToCmdline>","å°†è·¯å¾„å¤åˆ¶åˆ°å‘½ä»¤è¡Œ")
+  CustomActions("<cm_MultiRenameFiles>","æ‰¹é‡é‡å‘½å")
+  CustomActions("<cm_SysInfo>","ç³»ç»Ÿä¿¡æ¯")
+  CustomActions("<cm_OpenTransferManager>","åå°ä¼ è¾“ç®¡ç†å™¨")
+  CustomActions("<cm_SearchFor>","æœç´¢æ–‡ä»¶")
+  CustomActions("<cm_FileSync>","åŒæ­¥æ–‡ä»¶å¤¹")
+  CustomActions("<cm_Associate>","æ–‡ä»¶å…³è”")
+  CustomActions("<cm_InternalAssociate>","å®šä¹‰å†…éƒ¨å…³è”")
+  CustomActions("<cm_CompareFilesByContent>","æ¯”è¾ƒæ–‡ä»¶å†…å®¹")
+  CustomActions("<cm_IntCompareFilesByContent>","ä½¿ç”¨å†…éƒ¨æ¯”è¾ƒç¨‹åº")
+  CustomActions("<cm_CommandBrowser>","æµè§ˆå†…éƒ¨å‘½ä»¤")
+  CustomActions("<cm_VisButtonbar>","æ˜¾ç¤º/éšè—: å·¥å…·æ ")
+  CustomActions("<cm_VisDriveButtons>","æ˜¾ç¤º/éšè—: é©±åŠ¨å™¨æŒ‰é’®")
+  CustomActions("<cm_VisTwoDriveButtons>","æ˜¾ç¤º/éšè—: ä¸¤ä¸ªé©±åŠ¨å™¨æŒ‰é’®æ ")
+  CustomActions("<cm_VisFlatDriveButtons>","åˆ‡æ¢: å¹³å¦/ç«‹ä½“é©±åŠ¨å™¨æŒ‰é’®")
+  CustomActions("<cm_VisFlatInterface>","åˆ‡æ¢: å¹³å¦/ç«‹ä½“ç”¨æˆ·ç•Œé¢")
+  CustomActions("<cm_VisDriveCombo>","æ˜¾ç¤º/éšè—: é©±åŠ¨å™¨åˆ—è¡¨")
+  CustomActions("<cm_VisCurDir>","æ˜¾ç¤º/éšè—: å½“å‰æ–‡ä»¶å¤¹")
+  CustomActions("<cm_VisBreadCrumbs>","æ˜¾ç¤º/éšè—: è·¯å¾„å¯¼èˆªæ ")
+  CustomActions("<cm_VisTabHeader>","æ˜¾ç¤º/éšè—: æ’åºåˆ¶è¡¨ç¬¦")
+  CustomActions("<cm_VisStatusbar>","æ˜¾ç¤º/éšè—: çŠ¶æ€æ ")
+  CustomActions("<cm_VisCmdLine>","æ˜¾ç¤º/éšè—: å‘½ä»¤è¡Œ")
+  CustomActions("<cm_VisKeyButtons>","æ˜¾ç¤º/éšè—: åŠŸèƒ½é”®æŒ‰é’®")
+  CustomActions("<cm_ShowHint>","æ˜¾ç¤ºæ–‡ä»¶æç¤º")
+  CustomActions("<cm_ShowQuickSearch>","æ˜¾ç¤ºå¿«é€Ÿæœç´¢çª—å£")
+  CustomActions("<cm_SwitchLongNames>","å¼€å¯/å…³é—­: é•¿æ–‡ä»¶åæ˜¾ç¤º")
+  CustomActions("<cm_RereadSource>","åˆ·æ–°æ¥æºçª—å£")
+  CustomActions("<cm_ShowOnlySelected>","ä»…æ˜¾ç¤ºé€‰ä¸­çš„æ–‡ä»¶")
+  CustomActions("<cm_SwitchHidSys>","å¼€å¯/å…³é—­: éšè—æˆ–ç³»ç»Ÿæ–‡ä»¶æ˜¾ç¤º")
+  CustomActions("<cm_Switch83Names>","å¼€å¯/å…³é—­: 8.3 å¼æ–‡ä»¶åå°å†™æ˜¾ç¤º")
+  CustomActions("<cm_SwitchDirSort>","å¼€å¯/å…³é—­: æ–‡ä»¶å¤¹æŒ‰åç§°æ’åº")
+  CustomActions("<cm_DirBranch>","å±•å¼€æ‰€æœ‰æ–‡ä»¶å¤¹")
+  CustomActions("<cm_DirBranchSel>","åªå±•å¼€é€‰ä¸­çš„æ–‡ä»¶å¤¹")
+  CustomActions("<cm_50Percent>","çª—å£åˆ†éš”æ ä½äº 50%")
+  CustomActions("<cm_100Percent>","çª—å£åˆ†éš”æ ä½äº 100% TC 8.0+")
+  CustomActions("<cm_VisDirTabs>","æ˜¾ç¤º/éšè—: æ–‡ä»¶å¤¹æ ‡ç­¾")
+  CustomActions("<cm_VisXPThemeBackground>","æ˜¾ç¤º/éšè—: XP ä¸»é¢˜èƒŒæ™¯")
+  CustomActions("<cm_SwitchOverlayIcons>","å¼€å¯/å…³é—­: å ç½®å›¾æ ‡æ˜¾ç¤º")
+  CustomActions("<cm_VisHistHotButtons>","æ˜¾ç¤º/éšè—: æ–‡ä»¶å¤¹å†å²è®°å½•å’Œå¸¸ç”¨æ–‡ä»¶å¤¹æŒ‰é’®")
+  CustomActions("<cm_SwitchWatchDirs>","å¯ç”¨/ç¦ç”¨: æ–‡ä»¶å¤¹è‡ªåŠ¨åˆ·æ–°")
+  CustomActions("<cm_SwitchIgnoreList>","å¯ç”¨/ç¦ç”¨: è‡ªå®šä¹‰éšè—æ–‡ä»¶")
+  CustomActions("<cm_SwitchX64Redirection>","å¼€å¯/å…³é—­: 32 ä½ system32 ç›®å½•é‡å®šå‘(64 ä½ Windows)")
+  CustomActions("<cm_SeparateTreeOff>","å…³é—­ç‹¬ç«‹æ–‡ä»¶å¤¹æ ‘é¢æ¿")
+  CustomActions("<cm_SeparateTree1>","ä¸€ä¸ªç‹¬ç«‹æ–‡ä»¶å¤¹æ ‘é¢æ¿")
+  CustomActions("<cm_SeparateTree2>","ä¸¤ä¸ªç‹¬ç«‹æ–‡ä»¶å¤¹æ ‘é¢æ¿")
+  CustomActions("<cm_SwitchSeparateTree>","åˆ‡æ¢ç‹¬ç«‹æ–‡ä»¶å¤¹æ ‘é¢æ¿çŠ¶æ€")
+  CustomActions("<cm_ToggleSeparateTree1>","å¼€å¯/å…³é—­: ä¸€ä¸ªç‹¬ç«‹æ–‡ä»¶å¤¹æ ‘é¢æ¿")
+  CustomActions("<cm_ToggleSeparateTree2>","å¼€å¯/å…³é—­: ä¸¤ä¸ªç‹¬ç«‹æ–‡ä»¶å¤¹æ ‘é¢æ¿")
+  CustomActions("<cm_UserMenu1>","ç”¨æˆ·èœå• 1")
+  CustomActions("<cm_UserMenu2>","ç”¨æˆ·èœå• 2")
+  CustomActions("<cm_UserMenu3>","ç”¨æˆ·èœå• 3")
+  CustomActions("<cm_UserMenu4>","ç”¨æˆ·èœå• 4")
+  CustomActions("<cm_UserMenu5>","ç”¨æˆ·èœå• 5")
+  CustomActions("<cm_UserMenu6>","ç”¨æˆ·èœå• 6")
+  CustomActions("<cm_UserMenu7>","ç”¨æˆ·èœå• 7")
+  CustomActions("<cm_UserMenu8>","ç”¨æˆ·èœå• 8")
+  CustomActions("<cm_UserMenu9>","ç”¨æˆ·èœå• 9")
+  CustomActions("<cm_UserMenu10>","å¯å®šä¹‰å…¶ä»–ç”¨æˆ·èœå•")
+  CustomActions("<cm_OpenNewTab>","æ–°å»ºæ ‡ç­¾")
+  CustomActions("<cm_OpenNewTabBg>","æ–°å»ºæ ‡ç­¾(åœ¨åå°)")
+  CustomActions("<cm_OpenDirInNewTab>","æ–°å»ºæ ‡ç­¾(å¹¶æ‰“å¼€å…‰æ ‡å¤„çš„æ–‡ä»¶å¤¹)")
+  CustomActions("<cm_OpenDirInNewTabOther>","æ–°å»ºæ ‡ç­¾(åœ¨å¦ä¸€çª—å£æ‰“å¼€æ–‡ä»¶å¤¹)")
+  CustomActions("<cm_SwitchToNextTab>","ä¸‹ä¸€ä¸ªæ ‡ç­¾(Ctrl+Tab)")
+  CustomActions("<cm_SwitchToPreviousTab>","ä¸Šä¸€ä¸ªæ ‡ç­¾(Ctrl+Shift+Tab)")
+  CustomActions("<cm_CloseCurrentTab>","å…³é—­å½“å‰æ ‡ç­¾")
+  CustomActions("<cm_CloseAllTabs>","å…³é—­æ‰€æœ‰æ ‡ç­¾")
+  CustomActions("<cm_DirTabsShowMenu>","æ˜¾ç¤ºæ ‡ç­¾èœå•")
+  CustomActions("<cm_ToggleLockCurrentTab>","é”å®š/è§£é”å½“å‰æ ‡ç­¾")
+  CustomActions("<cm_ToggleLockDcaCurrentTab>","é”å®š/è§£é”å½“å‰æ ‡ç­¾(å¯æ›´æ”¹æ–‡ä»¶å¤¹)")
+  CustomActions("<cm_ExchangeWithTabs>","äº¤æ¢å·¦å³çª—å£åŠå…¶æ ‡ç­¾")
+  CustomActions("<cm_GoToLockedDir>","è½¬åˆ°é”å®šæ ‡ç­¾çš„æ ¹æ–‡ä»¶å¤¹")
+  CustomActions("<cm_SrcActivateTab1>","æ¥æºçª—å£: æ¿€æ´»æ ‡ç­¾ 1")
+  CustomActions("<cm_SrcActivateTab2>","æ¥æºçª—å£: æ¿€æ´»æ ‡ç­¾ 2")
+  CustomActions("<cm_SrcActivateTab3>","æ¥æºçª—å£: æ¿€æ´»æ ‡ç­¾ 3")
+  CustomActions("<cm_SrcActivateTab4>","æ¥æºçª—å£: æ¿€æ´»æ ‡ç­¾ 4")
+  CustomActions("<cm_SrcActivateTab5>","æ¥æºçª—å£: æ¿€æ´»æ ‡ç­¾ 5")
+  CustomActions("<cm_SrcActivateTab6>","æ¥æºçª—å£: æ¿€æ´»æ ‡ç­¾ 6")
+  CustomActions("<cm_SrcActivateTab7>","æ¥æºçª—å£: æ¿€æ´»æ ‡ç­¾ 7")
+  CustomActions("<cm_SrcActivateTab8>","æ¥æºçª—å£: æ¿€æ´»æ ‡ç­¾ 8")
+  CustomActions("<cm_SrcActivateTab9>","æ¥æºçª—å£: æ¿€æ´»æ ‡ç­¾ 9")
+  CustomActions("<cm_SrcActivateTab10>","æ¥æºçª—å£: æ¿€æ´»æ ‡ç­¾ 10")
+  CustomActions("<cm_TrgActivateTab1>","ç›®æ ‡çª—å£: æ¿€æ´»æ ‡ç­¾ 1")
+  CustomActions("<cm_TrgActivateTab2>","ç›®æ ‡çª—å£: æ¿€æ´»æ ‡ç­¾ 2")
+  CustomActions("<cm_TrgActivateTab3>","ç›®æ ‡çª—å£: æ¿€æ´»æ ‡ç­¾ 3")
+  CustomActions("<cm_TrgActivateTab4>","ç›®æ ‡çª—å£: æ¿€æ´»æ ‡ç­¾ 4")
+  CustomActions("<cm_TrgActivateTab5>","ç›®æ ‡çª—å£: æ¿€æ´»æ ‡ç­¾ 5")
+  CustomActions("<cm_TrgActivateTab6>","ç›®æ ‡çª—å£: æ¿€æ´»æ ‡ç­¾ 6")
+  CustomActions("<cm_TrgActivateTab7>","ç›®æ ‡çª—å£: æ¿€æ´»æ ‡ç­¾ 7")
+  CustomActions("<cm_TrgActivateTab8>","ç›®æ ‡çª—å£: æ¿€æ´»æ ‡ç­¾ 8")
+  CustomActions("<cm_TrgActivateTab9>","ç›®æ ‡çª—å£: æ¿€æ´»æ ‡ç­¾ 9")
+  CustomActions("<cm_TrgActivateTab10>","ç›®æ ‡çª—å£: æ¿€æ´»æ ‡ç­¾ 10")
+  CustomActions("<cm_LeftActivateTab1>","å·¦çª—å£: æ¿€æ´»æ ‡ç­¾ 1")
+  CustomActions("<cm_LeftActivateTab2>","å·¦çª—å£: æ¿€æ´»æ ‡ç­¾ 2")
+  CustomActions("<cm_LeftActivateTab3>","å·¦çª—å£: æ¿€æ´»æ ‡ç­¾ 3")
+  CustomActions("<cm_LeftActivateTab4>","å·¦çª—å£: æ¿€æ´»æ ‡ç­¾ 4")
+  CustomActions("<cm_LeftActivateTab5>","å·¦çª—å£: æ¿€æ´»æ ‡ç­¾ 5")
+  CustomActions("<cm_LeftActivateTab6>","å·¦çª—å£: æ¿€æ´»æ ‡ç­¾ 6")
+  CustomActions("<cm_LeftActivateTab7>","å·¦çª—å£: æ¿€æ´»æ ‡ç­¾ 7")
+  CustomActions("<cm_LeftActivateTab8>","å·¦çª—å£: æ¿€æ´»æ ‡ç­¾ 8")
+  CustomActions("<cm_LeftActivateTab9>","å·¦çª—å£: æ¿€æ´»æ ‡ç­¾ 9")
+  CustomActions("<cm_LeftActivateTab10>","å·¦çª—å£: æ¿€æ´»æ ‡ç­¾ 10")
+  CustomActions("<cm_RightActivateTab1>","å³çª—å£: æ¿€æ´»æ ‡ç­¾ 1")
+  CustomActions("<cm_RightActivateTab2>","å³çª—å£: æ¿€æ´»æ ‡ç­¾ 2")
+  CustomActions("<cm_RightActivateTab3>","å³çª—å£: æ¿€æ´»æ ‡ç­¾ 3")
+  CustomActions("<cm_RightActivateTab4>","å³çª—å£: æ¿€æ´»æ ‡ç­¾ 4")
+  CustomActions("<cm_RightActivateTab5>","å³çª—å£: æ¿€æ´»æ ‡ç­¾ 5")
+  CustomActions("<cm_RightActivateTab6>","å³çª—å£: æ¿€æ´»æ ‡ç­¾ 6")
+  CustomActions("<cm_RightActivateTab7>","å³çª—å£: æ¿€æ´»æ ‡ç­¾ 7")
+  CustomActions("<cm_RightActivateTab8>","å³çª—å£: æ¿€æ´»æ ‡ç­¾ 8")
+  CustomActions("<cm_RightActivateTab9>","å³çª—å£: æ¿€æ´»æ ‡ç­¾ 9")
+  CustomActions("<cm_RightActivateTab10>","å³çª—å£: æ¿€æ´»æ ‡ç­¾ 10")
+  CustomActions("<cm_SrcSortByCol1>","æ¥æºçª—å£: æŒ‰ç¬¬ 1 åˆ—æ’åº")
+  CustomActions("<cm_SrcSortByCol2>","æ¥æºçª—å£: æŒ‰ç¬¬ 2 åˆ—æ’åº")
+  CustomActions("<cm_SrcSortByCol3>","æ¥æºçª—å£: æŒ‰ç¬¬ 3 åˆ—æ’åº")
+  CustomActions("<cm_SrcSortByCol4>","æ¥æºçª—å£: æŒ‰ç¬¬ 4 åˆ—æ’åº")
+  CustomActions("<cm_SrcSortByCol5>","æ¥æºçª—å£: æŒ‰ç¬¬ 5 åˆ—æ’åº")
+  CustomActions("<cm_SrcSortByCol6>","æ¥æºçª—å£: æŒ‰ç¬¬ 6 åˆ—æ’åº")
+  CustomActions("<cm_SrcSortByCol7>","æ¥æºçª—å£: æŒ‰ç¬¬ 7 åˆ—æ’åº")
+  CustomActions("<cm_SrcSortByCol8>","æ¥æºçª—å£: æŒ‰ç¬¬ 8 åˆ—æ’åº")
+  CustomActions("<cm_SrcSortByCol9>","æ¥æºçª—å£: æŒ‰ç¬¬ 9 åˆ—æ’åº")
+  CustomActions("<cm_SrcSortByCol10>","æ¥æºçª—å£: æŒ‰ç¬¬ 10 åˆ—æ’åº")
+  CustomActions("<cm_TrgSortByCol1>","ç›®æ ‡çª—å£: æŒ‰ç¬¬ 1 åˆ—æ’åº")
+  CustomActions("<cm_TrgSortByCol2>","ç›®æ ‡çª—å£: æŒ‰ç¬¬ 2 åˆ—æ’åº")
+  CustomActions("<cm_TrgSortByCol3>","ç›®æ ‡çª—å£: æŒ‰ç¬¬ 3 åˆ—æ’åº")
+  CustomActions("<cm_TrgSortByCol4>","ç›®æ ‡çª—å£: æŒ‰ç¬¬ 4 åˆ—æ’åº")
+  CustomActions("<cm_TrgSortByCol5>","ç›®æ ‡çª—å£: æŒ‰ç¬¬ 5 åˆ—æ’åº")
+  CustomActions("<cm_TrgSortByCol6>","ç›®æ ‡çª—å£: æŒ‰ç¬¬ 6 åˆ—æ’åº")
+  CustomActions("<cm_TrgSortByCol7>","ç›®æ ‡çª—å£: æŒ‰ç¬¬ 7 åˆ—æ’åº")
+  CustomActions("<cm_TrgSortByCol8>","ç›®æ ‡çª—å£: æŒ‰ç¬¬ 8 åˆ—æ’åº")
+  CustomActions("<cm_TrgSortByCol9>","ç›®æ ‡çª—å£: æŒ‰ç¬¬ 9 åˆ—æ’åº")
+  CustomActions("<cm_TrgSortByCol10>","ç›®æ ‡çª—å£: æŒ‰ç¬¬ 10 åˆ—æ’åº")
+  CustomActions("<cm_LeftSortByCol1>","å·¦çª—å£: æŒ‰ç¬¬ 1 åˆ—æ’åº")
+  CustomActions("<cm_LeftSortByCol2>","å·¦çª—å£: æŒ‰ç¬¬ 2 åˆ—æ’åº")
+  CustomActions("<cm_LeftSortByCol3>","å·¦çª—å£: æŒ‰ç¬¬ 3 åˆ—æ’åº")
+  CustomActions("<cm_LeftSortByCol4>","å·¦çª—å£: æŒ‰ç¬¬ 4 åˆ—æ’åº")
+  CustomActions("<cm_LeftSortByCol5>","å·¦çª—å£: æŒ‰ç¬¬ 5 åˆ—æ’åº")
+  CustomActions("<cm_LeftSortByCol6>","å·¦çª—å£: æŒ‰ç¬¬ 6 åˆ—æ’åº")
+  CustomActions("<cm_LeftSortByCol7>","å·¦çª—å£: æŒ‰ç¬¬ 7 åˆ—æ’åº")
+  CustomActions("<cm_LeftSortByCol8>","å·¦çª—å£: æŒ‰ç¬¬ 8 åˆ—æ’åº")
+  CustomActions("<cm_LeftSortByCol9>","å·¦çª—å£: æŒ‰ç¬¬ 9 åˆ—æ’åº")
+  CustomActions("<cm_LeftSortByCol10>","å·¦çª—å£: æŒ‰ç¬¬ 10 åˆ—æ’åº")
+  CustomActions("<cm_RightSortByCol1>","å³çª—å£: æŒ‰ç¬¬ 1 åˆ—æ’åº")
+  CustomActions("<cm_RightSortByCol2>","å³çª—å£: æŒ‰ç¬¬ 2 åˆ—æ’åº")
+  CustomActions("<cm_RightSortByCol3>","å³çª—å£: æŒ‰ç¬¬ 3 åˆ—æ’åº")
+  CustomActions("<cm_RightSortByCol4>","å³çª—å£: æŒ‰ç¬¬ 4 åˆ—æ’åº")
+  CustomActions("<cm_RightSortByCol5>","å³çª—å£: æŒ‰ç¬¬ 5 åˆ—æ’åº")
+  CustomActions("<cm_RightSortByCol6>","å³çª—å£: æŒ‰ç¬¬ 6 åˆ—æ’åº")
+  CustomActions("<cm_RightSortByCol7>","å³çª—å£: æŒ‰ç¬¬ 7 åˆ—æ’åº")
+  CustomActions("<cm_RightSortByCol8>","å³çª—å£: æŒ‰ç¬¬ 8 åˆ—æ’åº")
+  CustomActions("<cm_RightSortByCol9>","å³çª—å£: æŒ‰ç¬¬ 9 åˆ—æ’åº")
+  CustomActions("<cm_RightSortByCol10>","å³çª—å£: æŒ‰ç¬¬ 10 åˆ—æ’åº")
+  CustomActions("<cm_SrcCustomView1>","æ¥æºçª—å£: è‡ªå®šä¹‰åˆ—è§†å›¾ 1")
+  CustomActions("<cm_SrcCustomView2>","æ¥æºçª—å£: è‡ªå®šä¹‰åˆ—è§†å›¾ 2")
+  CustomActions("<cm_SrcCustomView3>","æ¥æºçª—å£: è‡ªå®šä¹‰åˆ—è§†å›¾ 3")
+  CustomActions("<cm_SrcCustomView4>","æ¥æºçª—å£: è‡ªå®šä¹‰åˆ—è§†å›¾ 4")
+  CustomActions("<cm_SrcCustomView5>","æ¥æºçª—å£: è‡ªå®šä¹‰åˆ—è§†å›¾ 5")
+  CustomActions("<cm_SrcCustomView6>","æ¥æºçª—å£: è‡ªå®šä¹‰åˆ—è§†å›¾ 6")
+  CustomActions("<cm_SrcCustomView7>","æ¥æºçª—å£: è‡ªå®šä¹‰åˆ—è§†å›¾ 7")
+  CustomActions("<cm_SrcCustomView8>","æ¥æºçª—å£: è‡ªå®šä¹‰åˆ—è§†å›¾ 8")
+  CustomActions("<cm_SrcCustomView9>","æ¥æºçª—å£: è‡ªå®šä¹‰åˆ—è§†å›¾ 9")
+  CustomActions("<cm_SrcCustomView10>","æ¥æºçª—å£: è‡ªå®šä¹‰åˆ—è§†å›¾ 10")
+  CustomActions("<cm_LeftCustomView1>","å·¦çª—å£: è‡ªå®šä¹‰åˆ—è§†å›¾ 1")
+  CustomActions("<cm_LeftCustomView2>","å·¦çª—å£: è‡ªå®šä¹‰åˆ—è§†å›¾ 2")
+  CustomActions("<cm_LeftCustomView3>","å·¦çª—å£: è‡ªå®šä¹‰åˆ—è§†å›¾ 3")
+  CustomActions("<cm_LeftCustomView4>","å·¦çª—å£: è‡ªå®šä¹‰åˆ—è§†å›¾ 4")
+  CustomActions("<cm_LeftCustomView5>","å·¦çª—å£: è‡ªå®šä¹‰åˆ—è§†å›¾ 5")
+  CustomActions("<cm_LeftCustomView6>","å·¦çª—å£: è‡ªå®šä¹‰åˆ—è§†å›¾ 6")
+  CustomActions("<cm_LeftCustomView7>","å·¦çª—å£: è‡ªå®šä¹‰åˆ—è§†å›¾ 7")
+  CustomActions("<cm_LeftCustomView8>","å·¦çª—å£: è‡ªå®šä¹‰åˆ—è§†å›¾ 8")
+  CustomActions("<cm_LeftCustomView9>","å·¦çª—å£: è‡ªå®šä¹‰åˆ—è§†å›¾ 9")
+  CustomActions("<cm_LeftCustomView10>","å·¦çª—å£: è‡ªå®šä¹‰åˆ—è§†å›¾ 10")
+  CustomActions("<cm_RightCustomView1>","å³çª—å£: è‡ªå®šä¹‰åˆ—è§†å›¾ 1")
+  CustomActions("<cm_RightCustomView2>","å³çª—å£: è‡ªå®šä¹‰åˆ—è§†å›¾ 2")
+  CustomActions("<cm_RightCustomView3>","å³çª—å£: è‡ªå®šä¹‰åˆ—è§†å›¾ 3")
+  CustomActions("<cm_RightCustomView4>","å³çª—å£: è‡ªå®šä¹‰åˆ—è§†å›¾ 4")
+  CustomActions("<cm_RightCustomView5>","å³çª—å£: è‡ªå®šä¹‰åˆ—è§†å›¾ 5")
+  CustomActions("<cm_RightCustomView6>","å³çª—å£: è‡ªå®šä¹‰åˆ—è§†å›¾ 6")
+  CustomActions("<cm_RightCustomView7>","å³çª—å£: è‡ªå®šä¹‰åˆ—è§†å›¾ 7")
+  CustomActions("<cm_RightCustomView8>","å³çª—å£: è‡ªå®šä¹‰åˆ—è§†å›¾ 8")
+  CustomActions("<cm_RightCustomView9>","å³çª—å£: è‡ªå®šä¹‰åˆ—è§†å›¾ 9")
+  CustomActions("<cm_RightCustomView10>","å³çª—å£: è‡ªå®šä¹‰åˆ—è§†å›¾ 10")
+  CustomActions("<cm_SrcNextCustomView>","æ¥æºçª—å£: ä¸‹ä¸€ä¸ªè‡ªå®šä¹‰è§†å›¾")
+  CustomActions("<cm_SrcPrevCustomView>","æ¥æºçª—å£: ä¸Šä¸€ä¸ªè‡ªå®šä¹‰è§†å›¾")
+  CustomActions("<cm_TrgNextCustomView>","ç›®æ ‡çª—å£: ä¸‹ä¸€ä¸ªè‡ªå®šä¹‰è§†å›¾")
+  CustomActions("<cm_TrgPrevCustomView>","ç›®æ ‡çª—å£: ä¸Šä¸€ä¸ªè‡ªå®šä¹‰è§†å›¾")
+  CustomActions("<cm_LeftNextCustomView>","å·¦çª—å£: ä¸‹ä¸€ä¸ªè‡ªå®šä¹‰è§†å›¾")
+  CustomActions("<cm_LeftPrevCustomView>","å·¦çª—å£: ä¸Šä¸€ä¸ªè‡ªå®šä¹‰è§†å›¾")
+  CustomActions("<cm_RightNextCustomView>","å³çª—å£: ä¸‹ä¸€ä¸ªè‡ªå®šä¹‰è§†å›¾")
+  CustomActions("<cm_RightPrevCustomView>","å³çª—å£: ä¸Šä¸€ä¸ªè‡ªå®šä¹‰è§†å›¾")
+  CustomActions("<cm_LoadAllOnDemandFields>","æ‰€æœ‰æ–‡ä»¶éƒ½æŒ‰éœ€åŠ è½½å¤‡æ³¨")
+  CustomActions("<cm_LoadSelOnDemandFields>","ä»…é€‰ä¸­çš„æ–‡ä»¶æŒ‰éœ€åŠ è½½å¤‡æ³¨")
+  CustomActions("<cm_ContentStopLoadFields>","åœæ­¢åå°åŠ è½½å¤‡æ³¨")
 return
 SendPos(Number)
 {
 	PostMessage 1075, %Number%, 0, , AHK_CLASS TTOTAL_CMD
 }
-;<cm_SrcComments>: >>À´Ô´´°¿Ú: ÏÔÊ¾ÎÄ¼ş±¸×¢{{{2
+;<cm_SrcComments>: >>æ¥æºçª—å£: æ˜¾ç¤ºæ–‡ä»¶å¤‡æ³¨{{{2
 <cm_SrcComments>:
 	SendPos(300)
 Return
-;<cm_SrcShort>: >>À´Ô´´°¿Ú: ÁĞ±í{{{2
+;<cm_SrcShort>: >>æ¥æºçª—å£: åˆ—è¡¨{{{2
 <cm_SrcShort>:
 	SendPos(301)
 Return
-;<cm_SrcLong>: >>À´Ô´´°¿Ú: ÏêÏ¸ĞÅÏ¢{{{2
+;<cm_SrcLong>: >>æ¥æºçª—å£: è¯¦ç»†ä¿¡æ¯{{{2
 <cm_SrcLong>:
 	SendPos(302)
 Return
-;<cm_SrcTree>: >>À´Ô´´°¿Ú: ÎÄ¼ş¼ĞÊ÷{{{2
+;<cm_SrcTree>: >>æ¥æºçª—å£: æ–‡ä»¶å¤¹æ ‘{{{2
 <cm_SrcTree>:
 	SendPos(303)
-;<cm_SrcQuickview>: >>À´Ô´´°¿Ú: ¿ìËÙ²é¿´{{{2
+;<cm_SrcQuickview>: >>æ¥æºçª—å£: å¿«é€ŸæŸ¥çœ‹{{{2
 <cm_SrcQuickview>:
 	SendPos(304)
 Return
-;<cm_VerticalPanels>: >>×İÏòÅÅÁĞ{{{2
+;<cm_VerticalPanels>: >>çºµå‘æ’åˆ—{{{2
 <cm_VerticalPanels>:
 	SendPos(305)
 Return
-;<cm_SrcQuickInternalOnly>: >>À´Ô´´°¿Ú: ¿ìËÙ²é¿´(²»ÓÃ²å¼ş){{{2
+;<cm_SrcQuickInternalOnly>: >>æ¥æºçª—å£: å¿«é€ŸæŸ¥çœ‹(ä¸ç”¨æ’ä»¶){{{2
 <cm_SrcQuickInternalOnly>:
 	SendPos(306)
 Return
-;<cm_SrcHideQuickview>: >>À´Ô´´°¿Ú: ¹Ø±Õ¿ìËÙ²é¿´´°¿Ú{{{2
+;<cm_SrcHideQuickview>: >>æ¥æºçª—å£: å…³é—­å¿«é€ŸæŸ¥çœ‹çª—å£{{{2
 <cm_SrcHideQuickview>:
 	SendPos(307)
 Return
-;<cm_SrcExecs>: >>À´Ô´´°¿Ú: ¿ÉÖ´ĞĞÎÄ¼ş{{{2
+;<cm_SrcExecs>: >>æ¥æºçª—å£: å¯æ‰§è¡Œæ–‡ä»¶{{{2
 <cm_SrcExecs>:
 	SendPos(311)
 Return
-;<cm_SrcAllFiles>: >>À´Ô´´°¿Ú: ËùÓĞÎÄ¼ş{{{2
+;<cm_SrcAllFiles>: >>æ¥æºçª—å£: æ‰€æœ‰æ–‡ä»¶{{{2
 <cm_SrcAllFiles>:
 	SendPos(312)
 Return
-;<cm_SrcUserSpec>: >>À´Ô´´°¿Ú: ÉÏ´ÎÑ¡ÖĞµÄÎÄ¼ş{{{2
+;<cm_SrcUserSpec>: >>æ¥æºçª—å£: ä¸Šæ¬¡é€‰ä¸­çš„æ–‡ä»¶{{{2
 <cm_SrcUserSpec>:
 	SendPos(313)
 Return
-;<cm_SrcUserDef>: >>À´Ô´´°¿Ú: ×Ô¶¨ÒåÀàĞÍ{{{2
+;<cm_SrcUserDef>: >>æ¥æºçª—å£: è‡ªå®šä¹‰ç±»å‹{{{2
 <cm_SrcUserDef>:
 	SendPos(314)
 Return
-;<cm_SrcByName>: >>À´Ô´´°¿Ú: °´ÎÄ¼şÃûÅÅĞò{{{2
+;<cm_SrcByName>: >>æ¥æºçª—å£: æŒ‰æ–‡ä»¶åæ’åº{{{2
 <cm_SrcByName>:
 	SendPos(321)
 Return
-;<cm_SrcByExt>: >>À´Ô´´°¿Ú: °´À©Õ¹ÃûÅÅĞò{{{2
+;<cm_SrcByExt>: >>æ¥æºçª—å£: æŒ‰æ‰©å±•åæ’åº{{{2
 <cm_SrcByExt>:
 	SendPos(322)
 Return
-;<cm_SrcBySize>: >>À´Ô´´°¿Ú: °´´óĞ¡ÅÅĞò{{{2
+;<cm_SrcBySize>: >>æ¥æºçª—å£: æŒ‰å¤§å°æ’åº{{{2
 <cm_SrcBySize>:
 	SendPos(323)
 Return
-;<cm_SrcByDateTime>: >>À´Ô´´°¿Ú: °´ÈÕÆÚÊ±¼äÅÅĞò{{{2
+;<cm_SrcByDateTime>: >>æ¥æºçª—å£: æŒ‰æ—¥æœŸæ—¶é—´æ’åº{{{2
 <cm_SrcByDateTime>:
 	SendPos(324)
 Return
-;<cm_SrcUnsorted>: >>À´Ô´´°¿Ú: ²»ÅÅĞò{{{2
+;<cm_SrcUnsorted>: >>æ¥æºçª—å£: ä¸æ’åº{{{2
 <cm_SrcUnsorted>:
 	SendPos(325)
 Return
-;<cm_SrcNegOrder>: >>À´Ô´´°¿Ú: ·´ÏòÅÅĞò{{{2
+;<cm_SrcNegOrder>: >>æ¥æºçª—å£: åå‘æ’åº{{{2
 <cm_SrcNegOrder>:
 	SendPos(330)
 Return
-;<cm_SrcOpenDrives>: >>À´Ô´´°¿Ú: ´ò¿ªÇı¶¯Æ÷ÁĞ±í{{{2
+;<cm_SrcOpenDrives>: >>æ¥æºçª—å£: æ‰“å¼€é©±åŠ¨å™¨åˆ—è¡¨{{{2
 <cm_SrcOpenDrives>:
 	SendPos(331)
 Return
-;<cm_SrcThumbs>: >>À´Ô´´°¿Ú: ËõÂÔÍ¼{{{2
+;<cm_SrcThumbs>: >>æ¥æºçª—å£: ç¼©ç•¥å›¾{{{2
 <cm_SrcThumbs>:
 	SendPos(269	)
 Return
-;<cm_SrcCustomViewMenu>: >>À´Ô´´°¿Ú: ×Ô¶¨ÒåÊÓÍ¼²Ëµ¥{{{2
+;<cm_SrcCustomViewMenu>: >>æ¥æºçª—å£: è‡ªå®šä¹‰è§†å›¾èœå•{{{2
 <cm_SrcCustomViewMenu>:
 	SendPos(270)
 Return
-;<cm_SrcPathFocus>: >>À´Ô´´°¿Ú: ½¹µãÖÃÓÚÂ·¾¶ÉÏ{{{2
+;<cm_SrcPathFocus>: >>æ¥æºçª—å£: ç„¦ç‚¹ç½®äºè·¯å¾„ä¸Š{{{2
 <cm_SrcPathFocus>:
 	SendPos(332)
 Return
-;×ó´°¿Ú =========================================
+;å·¦çª—å£ =========================================
 Return
-;<cm_LeftComments>: >>×ó´°¿Ú: ÏÔÊ¾ÎÄ¼ş±¸×¢{{{2
+;<cm_LeftComments>: >>å·¦çª—å£: æ˜¾ç¤ºæ–‡ä»¶å¤‡æ³¨{{{2
 <cm_LeftComments>:
 	SendPos(100)
 Return
-;<cm_LeftShort>: >>×ó´°¿Ú: ÁĞ±í{{{2
+;<cm_LeftShort>: >>å·¦çª—å£: åˆ—è¡¨{{{2
 <cm_LeftShort>:
 	SendPos(101)
 Return
-;<cm_LeftLong>: >>×ó´°¿Ú: ÏêÏ¸ĞÅÏ¢{{{2
+;<cm_LeftLong>: >>å·¦çª—å£: è¯¦ç»†ä¿¡æ¯{{{2
 <cm_LeftLong>:
 	SendPos(102)
 Return
-;<cm_LeftTree>: >>×ó´°¿Ú: ÎÄ¼ş¼ĞÊ÷{{{2
+;<cm_LeftTree>: >>å·¦çª—å£: æ–‡ä»¶å¤¹æ ‘{{{2
 <cm_LeftTree>:
 	SendPos(103)
 Return
-;<cm_LeftQuickview>: >>×ó´°¿Ú: ¿ìËÙ²é¿´{{{2
+;<cm_LeftQuickview>: >>å·¦çª—å£: å¿«é€ŸæŸ¥çœ‹{{{2
 <cm_LeftQuickview>:
 	SendPos(104)
 Return
-;<cm_LeftQuickInternalOnly>: >>×ó´°¿Ú: ¿ìËÙ²é¿´(²»ÓÃ²å¼ş){{{2
+;<cm_LeftQuickInternalOnly>: >>å·¦çª—å£: å¿«é€ŸæŸ¥çœ‹(ä¸ç”¨æ’ä»¶){{{2
 <cm_LeftQuickInternalOnly>:
 	SendPos(106)
 Return
-;<cm_LeftHideQuickview>: >>×ó´°¿Ú: ¹Ø±Õ¿ìËÙ²é¿´´°¿Ú{{{2
+;<cm_LeftHideQuickview>: >>å·¦çª—å£: å…³é—­å¿«é€ŸæŸ¥çœ‹çª—å£{{{2
 <cm_LeftHideQuickview>:
 	SendPos(107)
 Return
-;<cm_LeftExecs>: >>×ó´°¿Ú: ¿ÉÖ´ĞĞÎÄ¼ş{{{2
+;<cm_LeftExecs>: >>å·¦çª—å£: å¯æ‰§è¡Œæ–‡ä»¶{{{2
 <cm_LeftExecs>:
 	SendPos(111)
 Return
-;<cm_LeftAllFiles>: >>	×ó´°¿Ú: ËùÓĞÎÄ¼ş{{{2
+;<cm_LeftAllFiles>: >>	å·¦çª—å£: æ‰€æœ‰æ–‡ä»¶{{{2
 <cm_LeftAllFiles>:
 	SendPos(112)
 Return
-;<cm_LeftUserSpec>: >>×ó´°¿Ú: ÉÏ´ÎÑ¡ÖĞµÄÎÄ¼ş{{{2
+;<cm_LeftUserSpec>: >>å·¦çª—å£: ä¸Šæ¬¡é€‰ä¸­çš„æ–‡ä»¶{{{2
 <cm_LeftUserSpec>:
 	SendPos(113)
 Return
-;<cm_LeftUserDef>: >>×ó´°¿Ú: ×Ô¶¨ÒåÀàĞÍ{{{2
+;<cm_LeftUserDef>: >>å·¦çª—å£: è‡ªå®šä¹‰ç±»å‹{{{2
 <cm_LeftUserDef>:
 	SendPos(114)
 Return
-;<cm_LeftByName>: >>×ó´°¿Ú: °´ÎÄ¼şÃûÅÅĞò{{{2
+;<cm_LeftByName>: >>å·¦çª—å£: æŒ‰æ–‡ä»¶åæ’åº{{{2
 <cm_LeftByName>:
 	SendPos(121)
 Return
-;<cm_LeftByExt>: >>×ó´°¿Ú: °´À©Õ¹ÃûÅÅĞò{{{2
+;<cm_LeftByExt>: >>å·¦çª—å£: æŒ‰æ‰©å±•åæ’åº{{{2
 <cm_LeftByExt>:
 	SendPos(122)
 Return
-;<cm_LeftBySize>: >>×ó´°¿Ú: °´´óĞ¡ÅÅĞò{{{2
+;<cm_LeftBySize>: >>å·¦çª—å£: æŒ‰å¤§å°æ’åº{{{2
 <cm_LeftBySize>:
 	SendPos(123)
 Return
-;<cm_LeftByDateTime>: >>×ó´°¿Ú: °´ÈÕÆÚÊ±¼äÅÅĞò{{{2
+;<cm_LeftByDateTime>: >>å·¦çª—å£: æŒ‰æ—¥æœŸæ—¶é—´æ’åº{{{2
 <cm_LeftByDateTime>:
 	SendPos(124)
 Return
-;<cm_LeftUnsorted>: >>×ó´°¿Ú: ²»ÅÅĞò{{{2
+;<cm_LeftUnsorted>: >>å·¦çª—å£: ä¸æ’åº{{{2
 <cm_LeftUnsorted>:
 	SendPos(125)
 Return
-;<cm_LeftNegOrder>: >>×ó´°¿Ú: ·´ÏòÅÅĞò{{{2
+;<cm_LeftNegOrder>: >>å·¦çª—å£: åå‘æ’åº{{{2
 <cm_LeftNegOrder>:
 	SendPos(130)
 Return
-;<cm_LeftOpenDrives>: >>×ó´°¿Ú: ´ò¿ªÇı¶¯Æ÷ÁĞ±í{{{2
+;<cm_LeftOpenDrives>: >>å·¦çª—å£: æ‰“å¼€é©±åŠ¨å™¨åˆ—è¡¨{{{2
 <cm_LeftOpenDrives>:
 	SendPos(131)
 Return
-;<cm_LeftPathFocus>: >>×ó´°¿Ú: ½¹µãÖÃÓÚÂ·¾¶ÉÏ{{{2
+;<cm_LeftPathFocus>: >>å·¦çª—å£: ç„¦ç‚¹ç½®äºè·¯å¾„ä¸Š{{{2
 <cm_LeftPathFocus>:
 	SendPos(132)
 Return
-;<cm_LeftDirBranch>: >>×ó´°¿Ú: Õ¹¿ªËùÓĞÎÄ¼ş¼Ğ{{{2
+;<cm_LeftDirBranch>: >>å·¦çª—å£: å±•å¼€æ‰€æœ‰æ–‡ä»¶å¤¹{{{2
 <cm_LeftDirBranch>:
 	SendPos(203)
 Return
-;<cm_LeftDirBranchSel>: >>	×ó´°¿Ú: Ö»Õ¹¿ªÑ¡ÖĞµÄÎÄ¼ş¼Ğ{{{2
+;<cm_LeftDirBranchSel>: >>	å·¦çª—å£: åªå±•å¼€é€‰ä¸­çš„æ–‡ä»¶å¤¹{{{2
 <cm_LeftDirBranchSel>:
 	SendPos(204)
 Return
-;<cm_LeftThumbs>: >>´°¿Ú: ËõÂÔÍ¼{{{2
+;<cm_LeftThumbs>: >>çª—å£: ç¼©ç•¥å›¾{{{2
 <cm_LeftThumbs>:
 	SendPos(69)
 Return
-;<cm_LeftCustomViewMenu>: >>	´°¿Ú: ×Ô¶¨ÒåÊÓÍ¼²Ëµ¥{{{2
+;<cm_LeftCustomViewMenu>: >>	çª—å£: è‡ªå®šä¹‰è§†å›¾èœå•{{{2
 <cm_LeftCustomViewMenu>:
 	SendPos(70)
 Return
-;ÓÒ´°¿Ú =========================================
+;å³çª—å£ =========================================
 Return
-;<cm_RightComments>: >>ÓÒ´°¿Ú: ÏÔÊ¾ÎÄ¼ş±¸×¢{{{2
+;<cm_RightComments>: >>å³çª—å£: æ˜¾ç¤ºæ–‡ä»¶å¤‡æ³¨{{{2
 <cm_RightComments>:
 	SendPos(200)
 Return
-;<cm_RightShort>: >>ÓÒ´°¿Ú: ÁĞ±í{{{2
+;<cm_RightShort>: >>å³çª—å£: åˆ—è¡¨{{{2
 <cm_RightShort>:
 	SendPos(201)
 Return
-;<cm_RightLong>: >> ÏêÏ¸ĞÅÏ¢{{{2
+;<cm_RightLong>: >> è¯¦ç»†ä¿¡æ¯{{{2
 <cm_RightLong>:
 	SendPos(202)
 Return
-;<cm_RightTre>: >>	ÓÒ´°¿Ú: ÎÄ¼ş¼ĞÊ÷{{{2
+;<cm_RightTre>: >>	å³çª—å£: æ–‡ä»¶å¤¹æ ‘{{{2
 <cm_RightTre>:
 		SendPos(203)
 Return
-;<cm_RightQuickvie>: >>	ÓÒ´°¿Ú: ¿ìËÙ²é¿´{{{2
+;<cm_RightQuickvie>: >>	å³çª—å£: å¿«é€ŸæŸ¥çœ‹{{{2
 <cm_RightQuickvie>:
 		SendPos(204)
 Return
-;<cm_RightQuickInternalOnl>: >>	ÓÒ´°¿Ú: ¿ìËÙ²é¿´(²»ÓÃ²å¼ş){{{2
+;<cm_RightQuickInternalOnl>: >>	å³çª—å£: å¿«é€ŸæŸ¥çœ‹(ä¸ç”¨æ’ä»¶){{{2
 <cm_RightQuickInternalOnl>:
 		SendPos(206)
 Return
-;<cm_RightHideQuickvie>: >>	ÓÒ´°¿Ú: ¹Ø±Õ¿ìËÙ²é¿´´°¿Ú{{{2
+;<cm_RightHideQuickvie>: >>	å³çª—å£: å…³é—­å¿«é€ŸæŸ¥çœ‹çª—å£{{{2
 <cm_RightHideQuickvie>:
 		SendPos(207)
 Return
-;<cm_RightExec>: >>	ÓÒ´°¿Ú: ¿ÉÖ´ĞĞÎÄ¼ş{{{2
+;<cm_RightExec>: >>	å³çª—å£: å¯æ‰§è¡Œæ–‡ä»¶{{{2
 <cm_RightExec>:
 		SendPos(211)
 Return
-;<cm_RightAllFile>: >>	ÓÒ´°¿Ú: ËùÓĞÎÄ¼ş{{{2
+;<cm_RightAllFile>: >>	å³çª—å£: æ‰€æœ‰æ–‡ä»¶{{{2
 <cm_RightAllFile>:
 		SendPos(212)
 Return
-;<cm_RightUserSpe>: >>	ÓÒ´°¿Ú: ÉÏ´ÎÑ¡ÖĞµÄÎÄ¼ş{{{2
+;<cm_RightUserSpe>: >>	å³çª—å£: ä¸Šæ¬¡é€‰ä¸­çš„æ–‡ä»¶{{{2
 <cm_RightUserSpe>:
 		SendPos(213)
 Return
-;<cm_RightUserDe>: >>	ÓÒ´°¿Ú: ×Ô¶¨ÒåÀàĞÍ{{{2
+;<cm_RightUserDe>: >>	å³çª—å£: è‡ªå®šä¹‰ç±»å‹{{{2
 <cm_RightUserDe>:
 		SendPos(214)
 Return
-;<cm_RightByNam>: >>	ÓÒ´°¿Ú: °´ÎÄ¼şÃûÅÅĞò{{{2
+;<cm_RightByNam>: >>	å³çª—å£: æŒ‰æ–‡ä»¶åæ’åº{{{2
 <cm_RightByNam>:
 		SendPos(221)
 Return
-;<cm_RightByEx>: >>	ÓÒ´°¿Ú: °´À©Õ¹ÃûÅÅĞò{{{2
+;<cm_RightByEx>: >>	å³çª—å£: æŒ‰æ‰©å±•åæ’åº{{{2
 <cm_RightByEx>:
 		SendPos(222)
 Return
-;<cm_RightBySiz>: >>	ÓÒ´°¿Ú: °´´óĞ¡ÅÅĞò{{{2
+;<cm_RightBySiz>: >>	å³çª—å£: æŒ‰å¤§å°æ’åº{{{2
 <cm_RightBySiz>:
 		SendPos(223)
 Return
-;<cm_RightByDateTim>: >>	ÓÒ´°¿Ú: °´ÈÕÆÚÊ±¼äÅÅĞò{{{2
+;<cm_RightByDateTim>: >>	å³çª—å£: æŒ‰æ—¥æœŸæ—¶é—´æ’åº{{{2
 <cm_RightByDateTim>:
 		SendPos(224)
 Return
-;<cm_RightUnsorte>: >>	ÓÒ´°¿Ú: ²»ÅÅĞò{{{2
+;<cm_RightUnsorte>: >>	å³çª—å£: ä¸æ’åº{{{2
 <cm_RightUnsorte>:
 		SendPos(225)
 Return
-;<cm_RightNegOrde>: >>	ÓÒ´°¿Ú: ·´ÏòÅÅĞò{{{2
+;<cm_RightNegOrde>: >>	å³çª—å£: åå‘æ’åº{{{2
 <cm_RightNegOrde>:
 		SendPos(230)
 Return
-;<cm_RightOpenDrive>: >>	ÓÒ´°¿Ú: ´ò¿ªÇı¶¯Æ÷ÁĞ±í{{{2
+;<cm_RightOpenDrive>: >>	å³çª—å£: æ‰“å¼€é©±åŠ¨å™¨åˆ—è¡¨{{{2
 <cm_RightOpenDrives>:
 		SendPos(231)
 Return
-;<cm_RightPathFocu>: >>	ÓÒ´°¿Ú: ½¹µãÖÃÓÚÂ·¾¶ÉÏ{{{2
+;<cm_RightPathFocu>: >>	å³çª—å£: ç„¦ç‚¹ç½®äºè·¯å¾„ä¸Š{{{2
 <cm_RightPathFocu>:
 		SendPos(232)
 Return
-;<cm_RightDirBranch>: >>ÓÒ´°¿Ú: Õ¹¿ªËùÓĞÎÄ¼ş¼Ğ{{{2
+;<cm_RightDirBranch>: >>å³çª—å£: å±•å¼€æ‰€æœ‰æ–‡ä»¶å¤¹{{{2
 <cm_RightDirBranch>:
 	SendPos(2035)
 Return
-;<cm_RightDirBranchSel>: >>ÓÒ´°¿Ú: Ö»Õ¹¿ªÑ¡ÖĞµÄÎÄ¼ş¼Ğ{{{2
+;<cm_RightDirBranchSel>: >>å³çª—å£: åªå±•å¼€é€‰ä¸­çš„æ–‡ä»¶å¤¹{{{2
 <cm_RightDirBranchSel>:
 	SendPos(2048)
 Return
-;<cm_RightThumb>: >>	ÓÒ´°¿Ú: ËõÂÔÍ¼{{{2
+;<cm_RightThumb>: >>	å³çª—å£: ç¼©ç•¥å›¾{{{2
 <cm_RightThumb>:
 	SendPos(169)
 Return
-;<cm_RightCustomViewMen>: >>	ÓÒ´°¿Ú: ×Ô¶¨ÒåÊÓÍ¼²Ëµ¥{{{2
+;<cm_RightCustomViewMen>: >>	å³çª—å£: è‡ªå®šä¹‰è§†å›¾èœå•{{{2
 <cm_RightCustomViewMen>:
 	SendPos(170)
 Return
-;ÎÄ¼ş²Ù×÷ =========================================
+;æ–‡ä»¶æ“ä½œ =========================================
 Return
-;<cm_List>: >>	²é¿´(ÓÃ²é¿´³ÌĞò){{{2
+;<cm_List>: >>	æŸ¥çœ‹(ç”¨æŸ¥çœ‹ç¨‹åº){{{2
 <cm_List>:
 	SendPos(903)
 Return
-;<cm_ListInternalOnly>: >>²é¿´(ÓÃ²é¿´³ÌĞò, µ«²»ÓÃ²å¼ş/¶àÃ½Ìå){{{2
+;<cm_ListInternalOnly>: >>æŸ¥çœ‹(ç”¨æŸ¥çœ‹ç¨‹åº, ä½†ä¸ç”¨æ’ä»¶/å¤šåª’ä½“){{{2
 <cm_ListInternalOnly>:
 	SendPos(1006)
 Return
-;<cm_Edit>: >>	±à¼­{{{2
+;<cm_Edit>: >>	ç¼–è¾‘{{{2
 <cm_Edit>:
 		SendPos(904)
 Return
-;<cm_Copy>: >>¸´ÖÆ{{{2
+;<cm_Copy>: >>å¤åˆ¶{{{2
 <cm_Copy>:
 	SendPos(905)
 Return
-;<cm_CopySamepanel>: >>¸´ÖÆµ½µ±Ç°´°¿Ú{{{2
+;<cm_CopySamepanel>: >>å¤åˆ¶åˆ°å½“å‰çª—å£{{{2
 <cm_CopySamepanel>:
 	SendPos(3100)
 Return
-;<cm_CopyOtherpanel>: >>¸´ÖÆµ½ÁíÒ»´°¿Ú{{{2
+;<cm_CopyOtherpanel>: >>å¤åˆ¶åˆ°å¦ä¸€çª—å£{{{2
 <cm_CopyOtherpanel>:
 	SendPos(3101)
 Return
-;<cm_RenMov>: >>ÖØÃüÃû/ÒÆ¶¯{{{2
+;<cm_RenMov>: >>é‡å‘½å/ç§»åŠ¨{{{2
 <cm_RenMov>:
 	SendPos(906)
 Return
-;<cm_MkDir>: >>ĞÂ½¨ÎÄ¼ş¼Ğ{{{2
+;<cm_MkDir>: >>æ–°å»ºæ–‡ä»¶å¤¹{{{2
 <cm_MkDir>:
 	SendPos(907)
 Return
-;<cm_Delete>: >>É¾³ı{{{2
+;<cm_Delete>: >>åˆ é™¤{{{2
 <cm_Delete>:
 	SendPos(908)
 Return
-;<cm_TestArchive>: >>²âÊÔÑ¹Ëõ°ü{{{2
+;<cm_TestArchive>: >>æµ‹è¯•å‹ç¼©åŒ…{{{2
 <cm_TestArchive>:
 	SendPos(518)
 Return
-;<cm_PackFiles>: >>Ñ¹ËõÎÄ¼ş{{{2
+;<cm_PackFiles>: >>å‹ç¼©æ–‡ä»¶{{{2
 <cm_PackFiles>:
 	SendPos(508)
 Return
-;<cm_UnpackFiles>: >>½âÑ¹ÎÄ¼ş{{{2
+;<cm_UnpackFiles>: >>è§£å‹æ–‡ä»¶{{{2
 <cm_UnpackFiles>:
 	SendPos(509)
 Return
-;<cm_RenameOnly>: >>ÖØÃüÃû(Shift+F6){{{2
+;<cm_RenameOnly>: >>é‡å‘½å(Shift+F6){{{2
 <cm_RenameOnly>:
 	SendPos(1002)
 Return
-;<cm_RenameSingleFile>: >>ÖØÃüÃûµ±Ç°ÎÄ¼ş{{{2
+;<cm_RenameSingleFile>: >>é‡å‘½åå½“å‰æ–‡ä»¶{{{2
 <cm_RenameSingleFile>:
 	SendPos(1007)
 Return
-;<cm_MoveOnly>: >>ÒÆ¶¯(F6){{{2
+;<cm_MoveOnly>: >>ç§»åŠ¨(F6){{{2
 <cm_MoveOnly>:
 	SendPos(1005)
 Return
-;<cm_Properties>: >>ÏÔÊ¾ÊôĞÔ{{{2
+;<cm_Properties>: >>æ˜¾ç¤ºå±æ€§{{{2
 <cm_Properties>:
 	SendPos(1003)
 Return
-;<cm_CreateShortcut>: >>´´½¨¿ì½İ·½Ê½{{{2
+;<cm_CreateShortcut>: >>åˆ›å»ºå¿«æ·æ–¹å¼{{{2
 <cm_CreateShortcut>:
 	SendPos(1004)
 Return
-;<cm_Return>: >>Ä£·Â°´ ENTER ¼ü{{{2
+;<cm_Return>: >>æ¨¡ä»¿æŒ‰ ENTER é”®{{{2
 <cm_Return>:
 	SendPos(1001)
 Return
-;<cm_OpenAsUser>: >>ÒÔÆäËûÓÃ»§Éí·İÔËĞĞ¹â±ê´¦µÄ³ÌĞò{{{2
+;<cm_OpenAsUser>: >>ä»¥å…¶ä»–ç”¨æˆ·èº«ä»½è¿è¡Œå…‰æ ‡å¤„çš„ç¨‹åº{{{2
 <cm_OpenAsUser>:
 	SendPos(2800)
 Return
-;<cm_Split>: >>·Ö¸îÎÄ¼ş{{{2
+;<cm_Split>: >>åˆ†å‰²æ–‡ä»¶{{{2
 <cm_Split>:
 	SendPos(560)
 Return
-;<cm_Combine>: >>ºÏ²¢ÎÄ¼ş{{{2
+;<cm_Combine>: >>åˆå¹¶æ–‡ä»¶{{{2
 <cm_Combine>:
 	SendPos(561)
 Return
-;<cm_Encode>: >>±àÂëÎÄ¼ş(MIME/UUE/XXE ¸ñÊ½){{{2
+;<cm_Encode>: >>ç¼–ç æ–‡ä»¶(MIME/UUE/XXE æ ¼å¼){{{2
 <cm_Encode>:
 	SendPos(562)
 Return
-;<cm_Decode>: >>½âÂëÎÄ¼ş(MIME/UUE/XXE/BinHex ¸ñÊ½){{{2
+;<cm_Decode>: >>è§£ç æ–‡ä»¶(MIME/UUE/XXE/BinHex æ ¼å¼){{{2
 <cm_Decode>:
 	SendPos(563)
 Return
-;<cm_CRCcreate>: >>´´½¨Ğ£ÑéÎÄ¼ş{{{2
+;<cm_CRCcreate>: >>åˆ›å»ºæ ¡éªŒæ–‡ä»¶{{{2
 <cm_CRCcreate>:
 	SendPos(564)
 Return
-;<cm_CRCcheck>: >>ÑéÖ¤Ğ£ÑéºÍ{{{2
+;<cm_CRCcheck>: >>éªŒè¯æ ¡éªŒå’Œ{{{2
 <cm_CRCcheck>:
 	SendPos(565)
 Return
-;<cm_SetAttrib>: >>¸ü¸ÄÊôĞÔ{{{2
+;<cm_SetAttrib>: >>æ›´æ”¹å±æ€§{{{2
 <cm_SetAttrib>:
 	SendPos(502)
 Return
-;ÅäÖÃ =========================================
+;é…ç½® =========================================
 Return
-;<cm_Config>: >>ÅäÖÃ: ²¼¾Ö{{{2
+;<cm_Config>: >>é…ç½®: å¸ƒå±€{{{2
 <cm_Config>:
 	SendPos(490)
 Return
-;<cm_DisplayConfig>: >>ÅäÖÃ: ÏÔÊ¾{{{2
+;<cm_DisplayConfig>: >>é…ç½®: æ˜¾ç¤º{{{2
 <cm_DisplayConfig>:
 	SendPos(486)
 Return
-;<cm_IconConfig>: >>ÅäÖÃ: Í¼±ê{{{2
+;<cm_IconConfig>: >>é…ç½®: å›¾æ ‡{{{2
 <cm_IconConfig>:
 	SendPos(477)
 Return
-;<cm_FontConfig>: >>ÅäÖÃ: ×ÖÌå{{{2
+;<cm_FontConfig>: >>é…ç½®: å­—ä½“{{{2
 <cm_FontConfig>:
 	SendPos(492)
 Return
-;<cm_ColorConfig>: >>ÅäÖÃ: ÑÕÉ«{{{2
+;<cm_ColorConfig>: >>é…ç½®: é¢œè‰²{{{2
 <cm_ColorConfig>:
 	SendPos(494)
 Return
-;<cm_ConfTabChange>: >>ÅäÖÃ: ÖÆ±í·û{{{2
+;<cm_ConfTabChange>: >>é…ç½®: åˆ¶è¡¨ç¬¦{{{2
 <cm_ConfTabChange>:
 	SendPos(497)
 Return
-;<cm_DirTabsConfig>: >>ÅäÖÃ: ÎÄ¼ş¼Ğ±êÇ©{{{2
+;<cm_DirTabsConfig>: >>é…ç½®: æ–‡ä»¶å¤¹æ ‡ç­¾{{{2
 <cm_DirTabsConfig>:
 	SendPos(488)
 Return
-;<cm_CustomColumnConfig>: >>ÅäÖÃ: ×Ô¶¨ÒåÁĞ{{{2
+;<cm_CustomColumnConfig>: >>é…ç½®: è‡ªå®šä¹‰åˆ—{{{2
 <cm_CustomColumnConfig>:
 	SendPos(483)
 Return
-;<cm_CustomColumnDlg>: >>¸ü¸Äµ±Ç°×Ô¶¨ÒåÁĞ{{{2
+;<cm_CustomColumnDlg>: >>æ›´æ”¹å½“å‰è‡ªå®šä¹‰åˆ—{{{2
 <cm_CustomColumnDlg>:
 	SendPos(2920)
 Return
-;<cm_LanguageConfig>: >>ÅäÖÃ: ÓïÑÔ{{{2
+;<cm_LanguageConfig>: >>é…ç½®: è¯­è¨€{{{2
 <cm_LanguageConfig>:
 	SendPos(499)
 Return
-;<cm_Config2>: >>ÅäÖÃ: ²Ù×÷·½Ê½{{{2
+;<cm_Config2>: >>é…ç½®: æ“ä½œæ–¹å¼{{{2
 <cm_Config2>:
 	SendPos(516)
 Return
-;<cm_EditConfig>: >>ÅäÖÃ: ±à¼­/²é¿´{{{2
+;<cm_EditConfig>: >>é…ç½®: ç¼–è¾‘/æŸ¥çœ‹{{{2
 <cm_EditConfig>:
 	SendPos(496)
 Return
-;<cm_CopyConfig>: >>ÅäÖÃ: ¸´ÖÆ/É¾³ı{{{2
+;<cm_CopyConfig>: >>é…ç½®: å¤åˆ¶/åˆ é™¤{{{2
 <cm_CopyConfig>:
 	SendPos(487)
 Return
-;<cm_RefreshConfig>: >>ÅäÖÃ: Ë¢ĞÂ{{{2
+;<cm_RefreshConfig>: >>é…ç½®: åˆ·æ–°{{{2
 <cm_RefreshConfig>:
 	SendPos(478)
 Return
-;<cm_QuickSearchConfig>: >>ÅäÖÃ: ¿ìËÙËÑË÷{{{2
+;<cm_QuickSearchConfig>: >>é…ç½®: å¿«é€Ÿæœç´¢{{{2
 <cm_QuickSearchConfig>:
 	SendPos(479)
 Return
-;<cm_FtpConfig>: >>ÅäÖÃ: FTP{{{2
+;<cm_FtpConfig>: >>é…ç½®: FTP{{{2
 <cm_FtpConfig>:
 	SendPos(489)
 Return
-;<cm_PluginsConfig>: >>ÅäÖÃ: ²å¼ş{{{2
+;<cm_PluginsConfig>: >>é…ç½®: æ’ä»¶{{{2
 <cm_PluginsConfig>:
 	SendPos(484)
 Return
-;<cm_ThumbnailsConfig>: >>ÅäÖÃ: ËõÂÔÍ¼{{{2
+;<cm_ThumbnailsConfig>: >>é…ç½®: ç¼©ç•¥å›¾{{{2
 <cm_ThumbnailsConfig>:
 	SendPos(482)
 Return
-;<cm_LogConfig>: >>ÅäÖÃ: ÈÕÖ¾ÎÄ¼ş{{{2
+;<cm_LogConfig>: >>é…ç½®: æ—¥å¿—æ–‡ä»¶{{{2
 <cm_LogConfig>:
 	SendPos(481)
 Return
-;<cm_IgnoreConfig>: >>ÅäÖÃ: Òş²ØÎÄ¼ş{{{2
+;<cm_IgnoreConfig>: >>é…ç½®: éšè—æ–‡ä»¶{{{2
 <cm_IgnoreConfig>:
 	SendPos(480)
 Return
-;<cm_PackerConfig>: >>ÅäÖÃ: Ñ¹Ëõ³ÌĞò{{{2
+;<cm_PackerConfig>: >>é…ç½®: å‹ç¼©ç¨‹åº{{{2
 <cm_PackerConfig>:
 	SendPos(491)
 Return
-;<cm_ZipPackerConfig>: >>ÅäÖÃ: ZIP Ñ¹Ëõ³ÌĞò{{{2
+;<cm_ZipPackerConfig>: >>é…ç½®: ZIP å‹ç¼©ç¨‹åº{{{2
 <cm_ZipPackerConfig>:
 	SendPos(485)
 Return
-;<cm_Confirmation>: >>ÅäÖÃ: ÆäËû/È·ÈÏ{{{2
+;<cm_Confirmation>: >>é…ç½®: å…¶ä»–/ç¡®è®¤{{{2
 <cm_Confirmation>:
 	SendPos(495)
 Return
-;<cm_ConfigSavePos>: >>±£´æÎ»ÖÃ{{{2
+;<cm_ConfigSavePos>: >>ä¿å­˜ä½ç½®{{{2
 <cm_ConfigSavePos>:
 	SendPos(493)
 Return
-;<cm_ButtonConfig>: >>¸ü¸Ä¹¤¾ßÀ¸{{{2
+;<cm_ButtonConfig>: >>æ›´æ”¹å·¥å…·æ {{{2
 <cm_ButtonConfig>:
 	SendPos(498)
 Return
-;<cm_ConfigSaveSettings>: >>±£´æÉèÖÃ{{{2
+;<cm_ConfigSaveSettings>: >>ä¿å­˜è®¾ç½®{{{2
 <cm_ConfigSaveSettings>:
 	SendPos(580)
 Return
-;<cm_ConfigChangeIniFiles>: >>Ö±½ÓĞŞ¸ÄÅäÖÃÎÄ¼ş{{{2
+;<cm_ConfigChangeIniFiles>: >>ç›´æ¥ä¿®æ”¹é…ç½®æ–‡ä»¶{{{2
 <cm_ConfigChangeIniFiles>:
 	SendPos(581)
 Return
-;<cm_ConfigSaveDirHistory>: >>±£´æÎÄ¼ş¼ĞÀúÊ·¼ÇÂ¼{{{2
+;<cm_ConfigSaveDirHistory>: >>ä¿å­˜æ–‡ä»¶å¤¹å†å²è®°å½•{{{2
 <cm_ConfigSaveDirHistory>:
 	SendPos(582)
 Return
-;<cm_ChangeStartMenu>: >>¸ü¸Ä¿ªÊ¼²Ëµ¥{{{2
+;<cm_ChangeStartMenu>: >>æ›´æ”¹å¼€å§‹èœå•{{{2
 <cm_ChangeStartMenu>:
 	SendPos(700)
 Return
-;ÍøÂç =========================================
+;ç½‘ç»œ =========================================
 Return
-;<cm_NetConnect>: >>Ó³ÉäÍøÂçÇı¶¯Æ÷{{{2
+;<cm_NetConnect>: >>æ˜ å°„ç½‘ç»œé©±åŠ¨å™¨{{{2
 <cm_NetConnect>:
 	SendPos(512)
 Return
-;<cm_NetDisconnect>: >>¶Ï¿ªÍøÂçÇı¶¯Æ÷{{{2
+;<cm_NetDisconnect>: >>æ–­å¼€ç½‘ç»œé©±åŠ¨å™¨{{{2
 <cm_NetDisconnect>:
 	SendPos(513)
 Return
-;<cm_NetShareDir>: >>¹²Ïíµ±Ç°ÎÄ¼ş¼Ğ{{{2
+;<cm_NetShareDir>: >>å…±äº«å½“å‰æ–‡ä»¶å¤¹{{{2
 <cm_NetShareDir>:
 	SendPos(514)
 Return
-;<cm_NetUnshareDir>: >>È¡ÏûÎÄ¼ş¼Ğ¹²Ïí{{{2
+;<cm_NetUnshareDir>: >>å–æ¶ˆæ–‡ä»¶å¤¹å…±äº«{{{2
 <cm_NetUnshareDir>:
 	SendPos(515)
 Return
-;<cm_AdministerServer>: >>ÏÔÊ¾ÏµÍ³¹²ÏíÎÄ¼ş¼Ğ{{{2
+;<cm_AdministerServer>: >>æ˜¾ç¤ºç³»ç»Ÿå…±äº«æ–‡ä»¶å¤¹{{{2
 <cm_AdministerServer>:
 	SendPos(2204)
 Return
-;<cm_ShowFileUser>: >>ÏÔÊ¾±¾µØÎÄ¼şµÄÔ¶³ÌÓÃ»§{{{2
+;<cm_ShowFileUser>: >>æ˜¾ç¤ºæœ¬åœ°æ–‡ä»¶çš„è¿œç¨‹ç”¨æˆ·{{{2
 <cm_ShowFileUser>:
 	SendPos(2203)
 Return
-;ÆäËû =========================================
+;å…¶ä»– =========================================
 Return
-;<cm_GetFileSpace>: >>¼ÆËãÕ¼ÓÃ¿Õ¼ä{{{2
+;<cm_GetFileSpace>: >>è®¡ç®—å ç”¨ç©ºé—´{{{2
 <cm_GetFileSpace>:
 	SendPos(503)
 Return
-;<cm_VolumeId>: >>ÉèÖÃ¾í±ê{{{2
+;<cm_VolumeId>: >>è®¾ç½®å·æ ‡{{{2
 <cm_VolumeId>:
 	SendPos(505)
 Return
-;<cm_VersionInfo>: >>°æ±¾ĞÅÏ¢{{{2
+;<cm_VersionInfo>: >>ç‰ˆæœ¬ä¿¡æ¯{{{2
 <cm_VersionInfo>:
 	SendPos(510)
 Return
-;<cm_ExecuteDOS>: >>´ò¿ªÃüÁîÌáÊ¾·û´°¿Ú{{{2
+;<cm_ExecuteDOS>: >>æ‰“å¼€å‘½ä»¤æç¤ºç¬¦çª—å£{{{2
 <cm_ExecuteDOS>:
 	SendPos(511)
 Return
-;<cm_CompareDirs>: >>±È½ÏÎÄ¼ş¼Ğ{{{2
+;<cm_CompareDirs>: >>æ¯”è¾ƒæ–‡ä»¶å¤¹{{{2
 <cm_CompareDirs>:
 	SendPos(533)
 Return
-;<cm_CompareDirsWithSubdirs>: >>±È½ÏÎÄ¼ş¼Ğ(Í¬Ê±±ê³öÁíÒ»´°¿ÚÃ»ÓĞµÄ×ÓÎÄ¼ş¼Ğ){{{2
+;<cm_CompareDirsWithSubdirs>: >>æ¯”è¾ƒæ–‡ä»¶å¤¹(åŒæ—¶æ ‡å‡ºå¦ä¸€çª—å£æ²¡æœ‰çš„å­æ–‡ä»¶å¤¹){{{2
 <cm_CompareDirsWithSubdirs>:
 	SendPos(536)
 Return
-;<cm_ContextMenu>: >>ÏÔÊ¾¿ì½İ²Ëµ¥{{{2
+;<cm_ContextMenu>: >>æ˜¾ç¤ºå¿«æ·èœå•{{{2
 <cm_ContextMenu>:
 	SendPos(2500)
 Return
-;<cm_ContextMenuInternal>: >>ÏÔÊ¾¿ì½İ²Ëµ¥(ÄÚ²¿¹ØÁª){{{2
+;<cm_ContextMenuInternal>: >>æ˜¾ç¤ºå¿«æ·èœå•(å†…éƒ¨å…³è”){{{2
 <cm_ContextMenuInternal>:
 	SendPos(2927)
 Return
-;<cm_ContextMenuInternalCursor>: >>ÏÔÊ¾¹â±ê´¦ÎÄ¼şµÄÄÚ²¿¹ØÁª¿ì½İ²Ëµ¥{{{2
+;<cm_ContextMenuInternalCursor>: >>æ˜¾ç¤ºå…‰æ ‡å¤„æ–‡ä»¶çš„å†…éƒ¨å…³è”å¿«æ·èœå•{{{2
 <cm_ContextMenuInternalCursor>:
 	SendPos(2928)
 Return
-;<cm_ShowRemoteMenu>: >>Ã½ÌåÖĞĞÄÒ£¿ØÆ÷²¥·Å/ÔİÍ£¼ü¿ì½İ²Ëµ¥{{{2
+;<cm_ShowRemoteMenu>: >>åª’ä½“ä¸­å¿ƒé¥æ§å™¨æ’­æ”¾/æš‚åœé”®å¿«æ·èœå•{{{2
 <cm_ShowRemoteMenu>:
 	SendPos(2930)
 Return
-;<cm_SyncChangeDir>: >>Á½±ß´°¿ÚÍ¬²½¸ü¸ÄÎÄ¼ş¼Ğ{{{2
+;<cm_SyncChangeDir>: >>ä¸¤è¾¹çª—å£åŒæ­¥æ›´æ”¹æ–‡ä»¶å¤¹{{{2
 <cm_SyncChangeDir>:
 	SendPos(2600)
 Return
-;<cm_EditComment>: >>±à¼­ÎÄ¼ş±¸×¢{{{2
+;<cm_EditComment>: >>ç¼–è¾‘æ–‡ä»¶å¤‡æ³¨{{{2
 <cm_EditComment>:
 	SendPos(2700)
 Return
-;<cm_FocusLeft>: >>½¹µãÖÃÓÚ×ó´°¿Ú{{{2
+;<cm_FocusLeft>: >>ç„¦ç‚¹ç½®äºå·¦çª—å£{{{2
 <cm_FocusLeft>:
 	SendPos(4001)
 Return
-;<cm_FocusRight>: >>½¹µãÖÃÓÚÓÒ´°¿Ú{{{2
+;<cm_FocusRight>: >>ç„¦ç‚¹ç½®äºå³çª—å£{{{2
 <cm_FocusRight>:
 	SendPos(4002)
 Return
-;<cm_FocusCmdLine>: >>½¹µãÖÃÓÚÃüÁîĞĞ{{{2
+;<cm_FocusCmdLine>: >>ç„¦ç‚¹ç½®äºå‘½ä»¤è¡Œ{{{2
 <cm_FocusCmdLine>:
 	SendPos(4003)
 Return
-;<cm_FocusButtonBar>: >>½¹µãÖÃÓÚ¹¤¾ßÀ¸{{{2
+;<cm_FocusButtonBar>: >>ç„¦ç‚¹ç½®äºå·¥å…·æ {{{2
 <cm_FocusButtonBar>:
 	SendPos(4004)
 Return
-;<cm_CountDirContent>: >>¼ÆËãËùÓĞÎÄ¼ş¼ĞÕ¼ÓÃµÄ¿Õ¼ä{{{2
+;<cm_CountDirContent>: >>è®¡ç®—æ‰€æœ‰æ–‡ä»¶å¤¹å ç”¨çš„ç©ºé—´{{{2
 <cm_CountDirContent>:
 	SendPos(2014)
 Return
-;<cm_UnloadPlugins>: >>Ğ¶ÔØËùÓĞ²å¼ş{{{2
+;<cm_UnloadPlugins>: >>å¸è½½æ‰€æœ‰æ’ä»¶{{{2
 <cm_UnloadPlugins>:
 	SendPos(2913)
 Return
-;<cm_DirMatch>: >>±ê³öĞÂÎÄ¼ş, Òş²ØÏàÍ¬Õß{{{2
+;<cm_DirMatch>: >>æ ‡å‡ºæ–°æ–‡ä»¶, éšè—ç›¸åŒè€…{{{2
 <cm_DirMatch>:
 	SendPos(534)
 Return
-;<cm_Exchange>: >>½»»»×óÓÒ´°¿Ú{{{2
+;<cm_Exchange>: >>äº¤æ¢å·¦å³çª—å£{{{2
 <cm_Exchange>:
 	SendPos(531)
 Return
-;<cm_MatchSrc>: >>Ä¿±ê = À´Ô´{{{2
+;<cm_MatchSrc>: >>ç›®æ ‡ = æ¥æº{{{2
 <cm_MatchSrc>:
 	SendPos(532)
 Return
-;<cm_ReloadSelThumbs>: >>Ë¢ĞÂÑ¡ÖĞÎÄ¼şµÄËõÂÔÍ¼{{{2
+;<cm_ReloadSelThumbs>: >>åˆ·æ–°é€‰ä¸­æ–‡ä»¶çš„ç¼©ç•¥å›¾{{{2
 <cm_ReloadSelThumbs>:
 	SendPos(2918)
 Return
-;²¢¿Ú =========================================
+;å¹¶å£ =========================================
 Return
-;<cm_DirectCableConnect>: >>Ö±½ÓµçÀÂÁ¬½Ó{{{2
+;<cm_DirectCableConnect>: >>ç›´æ¥ç”µç¼†è¿æ¥{{{2
 <cm_DirectCableConnect>:
 	SendPos(2300)
 Return
-;<cm_NTinstallDriver>: >>¼ÓÔØ NT ²¢¿ÚÇı¶¯³ÌĞò{{{2
+;<cm_NTinstallDriver>: >>åŠ è½½ NT å¹¶å£é©±åŠ¨ç¨‹åº{{{2
 <cm_NTinstallDriver>:
 	SendPos(2301)
 Return
-;<cm_NTremoveDriver>: >>Ğ¶ÔØ NT ²¢¿ÚÇı¶¯³ÌĞò{{{2
+;<cm_NTremoveDriver>: >>å¸è½½ NT å¹¶å£é©±åŠ¨ç¨‹åº{{{2
 <cm_NTremoveDriver>:
 	SendPos(2302)
 Return
-;´òÓ¡ =========================================
+;æ‰“å° =========================================
 Return
-;<cm_PrintDir>: >>´òÓ¡ÎÄ¼şÁĞ±í{{{2
+;<cm_PrintDir>: >>æ‰“å°æ–‡ä»¶åˆ—è¡¨{{{2
 <cm_PrintDir>:
 	SendPos(2027)
 Return
-;<cm_PrintDirSub>: >>´òÓ¡ÎÄ¼şÁĞ±í(º¬×ÓÎÄ¼ş¼Ğ){{{2
+;<cm_PrintDirSub>: >>æ‰“å°æ–‡ä»¶åˆ—è¡¨(å«å­æ–‡ä»¶å¤¹){{{2
 <cm_PrintDirSub>:
 	SendPos(2028)
 Return
-;<cm_PrintFile>: >>´òÓ¡ÎÄ¼şÄÚÈİ{{{2
+;<cm_PrintFile>: >>æ‰“å°æ–‡ä»¶å†…å®¹{{{2
 <cm_PrintFile>:
 	SendPos(504)
 Return
-;Ñ¡Ôñ =========================================
+;é€‰æ‹© =========================================
 Return
-;<cm_SpreadSelection>: >>Ñ¡ÔñÒ»×éÎÄ¼ş{{{2
+;<cm_SpreadSelection>: >>é€‰æ‹©ä¸€ç»„æ–‡ä»¶{{{2
 <cm_SpreadSelection>:
 	SendPos(521)
 Return
-;<cm_SelectBoth>: >>Ñ¡ÔñÒ»×é: ÎÄ¼şºÍÎÄ¼ş¼Ğ{{{2
+;<cm_SelectBoth>: >>é€‰æ‹©ä¸€ç»„: æ–‡ä»¶å’Œæ–‡ä»¶å¤¹{{{2
 <cm_SelectBoth>:
 	SendPos(3311)
 Return
-;<cm_SelectFiles>: >>Ñ¡ÔñÒ»×é: ½öÎÄ¼ş{{{2
+;<cm_SelectFiles>: >>é€‰æ‹©ä¸€ç»„: ä»…æ–‡ä»¶{{{2
 <cm_SelectFiles>:
 	SendPos(3312)
 Return
-;<cm_SelectFolders>: >>Ñ¡ÔñÒ»×é: ½öÎÄ¼ş¼Ğ{{{2
+;<cm_SelectFolders>: >>é€‰æ‹©ä¸€ç»„: ä»…æ–‡ä»¶å¤¹{{{2
 <cm_SelectFolders>:
 	SendPos(3313)
 Return
-;<cm_ShrinkSelection>: >>²»Ñ¡Ò»×éÎÄ¼ş{{{2
+;<cm_ShrinkSelection>: >>ä¸é€‰ä¸€ç»„æ–‡ä»¶{{{2
 <cm_ShrinkSelection>:
 	SendPos(522)
 Return
-;<cm_ClearFiles>: >>²»Ñ¡Ò»×é: ½öÎÄ¼ş{{{2
+;<cm_ClearFiles>: >>ä¸é€‰ä¸€ç»„: ä»…æ–‡ä»¶{{{2
 <cm_ClearFiles>:
 	SendPos(3314)
 Return
-;<cm_ClearFolders>: >>²»Ñ¡Ò»×é: ½öÎÄ¼ş¼Ğ{{{2
+;<cm_ClearFolders>: >>ä¸é€‰ä¸€ç»„: ä»…æ–‡ä»¶å¤¹{{{2
 <cm_ClearFolders>:
 	SendPos(3315)
 Return
-;<cm_ClearSelCfg>: >>²»Ñ¡Ò»×é: ÎÄ¼şºÍ/»òÎÄ¼ş¼Ğ(ÊÓÅäÖÃ¶ø¶¨){{{2
+;<cm_ClearSelCfg>: >>ä¸é€‰ä¸€ç»„: æ–‡ä»¶å’Œ/æˆ–æ–‡ä»¶å¤¹(è§†é…ç½®è€Œå®š){{{2
 <cm_ClearSelCfg>:
 	SendPos(3316)
 Return
-;<cm_SelectAll>: >>È«²¿Ñ¡Ôñ: ÎÄ¼şºÍ/»òÎÄ¼ş¼Ğ(ÊÓÅäÖÃ¶ø¶¨){{{2
+;<cm_SelectAll>: >>å…¨éƒ¨é€‰æ‹©: æ–‡ä»¶å’Œ/æˆ–æ–‡ä»¶å¤¹(è§†é…ç½®è€Œå®š){{{2
 <cm_SelectAll>:
 	SendPos(523)
 Return
-;<cm_SelectAllBoth>: >>È«²¿Ñ¡Ôñ: ÎÄ¼şºÍÎÄ¼ş¼Ğ{{{2
+;<cm_SelectAllBoth>: >>å…¨éƒ¨é€‰æ‹©: æ–‡ä»¶å’Œæ–‡ä»¶å¤¹{{{2
 <cm_SelectAllBoth>:
 	SendPos(3301)
 Return
-;<cm_SelectAllFiles>: >>È«²¿Ñ¡Ôñ: ½öÎÄ¼ş{{{2
+;<cm_SelectAllFiles>: >>å…¨éƒ¨é€‰æ‹©: ä»…æ–‡ä»¶{{{2
 <cm_SelectAllFiles>:
 	SendPos(3302)
 Return
-;<cm_SelectAllFolders>: >>È«²¿Ñ¡Ôñ: ½öÎÄ¼ş¼Ğ{{{2
+;<cm_SelectAllFolders>: >>å…¨éƒ¨é€‰æ‹©: ä»…æ–‡ä»¶å¤¹{{{2
 <cm_SelectAllFolders>:
 	SendPos(3303)
 Return
-;<cm_ClearAll>: >>È«²¿È¡Ïû: ÎÄ¼şºÍÎÄ¼ş¼Ğ{{{2
+;<cm_ClearAll>: >>å…¨éƒ¨å–æ¶ˆ: æ–‡ä»¶å’Œæ–‡ä»¶å¤¹{{{2
 <cm_ClearAll>:
 	SendPos(524)
 Return
-;<cm_ClearAllFiles>: >>È«²¿È¡Ïû: ½öÎÄ¼ş{{{2
+;<cm_ClearAllFiles>: >>å…¨éƒ¨å–æ¶ˆ: ä»…æ–‡ä»¶{{{2
 <cm_ClearAllFiles>:
 	SendPos(3304)
 Return
-;<cm_ClearAllFolders>: >>È«²¿È¡Ïû: ½öÎÄ¼ş¼Ğ{{{2
+;<cm_ClearAllFolders>: >>å…¨éƒ¨å–æ¶ˆ: ä»…æ–‡ä»¶å¤¹{{{2
 <cm_ClearAllFolders>:
 	SendPos(3305)
 Return
-;<cm_ClearAllCfg>: >>È«²¿È¡Ïû: ÎÄ¼şºÍ/»òÎÄ¼ş¼Ğ(ÊÓÅäÖÃ¶ø¶¨){{{2
+;<cm_ClearAllCfg>: >>å…¨éƒ¨å–æ¶ˆ: æ–‡ä»¶å’Œ/æˆ–æ–‡ä»¶å¤¹(è§†é…ç½®è€Œå®š){{{2
 <cm_ClearAllCfg>:
 	SendPos(3306)
 Return
-;<cm_ExchangeSelection>: >>·´ÏòÑ¡Ôñ{{{2
+;<cm_ExchangeSelection>: >>åå‘é€‰æ‹©{{{2
 <cm_ExchangeSelection>:
 	SendPos(525)
 Return
-;<cm_ExchangeSelBoth>: >>·´ÏòÑ¡Ôñ: ÎÄ¼şºÍÎÄ¼ş¼Ğ{{{2
+;<cm_ExchangeSelBoth>: >>åå‘é€‰æ‹©: æ–‡ä»¶å’Œæ–‡ä»¶å¤¹{{{2
 <cm_ExchangeSelBoth>:
 	SendPos(3321)
 Return
-;<cm_ExchangeSelFiles>: >>·´ÏòÑ¡Ôñ: ½öÎÄ¼ş{{{2
+;<cm_ExchangeSelFiles>: >>åå‘é€‰æ‹©: ä»…æ–‡ä»¶{{{2
 <cm_ExchangeSelFiles>:
 	SendPos(3322)
 Return
-;<cm_ExchangeSelFolders>: >>·´ÏòÑ¡Ôñ: ½öÎÄ¼ş¼Ğ{{{2
+;<cm_ExchangeSelFolders>: >>åå‘é€‰æ‹©: ä»…æ–‡ä»¶å¤¹{{{2
 <cm_ExchangeSelFolders>:
 	SendPos(3323)
 Return
-;<cm_SelectCurrentExtension>: >>Ñ¡ÔñÀ©Õ¹ÃûÏàÍ¬µÄÎÄ¼ş{{{2
+;<cm_SelectCurrentExtension>: >>é€‰æ‹©æ‰©å±•åç›¸åŒçš„æ–‡ä»¶{{{2
 <cm_SelectCurrentExtension>:
 	SendPos(527)
 Return
-;<cm_UnselectCurrentExtension>: >>²»Ñ¡À©Õ¹ÃûÏàÍ¬µÄÎÄ¼ş{{{2
+;<cm_UnselectCurrentExtension>: >>ä¸é€‰æ‰©å±•åç›¸åŒçš„æ–‡ä»¶{{{2
 <cm_UnselectCurrentExtension>:
 	SendPos(528)
 Return
-;<cm_SelectCurrentName>: >>Ñ¡ÔñÎÄ¼şÃûÏàÍ¬µÄÎÄ¼ş{{{2
+;<cm_SelectCurrentName>: >>é€‰æ‹©æ–‡ä»¶åç›¸åŒçš„æ–‡ä»¶{{{2
 <cm_SelectCurrentName>:
 	SendPos(541)
 Return
-;<cm_UnselectCurrentName>: >>²»Ñ¡ÎÄ¼şÃûÏàÍ¬µÄÎÄ¼ş{{{2
+;<cm_UnselectCurrentName>: >>ä¸é€‰æ–‡ä»¶åç›¸åŒçš„æ–‡ä»¶{{{2
 <cm_UnselectCurrentName>:
 	SendPos(542)
 Return
-;<cm_SelectCurrentNameExt>: >>Ñ¡ÔñÎÄ¼şÃûºÍÀ©Õ¹ÃûÏàÍ¬µÄÎÄ¼ş{{{2
+;<cm_SelectCurrentNameExt>: >>é€‰æ‹©æ–‡ä»¶åå’Œæ‰©å±•åç›¸åŒçš„æ–‡ä»¶{{{2
 <cm_SelectCurrentNameExt>:
 	SendPos(543)
 Return
-;<cm_UnselectCurrentNameExt>: >>²»Ñ¡ÎÄ¼şÃûºÍÀ©Õ¹ÃûÏàÍ¬µÄÎÄ¼ş{{{2
+;<cm_UnselectCurrentNameExt>: >>ä¸é€‰æ–‡ä»¶åå’Œæ‰©å±•åç›¸åŒçš„æ–‡ä»¶{{{2
 <cm_UnselectCurrentNameExt>:
 	SendPos(544)
 Return
-;<cm_SelectCurrentPath>: >>Ñ¡ÔñÍ¬Ò»Â·¾¶ÏÂµÄÎÄ¼ş(Õ¹¿ªÎÄ¼ş¼Ğ+ËÑË÷ÎÄ¼ş){{{2
+;<cm_SelectCurrentPath>: >>é€‰æ‹©åŒä¸€è·¯å¾„ä¸‹çš„æ–‡ä»¶(å±•å¼€æ–‡ä»¶å¤¹+æœç´¢æ–‡ä»¶){{{2
 <cm_SelectCurrentPath>:
 	SendPos(537)
 Return
-;<cm_UnselectCurrentPath>: >>²»Ñ¡Í¬Ò»Â·¾¶ÏÂµÄÎÄ¼ş(Õ¹¿ªÎÄ¼ş¼Ğ+ËÑË÷ÎÄ¼ş){{{2
+;<cm_UnselectCurrentPath>: >>ä¸é€‰åŒä¸€è·¯å¾„ä¸‹çš„æ–‡ä»¶(å±•å¼€æ–‡ä»¶å¤¹+æœç´¢æ–‡ä»¶){{{2
 <cm_UnselectCurrentPath>:
 	SendPos(538)
 Return
-;<cm_RestoreSelection>: >>»Ö¸´Ñ¡ÔñÁĞ±í{{{2
+;<cm_RestoreSelection>: >>æ¢å¤é€‰æ‹©åˆ—è¡¨{{{2
 <cm_RestoreSelection>:
 	SendPos(529)
 Return
-;<cm_SaveSelection>: >>±£´æÑ¡ÔñÁĞ±í{{{2
+;<cm_SaveSelection>: >>ä¿å­˜é€‰æ‹©åˆ—è¡¨{{{2
 <cm_SaveSelection>:
 	SendPos(530)
 Return
-;<cm_SaveSelectionToFile>: >>µ¼³öÑ¡ÔñÁĞ±í{{{2
+;<cm_SaveSelectionToFile>: >>å¯¼å‡ºé€‰æ‹©åˆ—è¡¨{{{2
 <cm_SaveSelectionToFile>:
 	SendPos(2031)
 Return
-;<cm_SaveSelectionToFileA>: >>µ¼³öÑ¡ÔñÁĞ±í(ANSI){{{2
+;<cm_SaveSelectionToFileA>: >>å¯¼å‡ºé€‰æ‹©åˆ—è¡¨(ANSI){{{2
 <cm_SaveSelectionToFileA>:
 	SendPos(2041)
 Return
-;<cm_SaveSelectionToFileW>: >>µ¼³öÑ¡ÔñÁĞ±í(Unicode){{{2
+;<cm_SaveSelectionToFileW>: >>å¯¼å‡ºé€‰æ‹©åˆ—è¡¨(Unicode){{{2
 <cm_SaveSelectionToFileW>:
 	SendPos(2042)
 Return
-;<cm_SaveDetailsToFile>: >>µ¼³öÏêÏ¸ĞÅÏ¢{{{2
+;<cm_SaveDetailsToFile>: >>å¯¼å‡ºè¯¦ç»†ä¿¡æ¯{{{2
 <cm_SaveDetailsToFile>:
 	SendPos(2039)
 Return
-;<cm_SaveDetailsToFileA>: >>µ¼³öÏêÏ¸ĞÅÏ¢(ANSI){{{2
+;<cm_SaveDetailsToFileA>: >>å¯¼å‡ºè¯¦ç»†ä¿¡æ¯(ANSI){{{2
 <cm_SaveDetailsToFileA>:
 	SendPos(2043)
 Return
-;<cm_SaveDetailsToFileW>: >>µ¼³öÏêÏ¸ĞÅÏ¢(Unicode){{{2
+;<cm_SaveDetailsToFileW>: >>å¯¼å‡ºè¯¦ç»†ä¿¡æ¯(Unicode){{{2
 <cm_SaveDetailsToFileW>:
 	SendPos(2044)
 Return
-;<cm_LoadSelectionFromFile>: >>µ¼ÈëÑ¡ÔñÁĞ±í(´ÓÎÄ¼ş){{{2
+;<cm_LoadSelectionFromFile>: >>å¯¼å…¥é€‰æ‹©åˆ—è¡¨(ä»æ–‡ä»¶){{{2
 <cm_LoadSelectionFromFile>:
 	SendPos(2032)
 Return
-;<cm_LoadSelectionFromClip>: >>µ¼ÈëÑ¡ÔñÁĞ±í(´Ó¼ôÌù°å){{{2
+;<cm_LoadSelectionFromClip>: >>å¯¼å…¥é€‰æ‹©åˆ—è¡¨(ä»å‰ªè´´æ¿){{{2
 <cm_LoadSelectionFromClip>:
 	SendPos(2033)
 Return
-;°²È« =========================================
+;å®‰å…¨ =========================================
 Return
-;<cm_EditPermissionInfo>: >>ÉèÖÃÈ¨ÏŞ(NTFS){{{2
+;<cm_EditPermissionInfo>: >>è®¾ç½®æƒé™(NTFS){{{2
 <cm_EditPermissionInfo>:
 	SendPos(2200)
 Return
-;<cm_EditAuditInfo>: >>ÉóºËÎÄ¼ş(NTFS){{{2
+;<cm_EditAuditInfo>: >>å®¡æ ¸æ–‡ä»¶(NTFS){{{2
 <cm_EditAuditInfo>:
 	SendPos(2201)
 Return
-;<cm_EditOwnerInfo>: >>»ñÈ¡ËùÓĞÈ¨(NTFS){{{2
+;<cm_EditOwnerInfo>: >>è·å–æ‰€æœ‰æƒ(NTFS){{{2
 <cm_EditOwnerInfo>:
 	SendPos(2202)
 Return
-;¼ôÌù°å =========================================
+;å‰ªè´´æ¿ =========================================
 Return
-;<cm_CutToClipboard>: >>¼ôÇĞÑ¡ÖĞµÄÎÄ¼şµ½¼ôÌù°å{{{2
+;<cm_CutToClipboard>: >>å‰ªåˆ‡é€‰ä¸­çš„æ–‡ä»¶åˆ°å‰ªè´´æ¿{{{2
 <cm_CutToClipboard>:
 	SendPos(2007)
 Return
-;<cm_CopyToClipboard>: >>¸´ÖÆÑ¡ÖĞµÄÎÄ¼şµ½¼ôÌù°å{{{2
+;<cm_CopyToClipboard>: >>å¤åˆ¶é€‰ä¸­çš„æ–‡ä»¶åˆ°å‰ªè´´æ¿{{{2
 <cm_CopyToClipboard>:
 	SendPos(2008)
 Return
-;<cm_PasteFromClipboard>: >>´Ó¼ôÌù°åÕ³Ìùµ½µ±Ç°ÎÄ¼ş¼Ğ{{{2
+;<cm_PasteFromClipboard>: >>ä»å‰ªè´´æ¿ç²˜è´´åˆ°å½“å‰æ–‡ä»¶å¤¹{{{2
 <cm_PasteFromClipboard>:
 	SendPos(2009)
 Return
-;<cm_CopyNamesToClip>: >>¸´ÖÆÎÄ¼şÃû{{{2
+;<cm_CopyNamesToClip>: >>å¤åˆ¶æ–‡ä»¶å{{{2
 <cm_CopyNamesToClip>:
 	SendPos(2017)
 Return
-;<cm_CopyFullNamesToClip>: >>¸´ÖÆÎÄ¼şÃû¼°ÍêÕûÂ·¾¶{{{2
+;<cm_CopyFullNamesToClip>: >>å¤åˆ¶æ–‡ä»¶ååŠå®Œæ•´è·¯å¾„{{{2
 <cm_CopyFullNamesToClip>:
 	SendPos(2018)
 Return
-;<cm_CopyNetNamesToClip>: >>¸´ÖÆÎÄ¼şÃû¼°ÍøÂçÂ·¾¶{{{2
+;<cm_CopyNetNamesToClip>: >>å¤åˆ¶æ–‡ä»¶ååŠç½‘ç»œè·¯å¾„{{{2
 <cm_CopyNetNamesToClip>:
 	SendPos(2021)
 Return
-;<cm_CopySrcPathToClip>: >>¸´ÖÆÀ´Ô´Â·¾¶{{{2
+;<cm_CopySrcPathToClip>: >>å¤åˆ¶æ¥æºè·¯å¾„{{{2
 <cm_CopySrcPathToClip>:
 	SendPos(2029)
 Return
-;<cm_CopyTrgPathToClip>: >>¸´ÖÆÄ¿±êÂ·¾¶{{{2
+;<cm_CopyTrgPathToClip>: >>å¤åˆ¶ç›®æ ‡è·¯å¾„{{{2
 <cm_CopyTrgPathToClip>:
 	SendPos(2030)
 Return
-;<cm_CopyFileDetailsToClip>: >>¸´ÖÆÎÄ¼şÏêÏ¸ĞÅÏ¢{{{2
+;<cm_CopyFileDetailsToClip>: >>å¤åˆ¶æ–‡ä»¶è¯¦ç»†ä¿¡æ¯{{{2
 <cm_CopyFileDetailsToClip>:
 	SendPos(2036)
 Return
-;<cm_CopyFpFileDetailsToClip>: >>¸´ÖÆÎÄ¼şÏêÏ¸ĞÅÏ¢¼°ÍêÕûÂ·¾¶{{{2
+;<cm_CopyFpFileDetailsToClip>: >>å¤åˆ¶æ–‡ä»¶è¯¦ç»†ä¿¡æ¯åŠå®Œæ•´è·¯å¾„{{{2
 <cm_CopyFpFileDetailsToClip>:
 	SendPos(2037)
 Return
-;<cm_CopyNetFileDetailsToClip>: >>¸´ÖÆÎÄ¼şÏêÏ¸ĞÅÏ¢¼°ÍøÂçÂ·¾¶{{{2
+;<cm_CopyNetFileDetailsToClip>: >>å¤åˆ¶æ–‡ä»¶è¯¦ç»†ä¿¡æ¯åŠç½‘ç»œè·¯å¾„{{{2
 <cm_CopyNetFileDetailsToClip>:
 	SendPos(2038)
 Return
 ;FTP =========================================
 Return
-;<cm_FtpConnect>: >>FTP Á¬½Ó{{{2
+;<cm_FtpConnect>: >>FTP è¿æ¥{{{2
 <cm_FtpConnect>:
 	SendPos(550)
 Return
-;<cm_FtpNew>: >>ĞÂ½¨ FTP Á¬½Ó{{{2
+;<cm_FtpNew>: >>æ–°å»º FTP è¿æ¥{{{2
 <cm_FtpNew>:
 	SendPos(551)
 Return
-;<cm_FtpDisconnect>: >>¶Ï¿ª FTP Á¬½Ó{{{2
+;<cm_FtpDisconnect>: >>æ–­å¼€ FTP è¿æ¥{{{2
 <cm_FtpDisconnect>:
 	SendPos(552)
 Return
-;<cm_FtpHiddenFiles>: >>ÏÔÊ¾Òş²ØÎÄ¼ş{{{2
+;<cm_FtpHiddenFiles>: >>æ˜¾ç¤ºéšè—æ–‡ä»¶{{{2
 <cm_FtpHiddenFiles>:
 	SendPos(553)
 Return
-;<cm_FtpAbort>: >>ÖĞÖ¹µ±Ç° FTP ÃüÁî{{{2
+;<cm_FtpAbort>: >>ä¸­æ­¢å½“å‰ FTP å‘½ä»¤{{{2
 <cm_FtpAbort>:
 	SendPos(554)
 Return
-;<cm_FtpResumeDownload>: >>Ğø´«{{{2
+;<cm_FtpResumeDownload>: >>ç»­ä¼ {{{2
 <cm_FtpResumeDownload>:
 	SendPos(555)
 Return
-;<cm_FtpSelectTransferMode>: >>Ñ¡Ôñ´«ÊäÄ£Ê½{{{2
+;<cm_FtpSelectTransferMode>: >>é€‰æ‹©ä¼ è¾“æ¨¡å¼{{{2
 <cm_FtpSelectTransferMode>:
 	SendPos(556)
 Return
-;<cm_FtpAddToList>: >>Ìí¼Óµ½ÏÂÔØÁĞ±í{{{2
+;<cm_FtpAddToList>: >>æ·»åŠ åˆ°ä¸‹è½½åˆ—è¡¨{{{2
 <cm_FtpAddToList>:
 	SendPos(557)
 Return
-;<cm_FtpDownloadList>: >>°´ÁĞ±íÏÂÔØ{{{2
+;<cm_FtpDownloadList>: >>æŒ‰åˆ—è¡¨ä¸‹è½½{{{2
 <cm_FtpDownloadList>:
 	SendPos(558)
 Return
-;µ¼º½ =========================================
+;å¯¼èˆª =========================================
 Return
-;<cm_GotoPreviousDir>: >>ºóÍË{{{2
+;<cm_GotoPreviousDir>: >>åé€€{{{2
 <cm_GotoPreviousDir>:
 	SendPos(570)
 Return
-;<cm_GotoNextDir>: >>Ç°½ø{{{2
+;<cm_GotoNextDir>: >>å‰è¿›{{{2
 <cm_GotoNextDir>:
 	SendPos(571)
 Return
-;<cm_DirectoryHistory>: >>ÎÄ¼ş¼ĞÀúÊ·¼ÇÂ¼{{{2
+;<cm_DirectoryHistory>: >>æ–‡ä»¶å¤¹å†å²è®°å½•{{{2
 <cm_DirectoryHistory>:
 	Vim_HotkeyCount := 0
 	SendPos(572)
 Return
-;<cm_GotoPreviousLocalDir>: >>ºóÍË(·Ç FTP){{{2
+;<cm_GotoPreviousLocalDir>: >>åé€€(é FTP){{{2
 <cm_GotoPreviousLocalDir>:
 	SendPos(573)
 Return
-;<cm_GotoNextLocalDir>: >>Ç°½ø(·Ç FTP){{{2
+;<cm_GotoNextLocalDir>: >>å‰è¿›(é FTP){{{2
 <cm_GotoNextLocalDir>:
 	SendPos(574)
 Return
-;<cm_DirectoryHotlist>: >>³£ÓÃÎÄ¼ş¼Ğ{{{2
+;<cm_DirectoryHotlist>: >>å¸¸ç”¨æ–‡ä»¶å¤¹{{{2
 <cm_DirectoryHotlist>:
 	Vim_HotkeyCount := 0
 	SendPos(526)
 Return
-;<cm_GoToRoot>: >>×ªµ½¸ùÎÄ¼ş¼Ğ{{{2
+;<cm_GoToRoot>: >>è½¬åˆ°æ ¹æ–‡ä»¶å¤¹{{{2
 <cm_GoToRoot>:
 	SendPos(2001)
 Return
-;<cm_GoToParent>: >>×ªµ½ÉÏ²ãÎÄ¼ş¼Ğ{{{2
+;<cm_GoToParent>: >>è½¬åˆ°ä¸Šå±‚æ–‡ä»¶å¤¹{{{2
 <cm_GoToParent>:
 	SendPos(2002)
 Return
-;<cm_GoToDir>: >>´ò¿ª¹â±ê´¦µÄÎÄ¼ş¼Ğ»òÑ¹Ëõ°ü{{{2
+;<cm_GoToDir>: >>æ‰“å¼€å…‰æ ‡å¤„çš„æ–‡ä»¶å¤¹æˆ–å‹ç¼©åŒ…{{{2
 <cm_GoToDir>:
 	SendPos(2003)
 Return
-;<cm_OpenDesktop>: >>×ÀÃæ{{{2
+;<cm_OpenDesktop>: >>æ¡Œé¢{{{2
 <cm_OpenDesktop>:
 	SendPos(2121)
 Return
-;<cm_OpenDrives>: >>ÎÒµÄµçÄÔ{{{2
+;<cm_OpenDrives>: >>æˆ‘çš„ç”µè„‘{{{2
 <cm_OpenDrives>:
 	SendPos(2122)
 Return
-;<cm_OpenControls>: >>¿ØÖÆÃæ°å{{{2
+;<cm_OpenControls>: >>æ§åˆ¶é¢æ¿{{{2
 <cm_OpenControls>:
 	SendPos(2123)
 Return
-;<cm_OpenFonts>: >>×ÖÌå{{{2
+;<cm_OpenFonts>: >>å­—ä½“{{{2
 <cm_OpenFonts>:
 	SendPos(2124)
 Return
-;<cm_OpenNetwork>: >>ÍøÉÏÁÚ¾Ó{{{2
+;<cm_OpenNetwork>: >>ç½‘ä¸Šé‚»å±…{{{2
 <cm_OpenNetwork>:
 	SendPos(2125)
 Return
-;<cm_OpenPrinters>: >>´òÓ¡»ú{{{2
+;<cm_OpenPrinters>: >>æ‰“å°æœº{{{2
 <cm_OpenPrinters>:
 	SendPos(2126)
 Return
-;<cm_OpenRecycled>: >>»ØÊÕÕ¾{{{2
+;<cm_OpenRecycled>: >>å›æ”¶ç«™{{{2
 <cm_OpenRecycled>:
 	SendPos(2127)
 Return
-;<cm_CDtree>: >>¸ü¸ÄÎÄ¼ş¼Ğ{{{2
+;<cm_CDtree>: >>æ›´æ”¹æ–‡ä»¶å¤¹{{{2
 <cm_CDtree>:
 	SendPos(500)
 Return
-;<cm_TransferLeft>: >>ÔÚ×ó´°¿Ú´ò¿ª¹â±ê´¦µÄÎÄ¼ş¼Ğ»òÑ¹Ëõ°ü{{{2
+;<cm_TransferLeft>: >>åœ¨å·¦çª—å£æ‰“å¼€å…‰æ ‡å¤„çš„æ–‡ä»¶å¤¹æˆ–å‹ç¼©åŒ…{{{2
 <cm_TransferLeft>:
 	SendPos(2024)
 Return
-;<cm_TransferRight>: >>ÔÚÓÒ´°¿Ú´ò¿ª¹â±ê´¦µÄÎÄ¼ş¼Ğ»òÑ¹Ëõ°ü{{{2
+;<cm_TransferRight>: >>åœ¨å³çª—å£æ‰“å¼€å…‰æ ‡å¤„çš„æ–‡ä»¶å¤¹æˆ–å‹ç¼©åŒ…{{{2
 <cm_TransferRight>:
 	SendPos(2025)
 Return
-;<cm_EditPath>: >>±à¼­À´Ô´´°¿ÚµÄÂ·¾¶{{{2
+;<cm_EditPath>: >>ç¼–è¾‘æ¥æºçª—å£çš„è·¯å¾„{{{2
 <cm_EditPath>:
 	SendPos(2912)
 Return
-;<cm_GoToFirstFile>: >>¹â±êÒÆµ½ÁĞ±íÖĞµÄµÚÒ»¸öÎÄ¼ş{{{2
+;<cm_GoToFirstFile>: >>å…‰æ ‡ç§»åˆ°åˆ—è¡¨ä¸­çš„ç¬¬ä¸€ä¸ªæ–‡ä»¶{{{2
 <cm_GoToFirstFile>:
 	SendPos(2050)
 Return
-;<cm_GotoNextDrive>: >>×ªµ½ÏÂÒ»¸öÇı¶¯Æ÷{{{2
+;<cm_GotoNextDrive>: >>è½¬åˆ°ä¸‹ä¸€ä¸ªé©±åŠ¨å™¨{{{2
 <cm_GotoNextDrive>:
 	SendPos(2051)
 Return
-;<cm_GotoPreviousDrive>: >>×ªµ½ÉÏÒ»¸öÇı¶¯Æ÷{{{2
+;<cm_GotoPreviousDrive>: >>è½¬åˆ°ä¸Šä¸€ä¸ªé©±åŠ¨å™¨{{{2
 <cm_GotoPreviousDrive>:
 	SendPos(2052)
 Return
-;<cm_GotoNextSelected>: >>×ªµ½ÏÂÒ»¸öÑ¡ÖĞµÄÎÄ¼ş{{{2
+;<cm_GotoNextSelected>: >>è½¬åˆ°ä¸‹ä¸€ä¸ªé€‰ä¸­çš„æ–‡ä»¶{{{2
 <cm_GotoNextSelected>:
 	SendPos(2053)
 Return
-;<cm_GotoPrevSelected>: >>×ªµ½ÉÏÒ»¸öÑ¡ÖĞµÄÎÄ¼ş{{{2
+;<cm_GotoPrevSelected>: >>è½¬åˆ°ä¸Šä¸€ä¸ªé€‰ä¸­çš„æ–‡ä»¶{{{2
 <cm_GotoPrevSelected>:
 	SendPos(2054)
 Return
-;<cm_GotoDriveA>: >>×ªµ½Çı¶¯Æ÷ A{{{2
+;<cm_GotoDriveA>: >>è½¬åˆ°é©±åŠ¨å™¨ A{{{2
 <cm_GotoDriveA>:
 	SendPos(2061)
 Return
-;<cm_GotoDriveC>: >>×ªµ½Çı¶¯Æ÷ C{{{2
+;<cm_GotoDriveC>: >>è½¬åˆ°é©±åŠ¨å™¨ C{{{2
 <cm_GotoDriveC>:
 	SendPos(2063)
 Return
-;<cm_GotoDriveD>: >>×ªµ½Çı¶¯Æ÷ D{{{2
+;<cm_GotoDriveD>: >>è½¬åˆ°é©±åŠ¨å™¨ D{{{2
 <cm_GotoDriveD>:
 	SendPos(2064)
 Return
-;<cm_GotoDriveE>: >>×ªµ½Çı¶¯Æ÷ E{{{2
+;<cm_GotoDriveE>: >>è½¬åˆ°é©±åŠ¨å™¨ E{{{2
 <cm_GotoDriveE>:
 	SendPos(2065)
 Return
-;<cm_GotoDriveF>: >>¿É×Ô¶¨ÒåÆäËûÇı¶¯Æ÷{{{2
+;<cm_GotoDriveF>: >>å¯è‡ªå®šä¹‰å…¶ä»–é©±åŠ¨å™¨{{{2
 <cm_GotoDriveF>:
 	SendPos(2066)
 Return
-;<cm_GotoDriveZ>: >>×î¶à 26 ¸ö{{{2
+;<cm_GotoDriveZ>: >>æœ€å¤š 26 ä¸ª{{{2
 <cm_GotoDriveZ>:
 	SendPos(2086)
 Return
-;°ïÖú =========================================
+;å¸®åŠ© =========================================
 Return
-;<cm_HelpIndex>: >>°ïÖúË÷Òı{{{2
+;<cm_HelpIndex>: >>å¸®åŠ©ç´¢å¼•{{{2
 <cm_HelpIndex>:
 	SendPos(610)
 Return
-;<cm_Keyboard>: >>¿ì½İ¼üÁĞ±í{{{2
+;<cm_Keyboard>: >>å¿«æ·é”®åˆ—è¡¨{{{2
 <cm_Keyboard>:
 	SendPos(620)
 Return
-;<cm_Register>: >>×¢²áĞÅÏ¢{{{2
+;<cm_Register>: >>æ³¨å†Œä¿¡æ¯{{{2
 <cm_Register>:
 	SendPos(630)
 Return
-;<cm_VisitHomepage>: >>·ÃÎÊ Totalcmd ÍøÕ¾{{{2
+;<cm_VisitHomepage>: >>è®¿é—® Totalcmd ç½‘ç«™{{{2
 <cm_VisitHomepage>:
 	SendPos(640)
 Return
-;<cm_About>: >>¹ØÓÚ Total Commander{{{2
+;<cm_About>: >>å…³äº Total Commander{{{2
 <cm_About>:
 	SendPos(690)
 Return
-;´°¿Ú =========================================
+;çª—å£ =========================================
 Return
-;<cm_Exit>: >>ÍË³ö Total Commander{{{2
+;<cm_Exit>: >>é€€å‡º Total Commander{{{2
 <cm_Exit>:
 	SendPos(24340)
 Return
-;<cm_Minimize>: >>×îĞ¡»¯ Total Commander{{{2
+;<cm_Minimize>: >>æœ€å°åŒ– Total Commander{{{2
 <cm_Minimize>:
 	SendPos(2000)
 Return
-;<cm_Maximize>: >>×î´ó»¯ Total Commander{{{2
+;<cm_Maximize>: >>æœ€å¤§åŒ– Total Commander{{{2
 <cm_Maximize>:
 	SendPos(2015)
 Return
-;<cm_Restore>: >>»Ö¸´Õı³£´óĞ¡{{{2
+;<cm_Restore>: >>æ¢å¤æ­£å¸¸å¤§å°{{{2
 <cm_Restore>:
 	SendPos(2016)
 Return
-;ÃüÁîĞĞ =========================================
+;å‘½ä»¤è¡Œ =========================================
 Return
-;<cm_ClearCmdLine>: >>Çå³ıÃüÁîĞĞ{{{2
+;<cm_ClearCmdLine>: >>æ¸…é™¤å‘½ä»¤è¡Œ{{{2
 <cm_ClearCmdLine>:
 	SendPos(2004)
 Return
-;<cm_NextCommand>: >>ÏÂÒ»ÌõÃüÁî{{{2
+;<cm_NextCommand>: >>ä¸‹ä¸€æ¡å‘½ä»¤{{{2
 <cm_NextCommand>:
 	SendPos(2005)
 Return
-;<cm_PrevCommand>: >>ÉÏÒ»ÌõÃüÁî{{{2
+;<cm_PrevCommand>: >>ä¸Šä¸€æ¡å‘½ä»¤{{{2
 <cm_PrevCommand>:
 	SendPos(2006)
 Return
-;<cm_AddPathToCmdline>: >>½«Â·¾¶¸´ÖÆµ½ÃüÁîĞĞ{{{2
+;<cm_AddPathToCmdline>: >>å°†è·¯å¾„å¤åˆ¶åˆ°å‘½ä»¤è¡Œ{{{2
 <cm_AddPathToCmdline>:
 	SendPos(2019)
 Return
-;¹¤¾ß =========================================
+;å·¥å…· =========================================
 Return
-;<cm_MultiRenameFiles>: >>ÅúÁ¿ÖØÃüÃû{{{2
+;<cm_MultiRenameFiles>: >>æ‰¹é‡é‡å‘½å{{{2
 <cm_MultiRenameFiles>:
 	SendPos(2400)
 Return
-;<cm_SysInfo>: >>ÏµÍ³ĞÅÏ¢{{{2
+;<cm_SysInfo>: >>ç³»ç»Ÿä¿¡æ¯{{{2
 <cm_SysInfo>:
 	SendPos(506)
 Return
-;<cm_OpenTransferManager>: >>ºóÌ¨´«Êä¹ÜÀíÆ÷{{{2
+;<cm_OpenTransferManager>: >>åå°ä¼ è¾“ç®¡ç†å™¨{{{2
 <cm_OpenTransferManager>:
 	SendPos(559)
 Return
-;<cm_SearchFor>: >>ËÑË÷ÎÄ¼ş{{{2
+;<cm_SearchFor>: >>æœç´¢æ–‡ä»¶{{{2
 <cm_SearchFor>:
 	SendPos(501)
 Return
-;<cm_FileSync>: >>Í¬²½ÎÄ¼ş¼Ğ{{{2
+;<cm_FileSync>: >>åŒæ­¥æ–‡ä»¶å¤¹{{{2
 <cm_FileSync>:
 	SendPos(2020)
 Return
-;<cm_Associate>: >>ÎÄ¼ş¹ØÁª{{{2
+;<cm_Associate>: >>æ–‡ä»¶å…³è”{{{2
 <cm_Associate>:
 	SendPos(507)
 Return
-;<cm_InternalAssociate>: >>¶¨ÒåÄÚ²¿¹ØÁª{{{2
+;<cm_InternalAssociate>: >>å®šä¹‰å†…éƒ¨å…³è”{{{2
 <cm_InternalAssociate>:
 	SendPos(519)
 Return
-;<cm_CompareFilesByContent>: >>±È½ÏÎÄ¼şÄÚÈİ{{{2
+;<cm_CompareFilesByContent>: >>æ¯”è¾ƒæ–‡ä»¶å†…å®¹{{{2
 <cm_CompareFilesByContent>:
 	SendPos(2022)
 Return
-;<cm_IntCompareFilesByContent>: >>Ê¹ÓÃÄÚ²¿±È½Ï³ÌĞò{{{2
+;<cm_IntCompareFilesByContent>: >>ä½¿ç”¨å†…éƒ¨æ¯”è¾ƒç¨‹åº{{{2
 <cm_IntCompareFilesByContent>:
 	SendPos(2040)
 Return
-;<cm_CommandBrowser>: >>ä¯ÀÀÄÚ²¿ÃüÁî{{{2
+;<cm_CommandBrowser>: >>æµè§ˆå†…éƒ¨å‘½ä»¤{{{2
 <cm_CommandBrowser>:
 	SendPos(2924)
 Return
-;ÊÓÍ¼ =========================================
+;è§†å›¾ =========================================
 Return
-;<cm_VisButtonbar>: >>ÏÔÊ¾/Òş²Ø: ¹¤¾ßÀ¸{{{2
+;<cm_VisButtonbar>: >>æ˜¾ç¤º/éšè—: å·¥å…·æ {{{2
 <cm_VisButtonbar>:
 	SendPos(2901)
 Return
-;<cm_VisDriveButtons>: >>ÏÔÊ¾/Òş²Ø: Çı¶¯Æ÷°´Å¥{{{2
+;<cm_VisDriveButtons>: >>æ˜¾ç¤º/éšè—: é©±åŠ¨å™¨æŒ‰é’®{{{2
 <cm_VisDriveButtons>:
 	SendPos(2902)
 Return
-;<cm_VisTwoDriveButtons>: >>ÏÔÊ¾/Òş²Ø: Á½¸öÇı¶¯Æ÷°´Å¥À¸{{{2
+;<cm_VisTwoDriveButtons>: >>æ˜¾ç¤º/éšè—: ä¸¤ä¸ªé©±åŠ¨å™¨æŒ‰é’®æ {{{2
 <cm_VisTwoDriveButtons>:
 	SendPos(2903)
 Return
-;<cm_VisFlatDriveButtons>: >>ÇĞ»»: Æ½Ì¹/Á¢ÌåÇı¶¯Æ÷°´Å¥{{{2
+;<cm_VisFlatDriveButtons>: >>åˆ‡æ¢: å¹³å¦/ç«‹ä½“é©±åŠ¨å™¨æŒ‰é’®{{{2
 <cm_VisFlatDriveButtons>:
 	SendPos(2904)
 Return
-;<cm_VisFlatInterface>: >>ÇĞ»»: Æ½Ì¹/Á¢ÌåÓÃ»§½çÃæ{{{2
+;<cm_VisFlatInterface>: >>åˆ‡æ¢: å¹³å¦/ç«‹ä½“ç”¨æˆ·ç•Œé¢{{{2
 <cm_VisFlatInterface>:
 	SendPos(2905)
 Return
-;<cm_VisDriveCombo>: >>ÏÔÊ¾/Òş²Ø: Çı¶¯Æ÷ÁĞ±í{{{2
+;<cm_VisDriveCombo>: >>æ˜¾ç¤º/éšè—: é©±åŠ¨å™¨åˆ—è¡¨{{{2
 <cm_VisDriveCombo>:
 	SendPos(2906)
 Return
-;<cm_VisCurDir>: >>ÏÔÊ¾/Òş²Ø: µ±Ç°ÎÄ¼ş¼Ğ{{{2
+;<cm_VisCurDir>: >>æ˜¾ç¤º/éšè—: å½“å‰æ–‡ä»¶å¤¹{{{2
 <cm_VisCurDir>:
 	SendPos(2907)
 Return
-;<cm_VisBreadCrumbs>: >>ÏÔÊ¾/Òş²Ø: Â·¾¶µ¼º½À¸{{{2
+;<cm_VisBreadCrumbs>: >>æ˜¾ç¤º/éšè—: è·¯å¾„å¯¼èˆªæ {{{2
 <cm_VisBreadCrumbs>:
 	SendPos(2926)
 Return
-;<cm_VisTabHeader>: >>ÏÔÊ¾/Òş²Ø: ÅÅĞòÖÆ±í·û{{{2
+;<cm_VisTabHeader>: >>æ˜¾ç¤º/éšè—: æ’åºåˆ¶è¡¨ç¬¦{{{2
 <cm_VisTabHeader>:
 	SendPos(2908)
 Return
-;<cm_VisStatusbar>: >>ÏÔÊ¾/Òş²Ø: ×´Ì¬À¸{{{2
+;<cm_VisStatusbar>: >>æ˜¾ç¤º/éšè—: çŠ¶æ€æ {{{2
 <cm_VisStatusbar>:
 	SendPos(2909)
 Return
-;<cm_VisCmdLine>: >>ÏÔÊ¾/Òş²Ø: ÃüÁîĞĞ{{{2
+;<cm_VisCmdLine>: >>æ˜¾ç¤º/éšè—: å‘½ä»¤è¡Œ{{{2
 <cm_VisCmdLine>:
 	SendPos(2910)
 Return
-;<cm_VisKeyButtons>: >>ÏÔÊ¾/Òş²Ø: ¹¦ÄÜ¼ü°´Å¥{{{2
+;<cm_VisKeyButtons>: >>æ˜¾ç¤º/éšè—: åŠŸèƒ½é”®æŒ‰é’®{{{2
 <cm_VisKeyButtons>:
 	SendPos(2911)
 Return
-;<cm_ShowHint>: >>ÏÔÊ¾ÎÄ¼şÌáÊ¾{{{2
+;<cm_ShowHint>: >>æ˜¾ç¤ºæ–‡ä»¶æç¤º{{{2
 <cm_ShowHint>:
 	SendPos(2914)
 Return
-;<cm_ShowQuickSearch>: >>ÏÔÊ¾¿ìËÙËÑË÷´°¿Ú{{{2
+;<cm_ShowQuickSearch>: >>æ˜¾ç¤ºå¿«é€Ÿæœç´¢çª—å£{{{2
 <cm_ShowQuickSearch>:
 	SendPos(2915)
 Return
-;<cm_SwitchLongNames>: >>¿ªÆô/¹Ø±Õ: ³¤ÎÄ¼şÃûÏÔÊ¾{{{2
+;<cm_SwitchLongNames>: >>å¼€å¯/å…³é—­: é•¿æ–‡ä»¶åæ˜¾ç¤º{{{2
 <cm_SwitchLongNames>:
 	SendPos(2010)
 Return
-;<cm_RereadSource>: >>Ë¢ĞÂÀ´Ô´´°¿Ú{{{2
+;<cm_RereadSource>: >>åˆ·æ–°æ¥æºçª—å£{{{2
 <cm_RereadSource>:
 	SendPos(540)
 Return
-;<cm_ShowOnlySelected>: >>½öÏÔÊ¾Ñ¡ÖĞµÄÎÄ¼ş{{{2
+;<cm_ShowOnlySelected>: >>ä»…æ˜¾ç¤ºé€‰ä¸­çš„æ–‡ä»¶{{{2
 <cm_ShowOnlySelected>:
 	SendPos(2023)
 Return
-;<cm_SwitchHidSys>: >>¿ªÆô/¹Ø±Õ: Òş²Ø»òÏµÍ³ÎÄ¼şÏÔÊ¾{{{2
+;<cm_SwitchHidSys>: >>å¼€å¯/å…³é—­: éšè—æˆ–ç³»ç»Ÿæ–‡ä»¶æ˜¾ç¤º{{{2
 <cm_SwitchHidSys>:
 	SendPos(2011)
 Return
-;<cm_Switch83Names>: >>¿ªÆô/¹Ø±Õ: 8.3 Ê½ÎÄ¼şÃûĞ¡Ğ´ÏÔÊ¾{{{2
+;<cm_Switch83Names>: >>å¼€å¯/å…³é—­: 8.3 å¼æ–‡ä»¶åå°å†™æ˜¾ç¤º{{{2
 <cm_Switch83Names>:
 	SendPos(2013)
 Return
-;<cm_SwitchDirSort>: >>¿ªÆô/¹Ø±Õ: ÎÄ¼ş¼Ğ°´Ãû³ÆÅÅĞò{{{2
+;<cm_SwitchDirSort>: >>å¼€å¯/å…³é—­: æ–‡ä»¶å¤¹æŒ‰åç§°æ’åº{{{2
 <cm_SwitchDirSort>:
 	SendPos(2012)
 Return
-;<cm_DirBranch>: >>Õ¹¿ªËùÓĞÎÄ¼ş¼Ğ{{{2
+;<cm_DirBranch>: >>å±•å¼€æ‰€æœ‰æ–‡ä»¶å¤¹{{{2
 <cm_DirBranch>:
 	SendPos(2026)
 Return
-;<cm_DirBranchSel>: >>Ö»Õ¹¿ªÑ¡ÖĞµÄÎÄ¼ş¼Ğ{{{2
+;<cm_DirBranchSel>: >>åªå±•å¼€é€‰ä¸­çš„æ–‡ä»¶å¤¹{{{2
 <cm_DirBranchSel>:
 	SendPos(2046)
 Return
-;<cm_50Percent>: >>´°¿Ú·Ö¸ôÀ¸Î»ÓÚ 50%{{{2
+;<cm_50Percent>: >>çª—å£åˆ†éš”æ ä½äº 50%{{{2
 <cm_50Percent>:
 	SendPos(909)
 Return
-;<cm_100Percent>: >>´°¿Ú·Ö¸ôÀ¸Î»ÓÚ 100%{{{2
+;<cm_100Percent>: >>çª—å£åˆ†éš”æ ä½äº 100%{{{2
 <cm_100Percent>:
 	SendPos(910)
 Return
-;<cm_VisDirTabs>: >>ÏÔÊ¾/Òş²Ø: ÎÄ¼ş¼Ğ±êÇ©{{{2
+;<cm_VisDirTabs>: >>æ˜¾ç¤º/éšè—: æ–‡ä»¶å¤¹æ ‡ç­¾{{{2
 <cm_VisDirTabs>:
 	SendPos(2916)
 Return
-;<cm_VisXPThemeBackground>: >>ÏÔÊ¾/Òş²Ø: XP Ö÷Ìâ±³¾°{{{2
+;<cm_VisXPThemeBackground>: >>æ˜¾ç¤º/éšè—: XP ä¸»é¢˜èƒŒæ™¯{{{2
 <cm_VisXPThemeBackground>:
 	SendPos(2923)
 Return
-;<cm_SwitchOverlayIcons>: >>¿ªÆô/¹Ø±Õ: µşÖÃÍ¼±êÏÔÊ¾{{{2
+;<cm_SwitchOverlayIcons>: >>å¼€å¯/å…³é—­: å ç½®å›¾æ ‡æ˜¾ç¤º{{{2
 <cm_SwitchOverlayIcons>:
 	SendPos(2917)
 Return
-;<cm_VisHistHotButtons>: >>ÏÔÊ¾/Òş²Ø: ÎÄ¼ş¼ĞÀúÊ·¼ÇÂ¼ºÍ³£ÓÃÎÄ¼ş¼Ğ°´Å¥{{{2
+;<cm_VisHistHotButtons>: >>æ˜¾ç¤º/éšè—: æ–‡ä»¶å¤¹å†å²è®°å½•å’Œå¸¸ç”¨æ–‡ä»¶å¤¹æŒ‰é’®{{{2
 <cm_VisHistHotButtons>:
 	SendPos(2919)
 Return
-;<cm_SwitchWatchDirs>: >>ÆôÓÃ/½ûÓÃ: ÎÄ¼ş¼Ğ×Ô¶¯Ë¢ĞÂ{{{2
+;<cm_SwitchWatchDirs>: >>å¯ç”¨/ç¦ç”¨: æ–‡ä»¶å¤¹è‡ªåŠ¨åˆ·æ–°{{{2
 <cm_SwitchWatchDirs>:
 	SendPos(2921)
 Return
-;<cm_SwitchIgnoreList>: >>ÆôÓÃ/½ûÓÃ: ×Ô¶¨ÒåÒş²ØÎÄ¼ş{{{2
+;<cm_SwitchIgnoreList>: >>å¯ç”¨/ç¦ç”¨: è‡ªå®šä¹‰éšè—æ–‡ä»¶{{{2
 <cm_SwitchIgnoreList>:
 	SendPos(2922)
 Return
-;<cm_SwitchX64Redirection>: >>¿ªÆô/¹Ø±Õ: 32 Î» system32 Ä¿Â¼ÖØ¶¨Ïò(64 Î» Windows){{{2
+;<cm_SwitchX64Redirection>: >>å¼€å¯/å…³é—­: 32 ä½ system32 ç›®å½•é‡å®šå‘(64 ä½ Windows){{{2
 <cm_SwitchX64Redirection>:
 	SendPos(2925)
 Return
-;<cm_SeparateTreeOff>: >>¹Ø±Õ¶ÀÁ¢ÎÄ¼ş¼ĞÊ÷Ãæ°å{{{2
+;<cm_SeparateTreeOff>: >>å…³é—­ç‹¬ç«‹æ–‡ä»¶å¤¹æ ‘é¢æ¿{{{2
 <cm_SeparateTreeOff>:
 	SendPos(3200)
 Return
-;<cm_SeparateTree1>: >>Ò»¸ö¶ÀÁ¢ÎÄ¼ş¼ĞÊ÷Ãæ°å{{{2
+;<cm_SeparateTree1>: >>ä¸€ä¸ªç‹¬ç«‹æ–‡ä»¶å¤¹æ ‘é¢æ¿{{{2
 <cm_SeparateTree1>:
 	SendPos(3201)
 Return
-;<cm_SeparateTree2>: >>Á½¸ö¶ÀÁ¢ÎÄ¼ş¼ĞÊ÷Ãæ°å{{{2
+;<cm_SeparateTree2>: >>ä¸¤ä¸ªç‹¬ç«‹æ–‡ä»¶å¤¹æ ‘é¢æ¿{{{2
 <cm_SeparateTree2>:
 	SendPos(3202)
 Return
-;<cm_SwitchSeparateTree>: >>ÇĞ»»¶ÀÁ¢ÎÄ¼ş¼ĞÊ÷Ãæ°å×´Ì¬{{{2
+;<cm_SwitchSeparateTree>: >>åˆ‡æ¢ç‹¬ç«‹æ–‡ä»¶å¤¹æ ‘é¢æ¿çŠ¶æ€{{{2
 <cm_SwitchSeparateTree>:
 	SendPos(3203)
 Return
-;<cm_ToggleSeparateTree1>: >>¿ªÆô/¹Ø±Õ: Ò»¸ö¶ÀÁ¢ÎÄ¼ş¼ĞÊ÷Ãæ°å{{{2
+;<cm_ToggleSeparateTree1>: >>å¼€å¯/å…³é—­: ä¸€ä¸ªç‹¬ç«‹æ–‡ä»¶å¤¹æ ‘é¢æ¿{{{2
 <cm_ToggleSeparateTree1>:
 	SendPos(3204)
 Return
-;<cm_ToggleSeparateTree2>: >>¿ªÆô/¹Ø±Õ: Á½¸ö¶ÀÁ¢ÎÄ¼ş¼ĞÊ÷Ãæ°å{{{2
+;<cm_ToggleSeparateTree2>: >>å¼€å¯/å…³é—­: ä¸¤ä¸ªç‹¬ç«‹æ–‡ä»¶å¤¹æ ‘é¢æ¿{{{2
 <cm_ToggleSeparateTree2>:
 	SendPos(3205)
 Return
-;ÓÃ»§ =========================================
+;ç”¨æˆ· =========================================
 Return
-;<cm_UserMenu1>: >>ÓÃ»§²Ëµ¥ 1{{{2
+;<cm_UserMenu1>: >>ç”¨æˆ·èœå• 1{{{2
 <cm_UserMenu1>:
 	SendPos(701)
 Return
-;<cm_UserMenu2>: >>ÓÃ»§²Ëµ¥ 2{{{2
+;<cm_UserMenu2>: >>ç”¨æˆ·èœå• 2{{{2
 <cm_UserMenu2>:
 	SendPos(702)
 Return
-;<cm_UserMenu3>: >>ÓÃ»§²Ëµ¥ 3{{{2
+;<cm_UserMenu3>: >>ç”¨æˆ·èœå• 3{{{2
 <cm_UserMenu3>:
 	SendPos(703)
 Return
@@ -1772,69 +1772,69 @@ Return
 <cm_UserMenu9>:
 	SendPos(70)
 Return
-;<cm_UserMenu10>: >>¿É¶¨ÒåÆäËûÓÃ»§²Ëµ¥{{{2
+;<cm_UserMenu10>: >>å¯å®šä¹‰å…¶ä»–ç”¨æˆ·èœå•{{{2
 <cm_UserMenu10>:
 	SendPos(710)
 Return
-;±êÇ© =========================================
+;æ ‡ç­¾ =========================================
 Return
-;<cm_OpenNewTab>: >>ĞÂ½¨±êÇ©{{{2
+;<cm_OpenNewTab>: >>æ–°å»ºæ ‡ç­¾{{{2
 <cm_OpenNewTab>:
 	SendPos(3001)
 Return
-;<cm_OpenNewTabBg>: >>ĞÂ½¨±êÇ©(ÔÚºóÌ¨){{{2
+;<cm_OpenNewTabBg>: >>æ–°å»ºæ ‡ç­¾(åœ¨åå°){{{2
 <cm_OpenNewTabBg>:
 	SendPos(3002)
 Return
-;<cm_OpenDirInNewTab>: >>ĞÂ½¨±êÇ©(²¢´ò¿ª¹â±ê´¦µÄÎÄ¼ş¼Ğ){{{2
+;<cm_OpenDirInNewTab>: >>æ–°å»ºæ ‡ç­¾(å¹¶æ‰“å¼€å…‰æ ‡å¤„çš„æ–‡ä»¶å¤¹){{{2
 <cm_OpenDirInNewTab>:
 	SendPos(3003)
 Return
-;<cm_OpenDirInNewTabOther>: >>ĞÂ½¨±êÇ©(ÔÚÁíÒ»´°¿Ú´ò¿ªÎÄ¼ş¼Ğ){{{2
+;<cm_OpenDirInNewTabOther>: >>æ–°å»ºæ ‡ç­¾(åœ¨å¦ä¸€çª—å£æ‰“å¼€æ–‡ä»¶å¤¹){{{2
 <cm_OpenDirInNewTabOther>:
 	SendPos(3004)
 Return
-;<cm_SwitchToNextTab>: >>ÏÂÒ»¸ö±êÇ©(Ctrl+Tab){{{2
+;<cm_SwitchToNextTab>: >>ä¸‹ä¸€ä¸ªæ ‡ç­¾(Ctrl+Tab){{{2
 <cm_SwitchToNextTab>:
 	SendPos(3005)
 Return
-;<cm_SwitchToPreviousTab>: >>ÉÏÒ»¸ö±êÇ©(Ctrl+Shift+Tab){{{2
+;<cm_SwitchToPreviousTab>: >>ä¸Šä¸€ä¸ªæ ‡ç­¾(Ctrl+Shift+Tab){{{2
 <cm_SwitchToPreviousTab>:
 	SendPos(3006)
 Return
-;<cm_CloseCurrentTab>: >>¹Ø±Õµ±Ç°±êÇ©{{{2
+;<cm_CloseCurrentTab>: >>å…³é—­å½“å‰æ ‡ç­¾{{{2
 <cm_CloseCurrentTab>:
 	SendPos(3007)
 Return
-;<cm_CloseAllTabs>: >>¹Ø±ÕËùÓĞ±êÇ©{{{2
+;<cm_CloseAllTabs>: >>å…³é—­æ‰€æœ‰æ ‡ç­¾{{{2
 <cm_CloseAllTabs>:
 	SendPos(3008)
 Return
-;<cm_DirTabsShowMenu>: >>ÏÔÊ¾±êÇ©²Ëµ¥{{{2
+;<cm_DirTabsShowMenu>: >>æ˜¾ç¤ºæ ‡ç­¾èœå•{{{2
 <cm_DirTabsShowMenu>:
 	SendPos(3009)
 Return
-;<cm_ToggleLockCurrentTab>: >>Ëø¶¨/½âËøµ±Ç°±êÇ©{{{2
+;<cm_ToggleLockCurrentTab>: >>é”å®š/è§£é”å½“å‰æ ‡ç­¾{{{2
 <cm_ToggleLockCurrentTab>:
 	SendPos(3010)
 Return
-;<cm_ToggleLockDcaCurrentTab>: >>Ëø¶¨/½âËøµ±Ç°±êÇ©(¿É¸ü¸ÄÎÄ¼ş¼Ğ){{{2
+;<cm_ToggleLockDcaCurrentTab>: >>é”å®š/è§£é”å½“å‰æ ‡ç­¾(å¯æ›´æ”¹æ–‡ä»¶å¤¹){{{2
 <cm_ToggleLockDcaCurrentTab>:
 	SendPos(3012)
 Return
-;<cm_ExchangeWithTabs>: >>½»»»×óÓÒ´°¿Ú¼°Æä±êÇ©{{{2
+;<cm_ExchangeWithTabs>: >>äº¤æ¢å·¦å³çª—å£åŠå…¶æ ‡ç­¾{{{2
 <cm_ExchangeWithTabs>:
 	SendPos(535)
 Return
-;<cm_GoToLockedDir>: >>×ªµ½Ëø¶¨±êÇ©µÄ¸ùÎÄ¼ş¼Ğ{{{2
+;<cm_GoToLockedDir>: >>è½¬åˆ°é”å®šæ ‡ç­¾çš„æ ¹æ–‡ä»¶å¤¹{{{2
 <cm_GoToLockedDir>:
 	SendPos(3011)
 Return
-;<cm_SrcActivateTab1>: >>À´Ô´´°¿Ú: ¼¤»î±êÇ© 1{{{2
+;<cm_SrcActivateTab1>: >>æ¥æºçª—å£: æ¿€æ´»æ ‡ç­¾ 1{{{2
 <cm_SrcActivateTab1>:
 	SendPos(5001)
 Return
-;<cm_SrcActivateTab2>: >>À´Ô´´°¿Ú: ¼¤»î±êÇ© 2{{{2
+;<cm_SrcActivateTab2>: >>æ¥æºçª—å£: æ¿€æ´»æ ‡ç­¾ 2{{{2
 <cm_SrcActivateTab2>:
 	SendPos(5002)
 Return
@@ -1842,7 +1842,7 @@ Return
 <cm_SrcActivateTab3>:
 	SendPos(5003)
 Return
-;<cm_SrcActivateTab4>: >>×î¶à 99 ¸ö{{{2
+;<cm_SrcActivateTab4>: >>æœ€å¤š 99 ä¸ª{{{2
 <cm_SrcActivateTab4>:
 	SendPos(5004)
 Return
@@ -1870,11 +1870,11 @@ Return
 <cm_SrcActivateTab10>:
 	SendPos(5010)
 Return
-;<cm_TrgActivateTab1>: >>Ä¿±ê´°¿Ú: ¼¤»î±êÇ© 1{{{2
+;<cm_TrgActivateTab1>: >>ç›®æ ‡çª—å£: æ¿€æ´»æ ‡ç­¾ 1{{{2
 <cm_TrgActivateTab1>:
 	SendPos(5101)
 Return
-;<cm_TrgActivateTab2>: >>Ä¿±ê´°¿Ú: ¼¤»î±êÇ© 2{{{2
+;<cm_TrgActivateTab2>: >>ç›®æ ‡çª—å£: æ¿€æ´»æ ‡ç­¾ 2{{{2
 <cm_TrgActivateTab2>:
 	SendPos(5102)
 Return
@@ -1882,7 +1882,7 @@ Return
 <cm_TrgActivateTab3>:
 	SendPos(5103)
 Return
-;<cm_TrgActivateTab4>: >>×î¶à 99 ¸ö{{{2
+;<cm_TrgActivateTab4>: >>æœ€å¤š 99 ä¸ª{{{2
 <cm_TrgActivateTab4>:
 	SendPos(5104)
 Return
@@ -1910,11 +1910,11 @@ Return
 <cm_TrgActivateTab10>:
 	SendPos(5110)
 Return
-;<cm_LeftActivateTab1>: >>×ó´°¿Ú: ¼¤»î±êÇ© 1{{{2
+;<cm_LeftActivateTab1>: >>å·¦çª—å£: æ¿€æ´»æ ‡ç­¾ 1{{{2
 <cm_LeftActivateTab1>:
 	SendPos(5201)
 Return
-;<cm_LeftActivateTab2>: >>×ó´°¿Ú: ¼¤»î±êÇ© 2{{{2
+;<cm_LeftActivateTab2>: >>å·¦çª—å£: æ¿€æ´»æ ‡ç­¾ 2{{{2
 <cm_LeftActivateTab2>:
 	SendPos(5202)
 Return
@@ -1922,7 +1922,7 @@ Return
 <cm_LeftActivateTab3>:
 	SendPos(5203)
 Return
-;<cm_LeftActivateTab4>: >>×î¶à 99 ¸ö{{{2
+;<cm_LeftActivateTab4>: >>æœ€å¤š 99 ä¸ª{{{2
 <cm_LeftActivateTab4>:
 	SendPos(5204)
 Return
@@ -1950,11 +1950,11 @@ Return
 <cm_LeftActivateTab10>:
 	SendPos(5210)
 Return
-;<cm_RightActivateTab1>: >>ÓÒ´°¿Ú: ¼¤»î±êÇ© 1{{{2
+;<cm_RightActivateTab1>: >>å³çª—å£: æ¿€æ´»æ ‡ç­¾ 1{{{2
 <cm_RightActivateTab1>:
 	SendPos(5301)
 Return
-;<cm_RightActivateTab2>: >>ÓÒ´°¿Ú: ¼¤»î±êÇ© 2{{{2
+;<cm_RightActivateTab2>: >>å³çª—å£: æ¿€æ´»æ ‡ç­¾ 2{{{2
 <cm_RightActivateTab2>:
 	SendPos(5302)
 Return
@@ -1962,7 +1962,7 @@ Return
 <cm_RightActivateTab3>:
 	SendPos(5303)
 Return
-;<cm_RightActivateTab4>: >>×î¶à 99 ¸ö{{{2
+;<cm_RightActivateTab4>: >>æœ€å¤š 99 ä¸ª{{{2
 <cm_RightActivateTab4>:
 	SendPos(5304)
 Return
@@ -1990,13 +1990,13 @@ Return
 <cm_RightActivateTab10>:
 	SendPos(5310)
 Return
-;ÅÅĞò =========================================
+;æ’åº =========================================
 Return
-;<cm_SrcSortByCol1>: >>À´Ô´´°¿Ú: °´µÚ 1 ÁĞÅÅĞò{{{2
+;<cm_SrcSortByCol1>: >>æ¥æºçª—å£: æŒ‰ç¬¬ 1 åˆ—æ’åº{{{2
 <cm_SrcSortByCol1>:
 	SendPos(6001)
 Return
-;<cm_SrcSortByCol2>: >>À´Ô´´°¿Ú: °´µÚ 2 ÁĞÅÅĞò{{{2
+;<cm_SrcSortByCol2>: >>æ¥æºçª—å£: æŒ‰ç¬¬ 2 åˆ—æ’åº{{{2
 <cm_SrcSortByCol2>:
 	SendPos(6002)
 Return
@@ -2004,7 +2004,7 @@ Return
 <cm_SrcSortByCol3>:
 	SendPos(6003)
 Return
-;<cm_SrcSortByCol4>: >>×î¶à 99 ÁĞ{{{2
+;<cm_SrcSortByCol4>: >>æœ€å¤š 99 åˆ—{{{2
 <cm_SrcSortByCol4>:
 	SendPos(6004)
 Return
@@ -2036,11 +2036,11 @@ Return
 <cm_SrcSortByCol99>:
 	SendPos(6099)
 Return
-;<cm_TrgSortByCol1>: >>Ä¿±ê´°¿Ú: °´µÚ 1 ÁĞÅÅĞò{{{2
+;<cm_TrgSortByCol1>: >>ç›®æ ‡çª—å£: æŒ‰ç¬¬ 1 åˆ—æ’åº{{{2
 <cm_TrgSortByCol1>:
 	SendPos(6101)
 Return
-;<cm_TrgSortByCol2>: >>Ä¿±ê´°¿Ú: °´µÚ 2 ÁĞÅÅĞò{{{2
+;<cm_TrgSortByCol2>: >>ç›®æ ‡çª—å£: æŒ‰ç¬¬ 2 åˆ—æ’åº{{{2
 <cm_TrgSortByCol2>:
 	SendPos(6102)
 Return
@@ -2048,7 +2048,7 @@ Return
 <cm_TrgSortByCol3>:
 	SendPos(6103)
 Return
-;<cm_TrgSortByCol4>: >>×î¶à 99 ÁĞ{{{2
+;<cm_TrgSortByCol4>: >>æœ€å¤š 99 åˆ—{{{2
 <cm_TrgSortByCol4>:
 	SendPos(6104)
 Return
@@ -2080,11 +2080,11 @@ Return
 <cm_TrgSortByCol99>:
 	SendPos(6199)
 Return
-;<cm_LeftSortByCol1>: >>×ó´°¿Ú: °´µÚ 1 ÁĞÅÅĞò{{{2
+;<cm_LeftSortByCol1>: >>å·¦çª—å£: æŒ‰ç¬¬ 1 åˆ—æ’åº{{{2
 <cm_LeftSortByCol1>:
 	SendPos(6201)
 Return
-;<cm_LeftSortByCol2>: >>×ó´°¿Ú: °´µÚ 2 ÁĞÅÅĞò{{{2
+;<cm_LeftSortByCol2>: >>å·¦çª—å£: æŒ‰ç¬¬ 2 åˆ—æ’åº{{{2
 <cm_LeftSortByCol2>:
 	SendPos(6202)
 Return
@@ -2092,7 +2092,7 @@ Return
 <cm_LeftSortByCol3>:
 	SendPos(6203)
 Return
-;<cm_LeftSortByCol4>: >>×î¶à 99 ÁĞ{{{2
+;<cm_LeftSortByCol4>: >>æœ€å¤š 99 åˆ—{{{2
 <cm_LeftSortByCol4>:
 	SendPos(6204)
 Return
@@ -2124,11 +2124,11 @@ Return
 <cm_LeftSortByCol99>:
 	SendPos(6299)
 Return
-;<cm_RightSortByCol1>: >>ÓÒ´°¿Ú: °´µÚ 1 ÁĞÅÅĞò{{{2
+;<cm_RightSortByCol1>: >>å³çª—å£: æŒ‰ç¬¬ 1 åˆ—æ’åº{{{2
 <cm_RightSortByCol1>:
 	SendPos(6301)
 Return
-;<cm_RightSortByCol2>: >>ÓÒ´°¿Ú: °´µÚ 2 ÁĞÅÅĞò{{{2
+;<cm_RightSortByCol2>: >>å³çª—å£: æŒ‰ç¬¬ 2 åˆ—æ’åº{{{2
 <cm_RightSortByCol2>:
 	SendPos(6302)
 Return
@@ -2136,7 +2136,7 @@ Return
 <cm_RightSortByCol3>:
 	SendPos(6303)
 Return
-;<cm_RightSortByCol4>: >>×î¶à 99 ÁĞ{{{2
+;<cm_RightSortByCol4>: >>æœ€å¤š 99 åˆ—{{{2
 <cm_RightSortByCol4>:
 	SendPos(6304)
 Return
@@ -2168,13 +2168,13 @@ Return
 <cm_RightSortByCol99>:
 	SendPos(6399)
 Return
-;×Ô¶¨ÒåÁĞÊÓÍ¼ =========================================
+;è‡ªå®šä¹‰åˆ—è§†å›¾ =========================================
 Return
-;<cm_SrcCustomView1>: >>À´Ô´´°¿Ú: ×Ô¶¨ÒåÁĞÊÓÍ¼ 1{{{2
+;<cm_SrcCustomView1>: >>æ¥æºçª—å£: è‡ªå®šä¹‰åˆ—è§†å›¾ 1{{{2
 <cm_SrcCustomView1>:
 	SendPos(271)
 Return
-;<cm_SrcCustomView2>: >>À´Ô´´°¿Ú: ×Ô¶¨ÒåÁĞÊÓÍ¼ 2{{{2
+;<cm_SrcCustomView2>: >>æ¥æºçª—å£: è‡ªå®šä¹‰åˆ—è§†å›¾ 2{{{2
 <cm_SrcCustomView2>:
 	SendPos(272)
 Return
@@ -2182,7 +2182,7 @@ Return
 <cm_SrcCustomView3>:
 	SendPos(273)
 Return
-;<cm_SrcCustomView4>: >>×î¶à 29 ¸ö{{{2
+;<cm_SrcCustomView4>: >>æœ€å¤š 29 ä¸ª{{{2
 <cm_SrcCustomView4>:
 	SendPos(274)
 Return
@@ -2206,11 +2206,11 @@ Return
 <cm_SrcCustomView9>:
 	SendPos(279)
 Return
-;<cm_LeftCustomView1>: >>×ó´°¿Ú: ×Ô¶¨ÒåÁĞÊÓÍ¼ 1{{{2
+;<cm_LeftCustomView1>: >>å·¦çª—å£: è‡ªå®šä¹‰åˆ—è§†å›¾ 1{{{2
 <cm_LeftCustomView1>:
 	SendPos(710)
 Return
-;<cm_LeftCustomView2>: >>×ó´°¿Ú: ×Ô¶¨ÒåÁĞÊÓÍ¼ 2{{{2
+;<cm_LeftCustomView2>: >>å·¦çª—å£: è‡ªå®šä¹‰åˆ—è§†å›¾ 2{{{2
 <cm_LeftCustomView2>:
 	SendPos(72)
 Return
@@ -2218,7 +2218,7 @@ Return
 <cm_LeftCustomView3>:
 	SendPos(73)
 Return
-;<cm_LeftCustomView4>: >>×î¶à 29 ¸ö{{{2
+;<cm_LeftCustomView4>: >>æœ€å¤š 29 ä¸ª{{{2
 <cm_LeftCustomView4>:
 	SendPos(74)
 Return
@@ -2242,11 +2242,11 @@ Return
 <cm_LeftCustomView9>:
 	SendPos(79)
 Return
-;<cm_RightCustomView1>: >>ÓÒ´°¿Ú: ×Ô¶¨ÒåÁĞÊÓÍ¼ 1{{{2
+;<cm_RightCustomView1>: >>å³çª—å£: è‡ªå®šä¹‰åˆ—è§†å›¾ 1{{{2
 <cm_RightCustomView1>:
 	SendPos(171)
 Return
-;<cm_RightCustomView2>: >>ÓÒ´°¿Ú: ×Ô¶¨ÒåÁĞÊÓÍ¼ 2{{{2
+;<cm_RightCustomView2>: >>å³çª—å£: è‡ªå®šä¹‰åˆ—è§†å›¾ 2{{{2
 <cm_RightCustomView2>:
 	SendPos(172)
 Return
@@ -2254,7 +2254,7 @@ Return
 <cm_RightCustomView3>:
 	SendPos(173)
 Return
-;<cm_RightCustomView4>: >>×î¶à 29 ¸ö{{{2
+;<cm_RightCustomView4>: >>æœ€å¤š 29 ä¸ª{{{2
 <cm_RightCustomView4>:
 	SendPos(174)
 Return
@@ -2278,47 +2278,47 @@ Return
 <cm_RightCustomView9>:
 	SendPos(179)
 Return
-;<cm_SrcNextCustomView>: >>À´Ô´´°¿Ú: ÏÂÒ»¸ö×Ô¶¨ÒåÊÓÍ¼{{{2
+;<cm_SrcNextCustomView>: >>æ¥æºçª—å£: ä¸‹ä¸€ä¸ªè‡ªå®šä¹‰è§†å›¾{{{2
 <cm_SrcNextCustomView>:
 	SendPos(5501)
 Return
-;<cm_SrcPrevCustomView>: >>À´Ô´´°¿Ú: ÉÏÒ»¸ö×Ô¶¨ÒåÊÓÍ¼{{{2
+;<cm_SrcPrevCustomView>: >>æ¥æºçª—å£: ä¸Šä¸€ä¸ªè‡ªå®šä¹‰è§†å›¾{{{2
 <cm_SrcPrevCustomView>:
 	SendPos(5502)
 Return
-;<cm_TrgNextCustomView>: >>Ä¿±ê´°¿Ú: ÏÂÒ»¸ö×Ô¶¨ÒåÊÓÍ¼{{{2
+;<cm_TrgNextCustomView>: >>ç›®æ ‡çª—å£: ä¸‹ä¸€ä¸ªè‡ªå®šä¹‰è§†å›¾{{{2
 <cm_TrgNextCustomView>:
 	SendPos(5503)
 Return
-;<cm_TrgPrevCustomView>: >>Ä¿±ê´°¿Ú: ÉÏÒ»¸ö×Ô¶¨ÒåÊÓÍ¼{{{2
+;<cm_TrgPrevCustomView>: >>ç›®æ ‡çª—å£: ä¸Šä¸€ä¸ªè‡ªå®šä¹‰è§†å›¾{{{2
 <cm_TrgPrevCustomView>:
 	SendPos(5504)
 Return
-;<cm_LeftNextCustomView>: >>×ó´°¿Ú: ÏÂÒ»¸ö×Ô¶¨ÒåÊÓÍ¼{{{2
+;<cm_LeftNextCustomView>: >>å·¦çª—å£: ä¸‹ä¸€ä¸ªè‡ªå®šä¹‰è§†å›¾{{{2
 <cm_LeftNextCustomView>:
 	SendPos(5505)
 Return
-;<cm_LeftPrevCustomView>: >>×ó´°¿Ú: ÉÏÒ»¸ö×Ô¶¨ÒåÊÓÍ¼{{{2
+;<cm_LeftPrevCustomView>: >>å·¦çª—å£: ä¸Šä¸€ä¸ªè‡ªå®šä¹‰è§†å›¾{{{2
 <cm_LeftPrevCustomView>:
 	SendPos(5506)
 Return
-;<cm_RightNextCustomView>: >>ÓÒ´°¿Ú: ÏÂÒ»¸ö×Ô¶¨ÒåÊÓÍ¼{{{2
+;<cm_RightNextCustomView>: >>å³çª—å£: ä¸‹ä¸€ä¸ªè‡ªå®šä¹‰è§†å›¾{{{2
 <cm_RightNextCustomView>:
 	SendPos(5507)
 Return
-;<cm_RightPrevCustomView>: >>ÓÒ´°¿Ú: ÉÏÒ»¸ö×Ô¶¨ÒåÊÓÍ¼{{{2
+;<cm_RightPrevCustomView>: >>å³çª—å£: ä¸Šä¸€ä¸ªè‡ªå®šä¹‰è§†å›¾{{{2
 <cm_RightPrevCustomView>:
 	SendPos(5508)
 Return
-;<cm_LoadAllOnDemandFields>: >>ËùÓĞÎÄ¼ş¶¼°´Ğè¼ÓÔØ±¸×¢{{{2
+;<cm_LoadAllOnDemandFields>: >>æ‰€æœ‰æ–‡ä»¶éƒ½æŒ‰éœ€åŠ è½½å¤‡æ³¨{{{2
 <cm_LoadAllOnDemandFields>:
 	SendPos(5512)
 Return
-;<cm_LoadSelOnDemandFields>: >>½öÑ¡ÖĞµÄÎÄ¼ş°´Ğè¼ÓÔØ±¸×¢{{{2
+;<cm_LoadSelOnDemandFields>: >>ä»…é€‰ä¸­çš„æ–‡ä»¶æŒ‰éœ€åŠ è½½å¤‡æ³¨{{{2
 <cm_LoadSelOnDemandFields>:
 	SendPos(5513)
 Return
-;<cm_ContentStopLoadFields>: >>Í£Ö¹ºóÌ¨¼ÓÔØ±¸×¢{{{2
+;<cm_ContentStopLoadFields>: >>åœæ­¢åå°åŠ è½½å¤‡æ³¨{{{2
 <cm_ContentStopLoadFields>:
 	SendPos(5514)
 Return

@@ -7,125 +7,10 @@ Init()
 Global VIATC_INI := GetPath_VIATC_INI()
 Global TCEXE := GetPath_TCEXE()
 Global TCINI := GetPath_TCINI()
-RegisterHotkey("J","<Down>","TQUICKSEARCH")
-RegisterHotkey("K","<Up>","TQUICKSEARCH")
-RegisterHotkey("0","<0>","TTOTAL_CMD")
-RegisterHotkey("1","<1>","TTOTAL_CMD")
-RegisterHotkey("2","<2>","TTOTAL_CMD")
-RegisterHotkey("3","<3>","TTOTAL_CMD")
-RegisterHotkey("4","<4>","TTOTAL_CMD")
-RegisterHotkey("5","<5>","TTOTAL_CMD")
-RegisterHotkey("6","<6>","TTOTAL_CMD")
-RegisterHotkey("7","<7>","TTOTAL_CMD")
-RegisterHotkey("8","<8>","TTOTAL_CMD")
-RegisterHotkey("9","<9>","TTOTAL_CMD")
-RegisterHotkey("k","<up>","TTOTAL_CMD")
-RegisterHotkey("K","<upSelect>","TTOTAL_CMD")
-RegisterHotkey("j","<down>","TTOTAL_CMD")
-RegisterHotkey("J","<downSelect>","TTOTAL_CMD")
-RegisterHotkey("h","<left>","TTOTAL_CMD")
-RegisterHotkey("H","<cm_GotoPreviousDir>","TTOTAL_CMD")
-RegisterHotkey("l","<right>","TTOTAL_CMD")
-RegisterHotkey("L","<cm_GotoNextDir>","TTOTAL_CMD")
-RegisterHotkey("I","<CreateNewFile>","TTOTAL_CMD")
-RegisterHotkey("i","<Insert_Mode_TC>","TTOTAL_CMD")
-RegisterHotkey("d","<cm_DirectoryHotlist>","TTOTAL_CMD")
-RegisterHotkey("D","<cm_OpenDesktop>","TTOTAL_CMD")
-RegisterHotkey("e","<cm_ContextMenu>","TTOTAL_CMD")
-RegisterHotkey("E","<cm_ExeCuteDOS>","TTOTAL_CMD")
-RegisterHotkey("N","<cm_DirectoryHistory>","TTOTAL_CMD")
-RegisterHotkey("n","<azHistory>","TTOTAL_CMD")
-RegisterHotkey("m","<Mark>","TTOTAL_CMD")
-RegisterHotkey("M","<Half>","TTOTAL_CMD")
-RegisterHotkey("'","<ListMark>","TTOTAL_CMD")
-RegisterHotkey("u","<GoToParentEx>","TTOTAL_CMD")
-RegisterHotkey("U","<cm_GoToRoot>","TTOTAL_CMD")
-RegisterHotkey("o","<cm_LeftOpenDrives>","TTOTAL_CMD")
-RegisterHotkey("O","<cm_RightOpenDrives>","TTOTAL_CMD")
-RegisterHotkey("q","<cm_SrcQuickView>","TTOTAL_CMD")
-RegisterHotkey("r","<cm_RenameOnly>","TTOTAL_CMD")
-RegisterHotkey("R","<cm_MultiRenameFiles>","TTOTAL_CMD")
-RegisterHotkey("x","<cm_Delete>","TTOTAL_CMD")
-RegisterHotkey("X","<ForceDelete>","TTOTAL_CMD")
-RegisterHotkey("w","<cm_List>","TTOTAL_CMD")
-RegisterHotkey("y","<cm_CopyNamesToClip>","TTOTAL_CMD")
-RegisterHotkey("Y","<cm_CopyFullNamesToClip>","TTOTAL_CMD")
-RegisterHotkey("P","<cm_PackFiles>","TTOTAL_CMD")
-RegisterHotkey("p","<cm_UnpackFiles>","TTOTAL_CMD")
-RegisterHotkey("t","<cm_OpenNewTab>","TTOTAL_CMD")
-RegisterHotkey("T","<cm_OpenNewTabBg>","TTOTAL_CMD")
-RegisterHotkey("/","<cm_ShowQuickSearch>","TTOTAL_CMD")
-RegisterHotkey("?","<cm_SearchFor>","TTOTAL_CMD")
-RegisterHotkey("[","<cm_SelectCurrentName>","TTOTAL_CMD")
-RegisterHotkey("{","<cm_UnselectCurrentName>","TTOTAL_CMD")
-RegisterHotkey("]","<cm_SelectCurrentExtension>","TTOTAL_CMD")
-RegisterHotkey("}","<cm_UnSelectCurrentExtension>","TTOTAL_CMD")
-RegisterHotkey("\","<cm_ExchangeSelection>","TTOTAL_CMD")
-RegisterHotkey("|","<cm_ClearAll>","TTOTAL_CMD")
-RegisterHotkey("-","<cm_SwitchSeparateTree>","TTOTAL_CMD")
-RegisterHotkey("=","<cm_MatchSrc>","TTOTAL_CMD")
-RegisterHotkey(":","<cm_FocusCmdLine>","TTOTAL_CMD")
-RegisterHotkey("G","<LastLine>","TTOTAL_CMD")
-RegisterHotkey("ga","<cm_CloseAllTabs>","TTOTAL_CMD")
-RegisterHotkey("gg","<GoToLine>","TTOTAL_CMD")
-RegisterHotkey("gn","<cm_SwitchToNextTab>","TTOTAL_CMD")
-RegisterHotkey("gp","<cm_SwitchToPreviousTab>","TTOTAL_CMD")
-RegisterHotkey("gc","<cm_CloseCurrentTab>","TTOTAL_CMD")
-RegisterHotkey("gb","<cm_OpenDirInNewTabOther>","TTOTAL_CMD")
-RegisterHotkey("ge","<cm_Exchange>","TTOTAL_CMD")
-RegisterHotkey("gw","<cm_ExchangeWithTabs>","TTOTAL_CMD")
-RegisterHotkey("g1","<cm_SrcActivateTab1>","TTOTAL_CMD")
-RegisterHotkey("g2","<cm_SrcActivateTab2>","TTOTAL_CMD")
-RegisterHotkey("g3","<cm_SrcActivateTab3>","TTOTAL_CMD")
-RegisterHotkey("g4","<cm_SrcActivateTab4>","TTOTAL_CMD")
-RegisterHotkey("g5","<cm_SrcActivateTab5>","TTOTAL_CMD")
-RegisterHotkey("g6","<cm_SrcActivateTab6>","TTOTAL_CMD")
-RegisterHotkey("g7","<cm_SrcActivateTab7>","TTOTAL_CMD")
-RegisterHotkey("g8","<cm_SrcActivateTab8>","TTOTAL_CMD")
-RegisterHotkey("g9","<cm_SrcActivateTab9>","TTOTAL_CMD")
-RegisterHotkey("g0","<GoLastTab>","TTOTAL_CMD")
-RegisterHotkey("sn","<cm_SrcByName>","TTOTAL_CMD")
-RegisterHotkey("se","<cm_SrcByExt>","TTOTAL_CMD")
-RegisterHotkey("ss","<cm_SrcBySize>","TTOTAL_CMD")
-RegisterHotkey("sd","<cm_SrcByDateTime>","TTOTAL_CMD")
-RegisterHotkey("sr","<cm_SrcNegOrder>","TTOTAL_CMD")
-RegisterHotkey("s1","<cm_SrcSortByCol1>","TTOTAL_CMD")
-RegisterHotkey("s2","<cm_SrcSortByCol2>","TTOTAL_CMD")
-RegisterHotkey("s3","<cm_SrcSortByCol3>","TTOTAL_CMD")
-RegisterHotkey("s4","<cm_SrcSortByCol4>","TTOTAL_CMD")
-RegisterHotkey("s5","<cm_SrcSortByCol5>","TTOTAL_CMD")
-RegisterHotkey("s6","<cm_SrcSortByCol6>","TTOTAL_CMD")
-RegisterHotkey("s7","<cm_SrcSortByCol7>","TTOTAL_CMD")
-RegisterHotkey("s8","<cm_SrcSortByCol8>","TTOTAL_CMD")
-RegisterHotkey("s9","<cm_SrcSortByCol9>","TTOTAL_CMD")
-RegisterHotkey("s0","<cm_SrcUnsorted>","TTOTAL_CMD")
-RegisterHotkey("v","<cm_SrcCustomViewMenu>","TTOTAL_CMD")
-RegisterHotkey("Vb","<cm_VisButtonbar>","TTOTAL_CMD")
-RegisterHotkey("Vd","<cm_VisDriveButtons>","TTOTAL_CMD")
-RegisterHotkey("Vo","<cm_VisTwoDriveButtons>","TTOTAL_CMD")
-RegisterHotkey("Vr","<cm_VisDriveCombo>","TTOTAL_CMD")
-RegisterHotkey("Vc","<cm_VisDriveCombo>","TTOTAL_CMD")
-RegisterHotkey("Vt","<cm_VisTabHeader>","TTOTAL_CMD")
-RegisterHotkey("Vs","<cm_VisStatusbar>","TTOTAL_CMD")
-RegisterHotkey("Vn","<cm_VisCmdLine>","TTOTAL_CMD")
-RegisterHotkey("Vf","<cm_VisKeyButtons>","TTOTAL_CMD")
-RegisterHotkey("Vw","<cm_VisDirTabs>","TTOTAL_CMD")
-RegisterHotkey("Ve","<cm_CommandBrowser>","TTOTAL_CMD")
-RegisterHotkey("zz","<cm_50Percent>","TTOTAL_CMD")
-RegisterHotkey("zi","<WinMaxLeft>","TTOTAL_CMD")
-RegisterHotkey("zo","<WinMaxRight>","TTOTAL_CMD")
-RegisterHotkey("zt","<AlwayOnTop>","TTOTAL_CMD")
-RegisterHotkey("zn","<cm_Minimize>","TTOTAL_CMD")
-RegisterHotkey("zm","<cm_Maximize>","TTOTAL_CMD")
-RegisterHotkey("zr","<cm_Restore>","TTOTAL_CMD")
-RegisterHotkey("zv","<cm_VerticalPanels>","TTOTAL_CMD")
-RegisterHotkey("zv","<cm_VerticalPanels>","TTOTAL_CMD")
-RegisterHotkey("zs","<TransParent>","TTOTAL_CMD")
-RegisterHotkey(".","<Repeat>","TTOTAL_CMD")
-RegisterHotkey("<lwin>e","<ToggleTC>")
-SetHotkey("esc","<Normal_Mode_TC>","TTOTAL_CMD")
+Vim_HotkeyList .= " <> "
 ReadConfigToRegHK()
-Traytip, ,ViATc 载入完毕,,17
+;Msgbox % Substr(Vim_HotkeyList,RegExMatch(Vim_HotkeyList,"\s<>\s"))
+Traytip,,ViATc 载入完毕,,17
 Sleep,1800
 Traytip
 ;RegisterHotkey("zf","<TCFullScreen>","TTOTAL_CMD")
@@ -203,37 +88,7 @@ ReadConfigToRegHK()
 		}
 	}
 }
-<GetClassByView>:
-	GetClassByView()
-return
-GetClassByView()
-{
-	Gui, Add, ListView, x2 y0 w400 h500, Title|Class
-	for process in ComObjGet("winmgmts:").ExecQuery("Select * from Win32_Process")
-	{
-		name := Process.name
-		Process,Exist,%name%
-		ID := ErrorLevel
-		WinGetClass,Class,AHK_PID %ID%
-		If Class
-		{
-			WinGetTitle,Title,AHK_PID %ID%
-   		 	LV_Add("", Title,class)
-		}
-	}
-	Gui, Show,, Process List
-}
-<GetClassByMouse>:
-	GetClassByMouse()
-return
-GetClassByMouse()
-{
-	MouseGetPos, , , id
-	WinGetClass, class, ahk_id %id%
-	ToolTip,AHKC_%class%
-	Sleep,2000
-	Tooltip
-}	
+
 ; 读取ini文件，如果读取的项是VIATC的选项，则在读取不到的时候创建
 VIATC_IniRead(section="",key="")
 {
@@ -418,3 +273,4 @@ EmptyMem()
 #include Actions\temp.ahk
 #include Actions\Tools.ahk
 #include Actions\TCCOMMAND+.ahk
+#include Actions\QDir.ahk

@@ -2,6 +2,7 @@
 ; 2013-04-10
 ; By Array ( linxinhong.sky@gmail.com )
 #UseHook on
+#NoEnv
 Init()
 {
 	Gosub,<Init>
@@ -15,17 +16,23 @@ Global Vim_HotkeyCount := 0
 Global Vim_Mode := True
 Global Vim_Repeat := []
 Global Vim_Actions := []
+Global Vim_Timer := 0
 return
 ;=========================================================
 ; RegisterHotkey(Key,Action,Class="") {{{2
 RegisterHotkey(Key,Action,Class="")
 {
+	If Not CLASS AND RegExMatch(Key,">[^<]{2}")
+	{
+		Msgbox % "不推荐在全局热键“" Key "”中含单键,请重新设置"
+		Return
+	}
 	If Not IsVimLabel(Action)
 	{
 		Msgbox % "1Key " Key " map to Action " Action " Error !"
 		Return
 	}
-	switch := False
+	switch := False ;用来判定保存热键是否成功
 	for,i,k in ResolveHotkey(Key)
 	{
 		If SetHotkey(K,"<HotkeyLabel>",Class)
@@ -33,8 +40,27 @@ RegisterHotkey(Key,Action,Class="")
 		Else
 			Msgbox % "2Key " Key " map to Action " Action " Error !"
 	}
-	If switch
+	If switch ;如果热键保存成功后，将热键体保存到内存中
+	{
+		If RegExMatch(HK_Match(Key,Class),"[^\n]*")
+			HK_Delete(Key,Class)
 		HK_Write(Key,Action,Class)
+	}
+	If RegExMatch(Action,"^\(.*\)$")
+	{
+		Info := "运行 " . Action
+		CustomActions(Action,Info)
+	}
+	If RegExMatch(Action,"^\{.*\}$")
+	{
+		Info := "发送 " . Action
+		CustomActions(Action,Info)
+	}
+	If RegExMatch(Action,"^\[.*\]$")
+	{
+		Info := "宏 " . Action
+		CustomActions(Action,Info)
+	}
 }
 ; SetHotkey(key,Action,Class="") {{{2
 ; 设置热键，返回设置结果
@@ -50,7 +76,10 @@ SetHotkey(key,Action,Class="")
 			GroupAdd,Vim_Group_Class,AHK_CLASS %class%
 		}
 		Else
+		{
 			Hotkey,IfWinActive
+			
+		}
 		Hotkey,%Key%,%Action%,On,UseErrorLevel
 		If ErrorLevel And ( Not RegExMatch(Action,"<HotkeyLabel>") )
 		{
@@ -93,20 +122,18 @@ HotkeyLabel()
 		Vim_HotkeyTemp[Class] := ""
 		Return
 	}
-;	Msgbox % Vim_HotkeyTemp[Class] "`n" Class "`n" HK_Match("g","notepad")
-;   Msgbox % Action
-;   If RegExMatch(Action,"^[<\(\{\[][^\t]*[\]\}\)>]$")
 	If IsVimLabel(Action)
 	{
+		Settimer,<TimeOutExecSub>,off
 		ExecSub(Action,Vim_HotkeyCount,Class)
-		If IsLabel("<ExcSubOK>")
-			GoSub,<ExcSubOK>
 		Vim_HotkeyTemp[Class] := ""
+		Vim_Timer := 0
 		return
 	}
 	List := Vim_HotkeyTemp[Class] "`n================================`n"
 	If Action
 	{
+		Settimer,<TimeOutExecSub>,50
 		;If GroupWarn
 		Loop,Parse,Action,%A_tab%
 		{
@@ -121,15 +148,34 @@ HotkeyLabel()
 	}
 	Else
 	{
-		If IsLabel("<ExcSubOK>")
-			GoSub,<ExcSubOK>
 		Vim_HotkeyTemp[Class] := ""
+		Tooltip
+	}
+}
+;<TimeOutExecSub>:
+<TimeOutExecSub>:
+	TimeOutExecSub()
+Return
+TimeOutExecSub()
+{
+	Vim_Timer++
+	If Vim_Timer > 30
+	{
+		Settimer,<TimeOutExecSub>,off
+		WinGetClass,Class,A
+		Action := HK_Match(Vim_HotkeyTemp[Class],Class,False)
+		If IsVimLabel(Action)
+			ExecSub(Action,Vim_HotkeyCount,Class)
+		Vim_HotkeyTemp[Class] := ""
+		Vim_Timer := 0
 	}
 }
 ; ExecSub(Action,Count=0,Class="") {{{2
 ExecSub(Action,Count=0,Class="")
 {
 	Tooltip
+	If Not Class
+		WinGetClass,Class,A
 	Count := Count ? Count : 1
 	If RegExMatch(Action,"^<.*>$")
 	{
@@ -202,7 +248,11 @@ Micro(action,class)
 			If RegExMatch(A_LoopField,"^\d*$")
 				Sleep,%A_LoopField%
 			a := RegExReplace(A_LoopField,"=\d*$")
+			If Not IsVimLabel(a)
+				Continue
 			c := Substr(A_LoopField,Strlen(a)+2)
+			If Not RegExMatch(c,"\d*")
+				Continue
 			Vim_HotkeyCount := c
 			ExecSub(a,c,class)
 		}
@@ -452,19 +502,28 @@ ResolveHotkey(KeyList)
 	}
 	Return NewKeyList
 }
-; HK_Match(Class,Key) {{{2
+; HK_Match(key,class) {{{2
 ; 按类和热键匹配
 ; 如果完全匹配，则返回action
 ; 如果模糊匹配，返回匹配的所有元素
 ; 如果无匹配，返回False
-HK_Match(Key="",Class="")
+HK_Match(Key="",Class="",ALL=True)
 {
 	; Key有传参时，为查询Class下，Key是否有对应Action
-	; Key无传参时，为查询Class下所有Key元素
+	; Key无传参时，为查询Class下所有的热键体
+	; ALL默认为真时，进行模糊匹配
+	; ALL为假时，进行完全匹配
 	If Strlen(Key) > 0
 	{
-		; 完全匹配,返回动作
-
+		; 防止出现大写字符
+		Loop,Parse,Key
+		{
+			If Asc(A_LoopField) >= 65 And Asc(A_LoopField) <= 90
+				m .= "<shift>" . Chr(Asc(A_LoopField)+32)
+			Else
+				m .= A_LoopField
+		}
+		Key := m
 		; 模糊匹配,返回所有可能
 		s := Vim_HotkeyList
 		m := 
@@ -482,10 +541,11 @@ HK_Match(Key="",Class="")
 			Else
 				Break
 		}
-		If idx > 1
+		If ( idx > 1 ) AND ALL
 			Return m
 		Else
 		{	
+			; 完整匹配
 			Match := "i)\t" . Strlen(Class) . "\|" . ToMatch(Class) . Strlen(key) . "\|" . ToMatch(Key) . "[^\s]*\d+\|[<\(\{\[][^\t]*[>\)\}\]]\t" 
 			Pos := RegExMatch(Vim_HotkeyList,Match)
 			If Pos

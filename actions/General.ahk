@@ -17,6 +17,8 @@
 	CustomActions("<AlwayOnTop>","设置窗口顶置")
 	CustomActions("<TransParent>","设置窗口透明")
 	CustomActions("<Repeat>","重复上一次动作")
+	CustomActions("<SaveClipBoard>","保存剪切板的数据")
+	CustomActions("<ReturnClipBoard>","返回保存的数据到剪切板")
 return
 <1>:
 return
@@ -51,12 +53,17 @@ return
 	Send,{Up}
 return
 <Insert_Mode>:
+	WinGetClass,Class,A
+		Vim_HotKeyTemp[Class] := ""
 	HotkeyControl(False)
 return
 <Normal_Mode>:
 	HotkeyControl(True)
+	WinGetClass,Class,A
+		Vim_HotKeyTemp[Class] := ""
 	Vim_HotKeyCount := 0
-	Send,{Esc}
+	Tooltip
+	Send,{%A_Thishotkey%}
 return
 ; <AlwayOnTop> {{{1
 <AlwayOnTop>:
@@ -94,6 +101,14 @@ TransParent()
 		WinSet,Transparent,%TranspVar%,ahk_id %win%
 	}
 }
+<SaveClipBoard>:
+	ClipboardSaved := ClipboardALL
+return
+<ReturnClipBoard>:
+	Sleep,100
+	Clipboard := ClipboardSaved
+	ClipboardSaved := ""
+return
 <Reload>:
 	Reload
 return
